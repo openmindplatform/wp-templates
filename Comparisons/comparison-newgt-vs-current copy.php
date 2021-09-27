@@ -15,7 +15,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
 		 <link rel="stylesheet" type="text/css" href="https://1061174115.rsc.cdn77.org/css_samples/guidedtrack_legacy.css">
 		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<style>
 			body {

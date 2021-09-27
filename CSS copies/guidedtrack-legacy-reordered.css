@@ -1,3 +1,665 @@
+/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+#account-actions-container {
+	padding: 1rem;
+}
+
+
+/* line 5, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management section {
+	margin-bottom: 4.5rem;
+}
+
+
+/* line 8, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management .section-title {
+	margin-bottom: 2rem;
+}
+
+
+/* line 11, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management .program {
+	display: flex;
+	flex-basis: 100px;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+@media (max-width: 300px) {
+	/* line 18, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+	.account-management .program {
+		flex-direction: column;
+	}
+}
+
+
+/* line 21, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management .program-name-with-logo {
+	display: flex;
+	width: calc(100% - 100px);
+	align-items: center;
+}
+
+
+/* line 26, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management .program-name-with-logo .program-logo {
+	width: 6rem;
+}
+
+
+/* line 29, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management .program-name-with-logo .program-info {
+	margin-left: 3rem;
+	width: 100%;
+	flex-direction: column;
+}
+
+
+/* line 34, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management .program-name-with-logo .program-info .program-name {
+	font-size: 1.8rem;
+}
+
+
+/* line 37, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management .program-name-with-logo .program-info .program-stats {
+	width: 100%;
+}
+
+
+/* line 40, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
+
+.account-management .delete-data-btn {
+	align-self: center;
+	width: 100px;
+}
+
+
+/* line 3, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/accounts.css.sass */
+
+#registrations_logo {
+	margin-top: -37px;
+}
+
+
+/* line 6, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/accounts.css.sass */
+
+.account-form {
+	margin-top: 30px;
+	border: 1px solid #ddd;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+
+/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/answers.css.sass */
+
+.data-point-label {
+	color: gray;
+}
+
+
+/* line 3, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-green {
+	color: white;
+	background-color: #00b37f;
+	border-color: #009e70;
+}
+
+
+/* line 7, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-green:hover {
+	background-color: #00a374;
+	border-color: #008f65;
+	color: white;
+}
+
+
+/* line 11, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-green:focus {
+	color: white;
+}
+
+
+/* line 14, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-blue {
+	color: white;
+	background-color: #008fcc;
+	border-color: #0081b8;
+}
+
+
+/* line 18, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-blue:hover {
+	background-color: #0084bd;
+	border-color: #0076a8;
+	color: white;
+}
+
+
+/* line 22, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-blue:focus {
+	color: white;
+}
+
+
+/* line 25, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-outline-danger {
+	color: #da4f49;
+	background-color: white;
+	border-color: #de607c;
+}
+
+
+/* line 29, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-outline-danger:hover,
+.btn-outline-danger:focus {
+	color: white;
+}
+
+
+/* line 31, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-outline-danger:hover {
+	background-color: #da4f49;
+}
+
+
+/* line 33, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
+
+.btn-outline-danger:focus {
+	background-color: #de607c;
+}
+
+
+/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
+
+body.branded {
+	padding-top: 10px;
+}
+
+
+/* line 4, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
+
+.clearerthinking_brand {
+	font: normal normal normal 72px/1.4em Palatino, "Book Antiqua", "Palatino Linotype", serif;
+	word-spacing: -10px;
+	text-align: center;
+}
+
+
+/* line 10, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
+
+.clearerthinking_brand a span.light {
+	color: #009ed8;
+}
+
+
+/* line 12, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
+
+.clearerthinking_brand a span.dark {
+	color: #006990;
+}
+
+@media (max-width: 480px) {
+	/* line 4, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
+	.clearerthinking_brand {
+		font-size: 2.5em;
+	}
+}
+
+
+/* line 3, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+input.toggle_access {
+	margin-top: -2px;
+	margin-right: 8px;
+}
+
+
+/* line 7, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+h4.section-title {
+	margin-top: 1.5em;
+}
+
+
+/* line 10, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+div.collaborators {
+	margin-bottom: 48px;
+}
+
+
+/* line 13, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+.collaborator {
+	padding: 8px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+
+/* line 17, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+.collaborator:hover {
+	background-color: #ccc;
+}
+
+
+/* line 20, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+.collaborator input {
+	margin-top: -2px;
+	margin-left: 8px;
+	margin-right: 32px;
+}
+
+
+/* line 26, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+.modal textarea {
+	width: 100%;
+	height: 144px;
+}
+
+
+/* line 30, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+.modal textarea.small {
+	height: 56px;
+}
+
+
+/* line 33, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+.pasteable[readonly] {
+	cursor: auto;
+}
+
+
+/* line 36, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+.clipboard_notification {
+	display: none;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1500;
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	text-align: center;
+}
+
+
+/* line 52, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+.clipboard_notification .checkmark {
+	font-size: 64px;
+	margin-top: 14px;
+	margin-bottom: 0;
+}
+
+
+/* line 57, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+#copied_to_clipboard_notification {
+	height: 150px;
+	width: 150px;
+}
+
+
+/* line 61, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
+
+#failed_to_copy_notification {
+	height: 50px;
+	width: 200px;
+}
+
+
+/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/contact.css.sass */
+
+.contact-info-container {
+	text-align: center;
+	font-size: 1.4em;
+}
+
+
+/* line 5, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/contact.css.sass */
+
+.contact-info-container .section {
+	margin-top: 1.6em;
+}
+
+
+/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/inline_editor.css.sass */
+
+.inline_editor_container .glyphicon {
+	display: inline-block;
+	padding: 6px;
+	cursor: pointer;
+}
+
+
+/* line 6, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/inline_editor.css.sass */
+
+.inline_editor_container .glyphicon:first-of-type {
+	padding-left: 12px;
+}
+
+
+/* line 9, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/inline_editor.css.sass */
+
+.inline_editor_container .glyphicon:last-of-type {
+	margin-right: -15px;
+	padding-right: 15px;
+}
+
+
+/* line 3, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+#zip-in-progress {
+	display: none;
+}
+
+
+/* line 6, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+nav.navbar {
+	margin-bottom: 0;
+}
+
+
+/* line 10, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+nav.navbar .logo {
+	padding: 5px 25px 0 0;
+}
+
+
+/* line 13, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+nav.navbar .logo img {
+	height: 40px;
+}
+
+
+/* line 16, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+nav.navbar .logo .last_link {
+	padding-right: 0;
+}
+
+
+/* line 20, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .programs-link-container {
+	flex-shrink: 0;
+}
+
+
+/* line 23, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .program_name_container {
+	margin-left: 0 !important;
+	margin-right: 20px;
+}
+
+
+/* line 28, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .inline_editor_content,
+.navbar-default .program_name_container {
+	flex-shrink: 0;
+	max-width: 100%;
+}
+
+
+/* line 34, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .program-name .editable {
+	padding-right: 28px;
+}
+
+@media (max-width: 767px) {
+	/* line 34, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+	.navbar-default .program-name .editable {
+		margin-right: 15px;
+	}
+}
+
+
+/* line 40, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .dropdown-toggle,
+.navbar-default .program-name {
+	display: flex;
+}
+
+
+/* line 44, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .dropdown-toggle .caret {
+	align-self: center;
+	margin-left: 5px;
+	margin-top: 2px;
+}
+
+
+/* line 49, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default>.container-fluid,
+.navbar-default .nav-right ul:not(.dropdown-menu) {
+	display: flex;
+	flex-direction: column;
+}
+
+
+/* line 53, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .navigation-links *,
+.navbar-default .nav-left {
+	min-width: 0;
+}
+
+
+/* line 58, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .navigation-links ul:not(.dropdown-menu) {
+	max-width: 100%;
+}
+
+
+/* line 61, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .nav-left {
+	padding: 0;
+}
+
+
+/* line 64, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .nav-left ul {
+	display: flex;
+	flex-direction: row;
+}
+
+
+/* line 68, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default .nav-right {
+	padding-right: 0;
+}
+
+@media (min-width: 768px) {
+	/* line 72, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+	.navbar-default .form-control {
+		width: 280px;
+	}
+	/* line 75, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+	.navbar-default>.container-fluid,
+	.navbar-default .nav-right ul:not(.dropdown-menu) {
+		flex-direction: row;
+	}
+	/* line 79, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+	.navbar-default .nav-right {
+		margin-left: auto;
+	}
+}
+
+@media (min-width: 768px) {
+	/* line 84, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+	.navbar-default .dropdown .dropdown-menu li>a,
+	.navbar-default .dropdown .dropdown-menu span {
+		color: #777 !important;
+	}
+}
+
+
+/* line 88, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.blue {
+	background-color: #10baff;
+	border-color: #00a1e6;
+}
+
+
+/* line 93, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.blue .navbar-nav>.open a.dropdown-toggle {
+	color: white;
+	background-color: #00a1e6;
+}
+
+
+/* line 98, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.blue .navbar-nav li>a {
+	color: white;
+}
+
+
+/* line 102, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.blue .navbar-nav .active a,
+.navbar-default.blue .navbar-nav .active a:active,
+.navbar-default.blue .navbar-nav .active a:focus,
+.navbar-default.blue .navbar-nav .active a:hover {
+	color: white;
+	background-color: #00a1e6;
+}
+
+
+/* line 106, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.green {
+	background-color: #00e5aa;
+	border-color: #00cc91;
+}
+
+
+/* line 111, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.green .navbar-nav>.open a.dropdown-toggle {
+	color: white;
+	background-color: #00cc91;
+}
+
+
+/* line 116, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.green .navbar-nav li>a,
+.navbar-default.green .navbar-nav span {
+	color: white;
+}
+
+
+/* line 120, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.green .navbar-nav .active a,
+.navbar-default.green .navbar-nav .active a:active,
+.navbar-default.green .navbar-nav .active a:focus,
+.navbar-default.green .navbar-nav .active a:hover {
+	color: white;
+	background-color: #00cc91;
+}
+
+
+/* line 124, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.green .navbar-nav #back_to_programs {
+	margin-left: 0;
+	margin-right: 30px;
+}
+
+@media (min-width: 992px) {
+	/* line 124, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+	.navbar-default.green .navbar-nav #back_to_programs {
+		margin-right: 50px;
+	}
+}
+
+@media (min-width: 1200px) {
+	/* line 124, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+	.navbar-default.green .navbar-nav #back_to_programs {
+		margin-right: 93px;
+	}
+}
+
+
+/* line 134, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.green.alternate {
+	background-color: #009F93;
+	border-color: #006C60;
+}
+
+
+/* line 138, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.green.alternate .navbar-nav .open>a.dropdown-toggle {
+	background-color: #006C60;
+}
+
+
+/* line 142, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+
+.navbar-default.green.alternate .navbar-nav .active a,
+.navbar-default.green.alternate .navbar-nav .active a:active,
+.navbar-default.green.alternate .navbar-nav .active a:focus,
+.navbar-default.green.alternate .navbar-nav .active a:hover {
+	background-color: #006C60;
+}
+
+@media (max-width: 640px) {
+	/* line 147, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
+	.tabs-container .search-container {
+		display: none;
+	}
+}
+
 /*
  * Social Buttons for Bootstrap
  *
@@ -1059,14 +1721,13 @@ fieldset[disabled] .btn-yahoo.active {
 	background-color: #fff
 }
 
-
 /*!
   * Datetimepicker for Bootstrap 3
   * version : 4.17.47
   * https://github.com/Eonasdan/bootstrap-datetimepicker/
   */
 
-.bootstrap-datetimepicker-widget {
+  .bootstrap-datetimepicker-widget {
 	list-style: none;
 }
 
@@ -1494,117 +2155,6 @@ fieldset[disabled] .btn-yahoo.active {
 	border: 0;
 }
 
-
-/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-#account-actions-container {
-	padding: 1rem;
-}
-
-
-/* line 5, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management section {
-	margin-bottom: 4.5rem;
-}
-
-
-/* line 8, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management .section-title {
-	margin-bottom: 2rem;
-}
-
-
-/* line 11, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management .program {
-	display: flex;
-	flex-basis: 100px;
-	flex-wrap: wrap;
-	align-items: flex-start;
-}
-
-@media (max-width: 300px) {
-	/* line 18, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-	.account-management .program {
-		flex-direction: column;
-	}
-}
-
-
-/* line 21, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management .program-name-with-logo {
-	display: flex;
-	width: calc(100% - 100px);
-	align-items: center;
-}
-
-
-/* line 26, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management .program-name-with-logo .program-logo {
-	width: 6rem;
-}
-
-
-/* line 29, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management .program-name-with-logo .program-info {
-	margin-left: 3rem;
-	width: 100%;
-	flex-direction: column;
-}
-
-
-/* line 34, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management .program-name-with-logo .program-info .program-name {
-	font-size: 1.8rem;
-}
-
-
-/* line 37, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management .program-name-with-logo .program-info .program-stats {
-	width: 100%;
-}
-
-
-/* line 40, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/account_management.css.sass */
-
-.account-management .delete-data-btn {
-	align-self: center;
-	width: 100px;
-}
-
-
-/* line 3, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/accounts.css.sass */
-
-#registrations_logo {
-	margin-top: -37px;
-}
-
-
-/* line 6, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/accounts.css.sass */
-
-.account-form {
-	margin-top: 30px;
-	border: 1px solid #ddd;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
-}
-
-
-/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/answers.css.sass */
-
-.data-point-label {
-	color: gray;
-}
-
-
 /*! =======================================================
                        VERSION  10.6.1              
  ========================================================= */
@@ -1649,7 +2199,7 @@ fieldset[disabled] .btn-yahoo.active {
   *
   * ========================================================= */
 
-.slider {
+  .slider {
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
@@ -1984,559 +2534,6 @@ fieldset[disabled] .btn-yahoo.active {
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8ac1ef', endColorstr='#ff82b3de', GradientType=0);
 	opacity: 1;
-}
-
-
-/* line 3, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-green {
-	color: white;
-	background-color: #00b37f;
-	border-color: #009e70;
-}
-
-
-/* line 7, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-green:hover {
-	background-color: #00a374;
-	border-color: #008f65;
-	color: white;
-}
-
-
-/* line 11, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-green:focus {
-	color: white;
-}
-
-
-/* line 14, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-blue {
-	color: white;
-	background-color: #008fcc;
-	border-color: #0081b8;
-}
-
-
-/* line 18, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-blue:hover {
-	background-color: #0084bd;
-	border-color: #0076a8;
-	color: white;
-}
-
-
-/* line 22, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-blue:focus {
-	color: white;
-}
-
-
-/* line 25, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-outline-danger {
-	color: #da4f49;
-	background-color: white;
-	border-color: #de607c;
-}
-
-
-/* line 29, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-outline-danger:hover,
-.btn-outline-danger:focus {
-	color: white;
-}
-
-
-/* line 31, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-outline-danger:hover {
-	background-color: #da4f49;
-}
-
-
-/* line 33, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/buttons.css.sass */
-
-.btn-outline-danger:focus {
-	background-color: #de607c;
-}
-
-
-/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
-
-body.branded {
-	padding-top: 10px;
-}
-
-
-/* line 4, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
-
-.clearerthinking_brand {
-	font: normal normal normal 72px/1.4em Palatino, "Book Antiqua", "Palatino Linotype", serif;
-	word-spacing: -10px;
-	text-align: center;
-}
-
-
-/* line 10, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
-
-.clearerthinking_brand a span.light {
-	color: #009ed8;
-}
-
-
-/* line 12, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
-
-.clearerthinking_brand a span.dark {
-	color: #006990;
-}
-
-@media (max-width: 480px) {
-	/* line 4, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/clearer_thinking.css.sass */
-	.clearerthinking_brand {
-		font-size: 2.5em;
-	}
-}
-
-
-/* line 3, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-input.toggle_access {
-	margin-top: -2px;
-	margin-right: 8px;
-}
-
-
-/* line 7, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-h4.section-title {
-	margin-top: 1.5em;
-}
-
-
-/* line 10, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-div.collaborators {
-	margin-bottom: 48px;
-}
-
-
-/* line 13, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-.collaborator {
-	padding: 8px;
-	-moz-border-radius: 4px;
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-}
-
-
-/* line 17, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-.collaborator:hover {
-	background-color: #ccc;
-}
-
-
-/* line 20, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-.collaborator input {
-	margin-top: -2px;
-	margin-left: 8px;
-	margin-right: 32px;
-}
-
-
-/* line 26, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-.modal textarea {
-	width: 100%;
-	height: 144px;
-}
-
-
-/* line 30, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-.modal textarea.small {
-	height: 56px;
-}
-
-
-/* line 33, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-.pasteable[readonly] {
-	cursor: auto;
-}
-
-
-/* line 36, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-.clipboard_notification {
-	display: none;
-	position: absolute;
-	margin: auto;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	z-index: 1500;
-	border-radius: 4px;
-	background-color: rgba(0, 0, 0, 0.7);
-	color: white;
-	text-align: center;
-}
-
-
-/* line 52, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-.clipboard_notification .checkmark {
-	font-size: 64px;
-	margin-top: 14px;
-	margin-bottom: 0;
-}
-
-
-/* line 57, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-#copied_to_clipboard_notification {
-	height: 150px;
-	width: 150px;
-}
-
-
-/* line 61, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/collaborators.css.sass */
-
-#failed_to_copy_notification {
-	height: 50px;
-	width: 200px;
-}
-
-
-/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/contact.css.sass */
-
-.contact-info-container {
-	text-align: center;
-	font-size: 1.4em;
-}
-
-
-/* line 5, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/contact.css.sass */
-
-.contact-info-container .section {
-	margin-top: 1.6em;
-}
-
-
-/* line 1, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/inline_editor.css.sass */
-
-.inline_editor_container .glyphicon {
-	display: inline-block;
-	padding: 6px;
-	cursor: pointer;
-}
-
-
-/* line 6, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/inline_editor.css.sass */
-
-.inline_editor_container .glyphicon:first-of-type {
-	padding-left: 12px;
-}
-
-
-/* line 9, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/inline_editor.css.sass */
-
-.inline_editor_container .glyphicon:last-of-type {
-	margin-right: -15px;
-	padding-right: 15px;
-}
-
-
-/* line 3, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-#zip-in-progress {
-	display: none;
-}
-
-
-/* line 6, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-nav.navbar {
-	margin-bottom: 0;
-}
-
-
-/* line 10, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-nav.navbar .logo {
-	padding: 5px 25px 0 0;
-}
-
-
-/* line 13, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-nav.navbar .logo img {
-	height: 40px;
-}
-
-
-/* line 16, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-nav.navbar .logo .last_link {
-	padding-right: 0;
-}
-
-
-/* line 20, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .programs-link-container {
-	flex-shrink: 0;
-}
-
-
-/* line 23, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .program_name_container {
-	margin-left: 0 !important;
-	margin-right: 20px;
-}
-
-
-/* line 28, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .inline_editor_content,
-.navbar-default .program_name_container {
-	flex-shrink: 0;
-	max-width: 100%;
-}
-
-
-/* line 34, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .program-name .editable {
-	padding-right: 28px;
-}
-
-@media (max-width: 767px) {
-	/* line 34, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-	.navbar-default .program-name .editable {
-		margin-right: 15px;
-	}
-}
-
-
-/* line 40, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .dropdown-toggle,
-.navbar-default .program-name {
-	display: flex;
-}
-
-
-/* line 44, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .dropdown-toggle .caret {
-	align-self: center;
-	margin-left: 5px;
-	margin-top: 2px;
-}
-
-
-/* line 49, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default>.container-fluid,
-.navbar-default .nav-right ul:not(.dropdown-menu) {
-	display: flex;
-	flex-direction: column;
-}
-
-
-/* line 53, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .navigation-links *,
-.navbar-default .nav-left {
-	min-width: 0;
-}
-
-
-/* line 58, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .navigation-links ul:not(.dropdown-menu) {
-	max-width: 100%;
-}
-
-
-/* line 61, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .nav-left {
-	padding: 0;
-}
-
-
-/* line 64, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .nav-left ul {
-	display: flex;
-	flex-direction: row;
-}
-
-
-/* line 68, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default .nav-right {
-	padding-right: 0;
-}
-
-@media (min-width: 768px) {
-	/* line 72, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-	.navbar-default .form-control {
-		width: 280px;
-	}
-	/* line 75, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-	.navbar-default>.container-fluid,
-	.navbar-default .nav-right ul:not(.dropdown-menu) {
-		flex-direction: row;
-	}
-	/* line 79, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-	.navbar-default .nav-right {
-		margin-left: auto;
-	}
-}
-
-@media (min-width: 768px) {
-	/* line 84, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-	.navbar-default .dropdown .dropdown-menu li>a,
-	.navbar-default .dropdown .dropdown-menu span {
-		color: #777 !important;
-	}
-}
-
-
-/* line 88, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.blue {
-	background-color: #10baff;
-	border-color: #00a1e6;
-}
-
-
-/* line 93, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.blue .navbar-nav>.open a.dropdown-toggle {
-	color: white;
-	background-color: #00a1e6;
-}
-
-
-/* line 98, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.blue .navbar-nav li>a {
-	color: white;
-}
-
-
-/* line 102, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.blue .navbar-nav .active a,
-.navbar-default.blue .navbar-nav .active a:active,
-.navbar-default.blue .navbar-nav .active a:focus,
-.navbar-default.blue .navbar-nav .active a:hover {
-	color: white;
-	background-color: #00a1e6;
-}
-
-
-/* line 106, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.green {
-	background-color: #00e5aa;
-	border-color: #00cc91;
-}
-
-
-/* line 111, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.green .navbar-nav>.open a.dropdown-toggle {
-	color: white;
-	background-color: #00cc91;
-}
-
-
-/* line 116, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.green .navbar-nav li>a,
-.navbar-default.green .navbar-nav span {
-	color: white;
-}
-
-
-/* line 120, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.green .navbar-nav .active a,
-.navbar-default.green .navbar-nav .active a:active,
-.navbar-default.green .navbar-nav .active a:focus,
-.navbar-default.green .navbar-nav .active a:hover {
-	color: white;
-	background-color: #00cc91;
-}
-
-
-/* line 124, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.green .navbar-nav #back_to_programs {
-	margin-left: 0;
-	margin-right: 30px;
-}
-
-@media (min-width: 992px) {
-	/* line 124, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-	.navbar-default.green .navbar-nav #back_to_programs {
-		margin-right: 50px;
-	}
-}
-
-@media (min-width: 1200px) {
-	/* line 124, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-	.navbar-default.green .navbar-nav #back_to_programs {
-		margin-right: 93px;
-	}
-}
-
-
-/* line 134, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.green.alternate {
-	background-color: #009F93;
-	border-color: #006C60;
-}
-
-
-/* line 138, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.green.alternate .navbar-nav .open>a.dropdown-toggle {
-	background-color: #006C60;
-}
-
-
-/* line 142, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-
-.navbar-default.green.alternate .navbar-nav .active a,
-.navbar-default.green.alternate .navbar-nav .active a:active,
-.navbar-default.green.alternate .navbar-nav .active a:focus,
-.navbar-default.green.alternate .navbar-nav .active a:hover {
-	background-color: #006C60;
-}
-
-@media (max-width: 640px) {
-	/* line 147, /home/lyudmil/Work/guidedtrack-web/app/assets/stylesheets/all/navbar.css.sass */
-	.tabs-container .search-container {
-		display: none;
-	}
 }
 
 

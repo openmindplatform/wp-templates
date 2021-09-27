@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blank Page Stage
+Template Name: Blank Page
 */
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
@@ -8,13 +8,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 	<head>
 		<title>OpenMind</title>
 		<link rel="icon" href="https://openmindplatform.org/wp-content/uploads/2017/11/cropped-OM-Icon-32x32.png" sizes="32x32" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 		<script src="https://www.guidedtrack.com/assets/jquery_gt.js"></script>
 		<script src="https://www.guidedtrack.com/assets/interpreter.js?v=1"></script>
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
 		 <link rel="stylesheet" type="text/css" href="https://1061174115.rsc.cdn77.org/css_samples/guidedtrack_legacy.css">
 		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<style>
 			body {
@@ -953,21 +954,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		$(window).on("loadSettings", function(event, data){
 		  tableData={};
 		  AccessCode = data.AccessCode;
-		  UserType = data.UserType;
 		  csvHeaders = data.csvHeaders; 
-  		  //Displays Course title for courses and group name otherwise
-  		  if (UserType == "college" || UserType == "highschool") { 
-  		  	infoTitle = "Course Title: ";
-  		  	infoData = data.CourseTitle;
-  		  }else{
-  		  	infoTitle = "Group Name: ";
-  		  	infoData = data.GroupName;
-  		  }
-
-          // Displays Access Code and Group Name
-          $('#accesscode').append("Access Code: "+"<em>"+AccessCode+"</em>");
-          $('#info').append(infoTitle+"<em>"+infoData+"</em>");
-		  
+		     
 		});
 
 		//Loads Headers and calls function to generate table 
@@ -1232,12 +1220,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
     </script>
 	
 <body class="openMind-app">
-	<div id="pp-display" style="display:none;margin-top: 0px;">
-	<br></br>
-		<div style="font-size:13px;">
-				<p id="accesscode" style="float:left;"></p>
-				<p id="info" style="text-align:right;display:run-in;"></p>
-	</div>
+    <div id="pp-display" style="display:none">
+        <br></br>
         <h3 style="margin-bottom:3px">Participant Progress Dashboard</h3>
 
         <p style="font-size:15px">Below you can view the progress of your participants on the OpenMind program. Only participants who have completed at least lesson 1 will display.</p>

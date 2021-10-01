@@ -37,7 +37,12 @@ body.openMind-app {
 	color: #555;
 }
 
-.openMind-app .h1, .openMind-app .h2, .openMind-app .h3, .openMind-app h1, .openMind-app h2, .openMind-app h3 {
+.openMind-app .h1, 
+.openMind-app .h2, 
+.openMind-app .h3, 
+.openMind-app h1, 
+.openMind-app h2, 
+.openMind-app h3 {
 	font-family: 'Arimo', Arial, sans-serif;
 	font-weight: 700;
 	color: #404042;
@@ -45,13 +50,15 @@ body.openMind-app {
 	margin-top: 0;
 }
 
-.openMind-app b, .openMind-app strong {
+.openMind-app b, 
+.openMind-app strong {
 	font-family: "800";
 	color: #111;
 	font-size: 19px;
 }
 
-.openMind-app a:hover, .openMind-app a:focus {
+.openMind-app a:hover, 
+.openMind-app a:focus {
 	color: #66c6c1;
 }
 
@@ -218,7 +225,10 @@ body.openMind-app {
 	  transition: all 0.3s ease-out;
 }
 
-.no-touch #program_navigation .navigation_container ul.navigation_items li:hover, #program_navigation .navigation_container ul.navigation_items .no-touch li:hover, .no-touch #program_navigation #run-menu:hover, #program_navigation .no-touch #run-menu:hover {
+.no-touch #program_navigation .navigation_container ul.navigation_items li:hover, 
+#program_navigation .navigation_container ul.navigation_items .no-touch li:hover, 
+.no-touch #program_navigation #run-menu:hover, 
+#program_navigation .no-touch #run-menu:hover {
 	  color: #66c6c1;
 }
 
@@ -234,7 +244,10 @@ body.openMind-app {
 	  background-image: url("../wp-content/uploads/2017/12/icon-home_green.png");
 }
 
-.openMind-app .gt-program-navigation-button.active, .openMind-app #program_navigation .active#back-button, .openMind-app #program_navigation .navigation_container ul.navigation_items li.active, .openMind-app #program_navigation .active#run-menu {
+.openMind-app .gt-program-navigation-button.active, 
+.openMind-app #program_navigation .active#back-button, 
+.openMind-app #program_navigation .navigation_container ul.navigation_items li.active, 
+.openMind-app #program_navigation .active#run-menu {
 	border-bottom: none;
 }
 
@@ -311,7 +324,8 @@ body.openMind-app {
 
 
 /* Button Main Styling */
-.openMind-app .program_container .btn-default, .openMind-app ul.button-group li.btn-primary {
+.openMind-app .program_container .btn-default, 
+.openMind-app ul.button-group li.btn-primary {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
 	background: rgb(102,198,193); /* Old browsers */
 	background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
@@ -355,7 +369,8 @@ body.openMind-app {
 	border: none;
 }
 
-.openMind-app .btn-group-lg>.btn, .openMind-app .btn-lg {
+.openMind-app .btn-group-lg>.btn, 
+.openMind-app .btn-lg {
 	padding: 15px;
 	margin-top: 20px;
 }
@@ -397,7 +412,8 @@ body.openMind-app {
 	  transition-delay: 0.3s;
 }
 
-.openMind-app .panel-collapse, .openMind-app .panel-title {
+.openMind-app .panel-collapse, 
+.openMind-app .panel-title {
 	  border-left: 2px solid;
 	  border-color: transparent;
 }
@@ -406,7 +422,8 @@ body.openMind-app {
 	  border-left: 2px solid #66c6c1;
 }
 
-.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+.panel-group .panel-heading+.panel-collapse>.list-group, 
+.panel-group .panel-heading+.panel-collapse>.panel-body {
 	 border-top: 0;
 	  padding-top: 0;
 }
@@ -440,7 +457,8 @@ body.openMind-app {
 	  top: 1em;
 }
 
-.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
+.panel-group .panel-heading+.panel-collapse>.list-group, 
+.panel-group .panel-heading+.panel-collapse>.panel-body {
 	  border-top: 1px solid #eee;
 	padding-top: 1em;
 }
@@ -523,7 +541,8 @@ body.openMind-app {
 	display: none;
 }
 
-.openMind-app ul.button-group li:last-of-type, .openMind-app ul.button-group li:first-of-type {
+.openMind-app ul.button-group li:last-of-type, 
+.openMind-app ul.button-group li:first-of-type {
 	  border-bottom: 1px solid #f7f7f7;
 	  border-radius: 5px;
 	  -webkit-border-radius: 5px;
@@ -852,7 +871,8 @@ line-height: 23.8px;
 	font-size: 12px;
   }
 
-#dl-button, #searchBox {
+#dl-button, 
+#searchBox {
 	float: right;
 	margin-right: 5px;
   }

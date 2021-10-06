@@ -954,8 +954,22 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		$(window).on("loadSettings", function(event, data){
 		  tableData={};
 		  AccessCode = data.AccessCode;
+		  UserType = data.UserType;
 		  csvHeaders = data.csvHeaders; 
-		     
+  		  //Displays Course title for courses and group name otherwise
+  		  if (UserType == "college" || UserType == "highschool") { 
+  		  	infoTitle = "Course Title: ";
+  		  	infoData = data.CourseTitle;
+  		  }else{
+  		  	infoTitle = "Group Name: ";
+  		  	infoData = data.GroupName;
+  		  }
+          // Displays Access Code and Group Name
+		  $('#accesscode').empty();
+          $('#accesscode').append("Access Code: "+"<em>"+AccessCode+"</em>");
+		  $('#info').empty();
+          $('#info').append(infoTitle+"<em>"+infoData+"</em>");
+		  
 		});
 
 		//Loads Headers and calls function to generate table 
@@ -1220,8 +1234,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
     </script>
 	
 <body class="openMind-app">
-    <div id="pp-display" style="display:none">
-        <br></br>
+	<div id="pp-display" style="display:none;margin-top: 0px;">
+	<br></br>
+		<div style="font-size:13px;">
+				<p id="accesscode" style="float:left;"></p>
+				<p id="info" style="text-align:right;display:run-in;"></p>
+	</div>
         <h3 style="margin-bottom:3px">Participant Progress Dashboard</h3>
 
         <p style="font-size:15px">Below you can view the progress of your participants on the OpenMind program. Only participants who have completed at least lesson 1 will display.</p>

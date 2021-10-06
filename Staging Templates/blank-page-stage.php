@@ -953,11 +953,21 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		$(window).on("loadSettings", function(event, data){
 		  tableData={};
 		  AccessCode = data.AccessCode;
+		  UserType = data.UserType;
 		  csvHeaders = data.csvHeaders; 
-  		  GroupName = data.GroupName;
+  		  //Displays Course title for courses and group name otherwise
+  		  if (UserType == "college" || UserType == "highschool") { 
+  		  	infoTitle = "Course Title: ";
+  		  	infoData = data.CourseTitle;
+  		  }else{
+  		  	infoTitle = "Group Name: ";
+  		  	infoData = data.GroupName;
+  		  }
           // Displays Access Code and Group Name
-          $('#accesscode').append("<em>" +AccessCode +"</em>");
-          $('#groupname').append("<em>"+GroupName+"</em>");
+		  $('#accesscode').empty();
+          $('#accesscode').append("Access Code: "+"<em>"+AccessCode+"</em>");
+		  $('#info').empty();
+          $('#info').append(infoTitle+"<em>"+infoData+"</em>");
 		  
 		});
 
@@ -1223,11 +1233,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
     </script>
 	
 <body class="openMind-app">
-	<div id="pp-display" style="display:none">
+	<div id="pp-display" style="display:none;margin-top: 0px;">
 	<br></br>
 		<div style="font-size:13px;">
-				<p id="accesscode" style="float:left;">Access Code: </p>
-				<p id="groupname" style="text-align:right;display:run-in;">Group Name: </p>
+				<p id="accesscode" style="float:left;"></p>
+				<p id="info" style="text-align:right;display:run-in;"></p>
 	</div>
         <h3 style="margin-bottom:3px">Participant Progress Dashboard</h3>
 

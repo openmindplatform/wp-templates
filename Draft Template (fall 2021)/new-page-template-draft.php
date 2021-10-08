@@ -18,11 +18,19 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<style>
-			/*There is only one body element so might as well combine the selectors*/
             body {
-                padding-top: 20px;
+				/* increased padding */
+                padding-top: 40px;
                 background-color: #fbfcfe;
             }
+			
+			/* parent of program-container div - center program container horizontally */
+			.row{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
 
             /* Loader */
             .spinner>.double-bounce1, .double-bounce2 {
@@ -32,7 +40,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Container basic styling */
             .program_container {
                 background-color: #fff;
-                padding: 30px 50px 50px 50px;
+				/* reduce bottom padding */
+                padding: 30px 50px 30px 50px;
                 margin-bottom: 40px;
                 border-radius: 5px;
                 -webkit-border-radius: 5px;
@@ -60,26 +69,50 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             h1, 
             h2, 
             h3 {
-                font-family: 'Arimo', Arial, sans-serif;
-                font-weight: 700;
-                color: #404042;
-                margin-bottom: 30px;
-                margin-top: 0;
+                font-size: 24px !important;
+				font-family: 'Arimo', Arial, sans-serif !important;
+                font-weight: 700 !important;
+                color: #404042 !important;
+                margin-bottom: 30px !important;
+                margin-top: 0 !important;
             }
 
             b, 
             strong {
-                font-family: "800";
-                color: #111;
-                font-size: 19px;
+                font-family: "800" !important;
+                color: #111 !important;
+                font-size: 19px !important;
             }
 
-            a:hover, 
+			a {
+				color: #337ab7 !important;
+				text-decoration: none !important;
+			}
+			
+			a:hover, 
             a:focus {
-                color: #66c6c1;
+                color: #66c6c1 !important;
             }
 
-            /* Points Bubble */
+            /* Images */
+			.program_container .multimedia_node * {
+				margin-top: 16px;
+				margin-bottom: 16px;
+			}
+			
+			/* Component (Default — no classes added) */
+			.program_container .component {
+				padding: 12px;
+				padding-bottom: 0;
+				border: 1px solid;
+				margin-bottom: 12px;
+				-moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				border-color: #eee;
+			}
+			
+			/* Points Bubble */
             .program_container .points div {
                 width: 70px;
                 height: 70px;
@@ -150,46 +183,89 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Progress Bar */
             /* */
             .program_container .progress {
+				background-color: rgba(148, 207, 161, 0.2) !important;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                border-radius: 5px;
+                -webkit-border-radius: none;
+                -moz-border-radius: none;
                 /* overrides position: static that affixes progress to top of window */
                 position: relative;
                 height: 20px;
-                margin-bottom: 15px;
+				/* reduce bottom margin to match enlarged nav container */
+                margin-bottom: 5px;
+				/* override new GT CSS positioning */
+				top: auto !important;
+				
             }
-
+			
+			@media screen and (min-width: 768px){
+				.program_container .progress {
+					width: auto !important;
+				}
+			}	
+			
+			@media screen and (max-width: 767px){
+				.progress {
+					position: fixed !important;
+					width: calc(100% - 30px) !important;
+					margin: 40px 30px 0 15px !important;
+				}
+			}
+			
             .program_container .progress .progress-bar {
                 line-height: 20px;
                 font-family: "Arimo", Arial, sans-serif;
-                font-size: 10px;
-
+				/* enlarge font slightly */
+                font-size: 11px;
+				/* override new GT CSS narrow height, heavier font */
+				height: auto !important;
+				font-weight: 400 !important;
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                background: rgb(102,198,193) !important; /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%) !important; /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%) !important; /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
                 box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
                 -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
                 -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+				
+				z-index: 1 !important;
             }
 
-            .progress {
-                background-color: rgba(148, 207, 161, 0.2);
-                box-shadow: none;
-                -webkit-box-shadow: none;
-                -moz-box-shadow: none;
-
-                border-radius: 5px;
-                -webkit-border-radius: none;
-                -moz-border-radius: none;
-            }
 
             /* Program navigation */
             #program_navigation {
-                border-bottom: 1px solid #eee;
-                min-height: 38px;
+				display: flex;
+				flex-direction: row;
+                border-bottom: 1px solid #eee !important;
+                min-height: 38px !important;
+				/* override GT CSS */
+				-webkit-box-shadow: none !important;
+   				box-shadow: none !important;
+				width: 100% !important;
+				z-index: 10 !important;
             }
+			
+			@media (max-width: 767px) {
+				#program_navigation {
+					/* override new GT CSS positioning nav at very top */
+					margin-right: 15px !important;
+					max-width: calc(100% - 30px) !important;
+					margin-bottom: 1em !important;
+				}
+			} 
+			
+			/* override new GT CSS; make opaque */
+			#program_navigation #back-button{
+				opacity: 1;
+			}
 
             #program_navigation #back-button span.glyphicon{
+				/* place in front of bottom nav border*/
+				z-index: 10;
                 width: 20px;
                 height: 19px;
                 line-height: 19px;
@@ -198,37 +274,63 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 background-repeat: no-repeat;
                 text-indent: -9999px;
                 left: -5px;
-
-                top: 29px;
-                background-color: #fff;
-                padding-right: 40px;
-
+				/* adjust positioning to line up with nav border */
+                top: 39px;
+                background-color: #fff !important;
+                padding-right: 40px !important;
                 -webkit-transition: all 0.3s ease-out;
                 -moz-transition: all 0.3s ease-out;
                 -o-transition: all 0.3s ease-out;
                 transition: all 0.3s ease-out;
             }
+			
+			@media (max-width: 767px) {
+				#program_navigation #back-button span.glyphicon{
+					left: 0px !important;
+				}
+			}
 
             #program_navigation #back-button span.glyphicon:hover {
                 background-image: url("../wp-content/uploads/2017/12/icon-back_green.png");
             }
 
-
             .navigation_items .text-center {
-                display: none;
+                display: none !important;
+            }
+
+			/* hide nav item by default */
+			li.no-icon {
+                display: none !important;
             }
 
             #program_navigation .navigation_container {
-                margin-top: -10px;
-                margin-bottom: -10px;
+				/* correct for excessive spacing */
+                margin-top: 0;
+                margin-bottom: 0;
+				width: auto !important;
             }
+			
+			/* override GT CSS box-shadow for small screens */
+			@media screen and (max-width: 767px) {
+				.program_container .navigation_container {
+					background: var(--themeColor-background);
+					-webkit-box-shadow: none;
+					box-shadow: none;
+					position: relative;
+					bottom: auto !important;
+					left: 0;
+					margin-top: 0px;
+					z-index: 100;
+				}
+			}
 
             #program_navigation .navigation_container ul.navigation_items {
                 font-size: 14px;
                 font-family: "Arimo", sans-serif;
                 font-weight: 500;
                 color: #aaa;
-                top: 18px;
+				/* remove lowered positioning */
+                top: 0;
                 position: relative;
             }
 
@@ -273,27 +375,95 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Run Menu */
 
             #program_navigation #run-menu {
-                top: -20px;
-                right: -50px;
+				/* override GT CSS positioning */
+				position: absolute;
+				left: auto !important;
+				right: -47 !important;
+				top: 47 !important;
+				line-height: 64px;
+				width: 47px;
             }
-
+			
+			@media (max-width: 767px) {
+				#program_navigation #run-menu {
+					/* try to get menu visible in small screens */
+					right: 0 !important;
+					top: 15 !important;
+				}
+			}
+			
             .dropdown-menu {
-                border: 1px solid #f7f7f7;
-                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                border: 1px solid #f7f7f7 !important;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
                 border-radius: 5px;
                 -webkit-border-radius: 5px;
                 -moz-border-radius: 5px;
+				/* trying to fix positioning */
+				left: auto !important;
+				right: 0 !important;
             }
+			
+				
+			.program_container .dropdown-menu.pull-right {
+				/* override new GT CSS — put menu closer to toggle */
+				margin-top: 30px !important;
+			}
+			
+			@media screen and (max-width: 767px) {
+				.program_container .dropdown-menu.pull-right {
+					max-width: 90vw !important;
+					margin-top: 48px !important;
+					z-index: 100;
+					/* darker box shadow for more contrast on mobile */
+					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2) !important;
+					-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2) !important;
+					-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2) !important;
+				}
+			}
+			
+			/* imported from GT legacy CSS — menu toggle behavior */
+			#program_navigation #run-menu .dropdown-toggle {
+				display: inline-block;
+				margin-bottom: 0;
+				font-weight: 400;
+				line-height: 1.42857;
+				white-space: nowrap;
+				text-align: center;
+				vertical-align: middle;
+				touch-action: manipulation;
+				cursor: pointer;
+				user-select: none;
+			}
+			
+			@media (max-width: 768px) {
+				/* override new GT CSS focus styling for mobile */
+				.program_container #run-menu .dropdown-toggle:focus {
+					background-color: transparent !important;
+					transition: none !important;
+				}
+			}
 
             #program_navigation #run-menu .dropdown-toggle span {
                 color: #555;
+				/* increase size of icon */
+				font-size: 1.2em;
+				padding-bottom: 0px !important;
+				/* override GT CSS reduced opacity */
+				opacity: 1 !important;
             }
+			
+			
+			.dropdown-menu li {
+				/* override vertical divider between items in dropdown menu */
+				border-bottom: none !important;
+				z-index: 1001;
+			}
 
             .dropdown-menu>li>a {
                 font-family: "Arimo", sans-serif;
-                color: #404042;
+                color: #404042 !important;
 
                 -webkit-transition: all 0.3s ease-out;
                 -moz-transition: all 0.3s ease-out;
@@ -343,6 +513,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
 
             /* Button Main Styling */
+			.program_container .btn {
+				/*override new GT CSS large top margin*/
+				margin: 0.5em 0px 7px 0px;
+			}
+			
             .program_container .btn-default, 
             ul.button-group li.btn-primary {
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
@@ -350,12 +525,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
                 background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
                 background-image: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                
                 white-space: normal;
-
                 font-family: "Arimo", Arial, sans-serif;
-                font-weight: 700;
-                font-size: 18px;
+                font-weight: 700 !important;
+				/* slightly larger font for better contrast */
+                font-size: 19px;
                 color: #fff;
 
                 border: none;
@@ -391,7 +565,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .btn-group-lg>.btn, 
             .btn-lg {
                 padding: 15px;
-                margin-top: 20px;
+                margin-top: 30px !important;
             }
 
             /* Accordion Styling First Level */
@@ -408,7 +582,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
             .panel-default>.panel-heading {
-                background-color: #fff;
+                background-color: #fff !important;
             }
 
             .panel-heading {
@@ -453,33 +627,34 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
             .panel {
-                background-color: #fff;
-                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                background-color: #fff !important;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
                 -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-                border: 1px solid #f7f7f7;
+                border: 1px solid #f7f7f7 !important;
 
-                -webkit-transition: all 0.3s ease-out;
-                -moz-transition: all 0.3s ease-out;
-                -o-transition: all 0.3s ease-out;
+                -webkit-transition: all 0.3s ease-out !important;
+                -moz-transition: all 0.3s ease-out !important;
+                -o-transition: all 0.3s ease-out !important;
                 transition: all 0.3s ease-out;
             }
 
             .panel:hover {
-                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-                -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
             }
 
             .program_container .main .panel-group .panel-heading a.panel-title .toggle-expand {
-                color: #404042;
-                top: 1em;
+                color: #404042 !important;
+                top: 1em !important;
             }
 
             .panel-group .panel-heading+.panel-collapse>.list-group, 
             .panel-group .panel-heading+.panel-collapse>.panel-body {
-                border-top: 1px solid #eee;
-                padding-top: 1em;
+                border-top: 1px solid #eee !important;
+				/* added padding on all sides of panel content */
+                padding: 1em !important;
             }
 
             .program_container .main .panel-group .panel-heading a.panel-title.collapsed .toggle-expand .glyphicon-chevron-down {
@@ -495,13 +670,32 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             /* Main content styling */
             .program_container .main {
-                padding-top: 3em;
+				/* override GT CSS extra padding on left/right, extra bottom margin */
+                padding: 3em 0em 0em 0em;
+				margin-bottom: 0em;
             }
+			
+			@media screen and (max-width: 767px) {
+				.program_container .main {
+					margin-top: 48px;
+				}
+			}
+				
 
             .program_container .main .prompt {
-                margin-top: 1em;
+				/* bold & slightly enlarge question prompts */
+				font-size: 19px;
+                font-weight: 700;
+				/* decrease top margin slightly */
+                margin-top: .5em;
                 margin-left: 0;
                 margin-right: 0;
+            }
+			
+			/* don't display blank question prompt */
+			.program_container .prompt:empty {
+                padding: 0;
+                margin: 0;
             }
 
             /* Questions General Styling */
@@ -513,7 +707,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 border-radius: 8px 8px 0 0;
                 -webkit-border-radius: 8px 8px 0 0;
                 -moz-border-radius: 8px 8px 0 0;
-                padding: 0.5em 1em 1em 1em;
+                /* eliminate bottom padding */
+                padding: 1em 1em 0.5em 1em;
             }
 
             ul.button-group {
@@ -525,35 +720,50 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 line-height: 28px;
                 font-weight: 400;
 
-                background-color: #fff;
-                border: 1px solid #f7f7f7;
-                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-                border-radius: 5px;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
+                background-color: #fff !important;
+                border: 1px solid #f7f7f7 !important;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                border-radius: 5px !important;
+                -webkit-border-radius: 5px !important;
+                -moz-border-radius: 5px !important;
 
                 -webkit-transition: all 0.3s ease-out;
                 -moz-transition: all 0.3s ease-out;
                 -o-transition: all 0.3s ease-out;
                 transition: all 0.3s ease-out;
             }
+			
+			.program_container li.answer {
+				/*override GT CSS smaller font sizes for questions */
+				font-size: 18px;
+			}
+
+			/* imported from GT legacy CSS */
+			ul.button-group .answer.selected {
+				font-weight: 700;
+			}
 
             .no-touch ul.button-group .answer:hover:not(.selected) {
-                background-color: #f5f6fa;
-
-                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-                -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+/*                 background-color: #f5f6fa !important; */
+				/* try higher contrast color for hover state */
+				background-color: rgba(148, 207, 161, 0.1) !important;
+				border: 1px solid transparent !important;
+				font-weight: 500 !important;
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
             }
 
             ul.button-group .answer {
-                margin-bottom: 10px;
+                margin-bottom: 10px !important;
             }
 
             ul.button-group .answer.selected {
-                background-color: #f5f6fa;
+/*                 background-color: #f5f6fa !important; */
+				background-color: rgba(148, 207, 161, 0.3) !important;
+				border: 1px solid transparent !important;
             }
 
             ul.button-group .answer.selected span.glyphicon {
@@ -562,10 +772,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             ul.button-group li:last-of-type, 
             ul.button-group li:first-of-type {
-                border-bottom: 1px solid #f7f7f7;
-                border-radius: 5px;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
+                border-bottom: 1px solid #f7f7f7 !important;
+                border-radius: 5px !important;
+                -webkit-border-radius: 5px !important;
+                -moz-border-radius: 5px !important;
             }
 
             .program_container .main .answers {
@@ -581,9 +791,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Tip styling */
             .program_container .tip {
                 font-size: 16px;
-                
+				color: #666 !important;
                 background-color: #f7f7f7;
-                padding: 0 0 1em 1.1em;
+				/* add top margin to counterbalance lack of bottom padding for prompt */
+                padding: 0.5em 0 1em 1.1em;
                 margin: 0;
             }
 
@@ -599,13 +810,43 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 margin: 0;
             }
 
-            .program_container .answer_textbox .answer_submit.textbox {
+			/* override full width for submit button in new GT CSS */
+            .program_container .answer_textbox .answer_submit {
                 margin-left: 0;
+				border: none !important;
+				width: auto !important;
             }
+			
+			@media screen and (max-width: 767px) {
+				/* add top margin above submit button on mobile since text boxes are full width above */
+				.program_container .answer_textbox .answer_submit {
+					margin-top: 1em;
+				}
+			}		
 
             .program_container .answer_input {
+				/* override extra top margin in new GT CSS */
+				margin-top: 0px !important;
                 margin-right: 1em;
             }
+			
+			.program_container .answer_input .form-control, 
+			.program_container .form-inline .input-group, 
+			.program_container .form-inline .input-group>.form-control {
+				/* override full width in GT CSS */
+				width: auto !important;
+			}
+			
+			@media screen and (max-width: 767px) {
+				.program_container .answer_input .form-control, 
+				.program_container .form-inline .input-group, 
+				.program_container .form-inline .input-group>.form-control {
+					/* override full width in GT CSS */
+					width: 100% !important;
+				}
+			}
+			
+
 
             /* Gradable Question Styling */
             .program_container .question.question-gradable {
@@ -648,22 +889,21 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 box-shadow: none;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
-
                 border-radius: 5px;
                 -webkit-border-radius: 5px;
                 -moz-border-radius: 5px;
-
-                background-color: rgba(63, 80, 160, 0.1);
+                background-color: rgba(63, 80, 160, 0.1) !important;
                 background-image: none;
+				/* override added border in new GT CSS; add small margin to make room for labels */
+				border: none !important;
+				margin-top: 5px !important;
             }
 
             .program_container .main .slider-answer-widget .slider-selection {
                 background-color: #66c6c1;
-
                 box-shadow: none;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
-
                 border-radius: 5px;
                 -webkit-border-radius: 5px;
                 -moz-border-radius: 5px;
@@ -672,28 +912,38 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .slider-handle {
                 width: 30px;
                 height: 30px;
-                background-color: #66c6c1;
+                background-color: #66c6c1 !important;
                 background-image: none;
                 opacity: 1;
+				/* override added border in new GT CSS */
+				border: none !important;
             }
 
             .slider.slider-horizontal .slider-handle {
                 margin-left: -15px;
-                margin-top: -10px;
+				/* move handle down a smidge */
+                margin-top: -5px;
             }
 
             .slider .tooltip {
-                margin-top: 0;
+				/* override new GT CSS higher tooltip placement */
+                margin-top: .5em !important;
             }
+			
+			/* override new GT CSS matching tooltip to theme color */
+			.slider .tooltip .tooltip-inner {
+				background-color: #666 !important;
+			}
+			.slider .tooltip .tooltip-arrow {
+				border-top-color: #666 !important;
+			}
 
             /* Styling background on slider widget */
             .program_container .main .slider-answer-widget {
                 background-color: #f7f7f7;
-                margin-bottom: 1em;
-                margin-top: 0;
-                margin-left: 0;
-                margin-right: 0;
-                padding: 1em;
+                margin: 0 0 1em 0;
+				/* extra padding on top & bottom */
+                padding: 2em 1em 1.5em 1em;
                 width: 100%;
                 box-sizing: border-box;
                 
@@ -702,66 +952,101 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 -moz-border-radius: 0 0 8px 8px;
             }
 
-            .program_container .main .slider-answer-widget .slider-label.left {
+			.slider-answer-widget .slider-label.left {
                 margin-right: 0;
                 padding-right: 1em;
             }
-
-            .program_container .main .slider-answer-widget .slider-label.right {
+            .slider-answer-widget .slider-label.right {
                 margin-left: 0;
                 padding-left: 1em;
             }
 
             /* Forms Styling */
+
+			/* override extra margin in new GT CSS */
+			textarea.form-control {
+				margin-top: 0 !important;
+			}
+			
+			.form-inline .form-control {
+				/* override new GT CSS enlarged form input font */
+				font-size: 15px !important;
+			}
+			
             .form-control {
-                border: 1px solid #eee;
+                border: 1px solid #eee !important;
+				background-color: #fff !important;
+				border-radius: 4px !important;
+				/* styling details import from bootstrap.css  — not working */
+				-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%) !important;
+				box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%) !important;
+				-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s !important;
+				-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s !important;
+				transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s !important;
             }
 
             .input-group {
-                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-                -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-                -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1) !important;
+                -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1) !important;
             }
 
             .input-group-addon {
-                background-color: rgba(63, 80, 160, 0.1);
-                border: 1px solid #eee;
+                background-color: rgba(63, 80, 160, 0.1) !important;
+                border: 1px solid #eee !important;
+				color: #555 !important;
             }
 
             .form-control:focus {
-                box-shadow: none;
-                -webkit-box-shadow: none;
-                -moz-box-shadow: none;
-                border-color: #66c6c1;
+                box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                border-color: #66c6c1 !important;
             }
-
 
             ul.navigation_items li .navigation_icon {
                 line-height: 23.8px;
             }
 
             /* Lists */
-            .program_container .main .list li {
-                font-size: 18px;
+			.program_container .main .list {
+				list-style: disc outside;
+				/* override shallow padding in GT CSS */
+				padding-left: 40px;
+				margin: 0px 0px 10px 0px;
             }
-
+			
             .program_container .main .list li {
-                list-style: none;
-                position: relative;
+				font-size: inherit !important;
+				/* this isn't working */
+/* 				font-weight: inherit !important; */
+				line-height: 1.6em !important;
+				list-style: none !important;
+                position: relative !important;
+				/* override extra padding in GT CSS */
+				margin-bottom: 8px;
+            }
+			
+			/* this should force strong to display as bold but isn't */
+			.program_container .main .list li strong {
+				font-weight: "800" !important;
+                color: #111 !important;
+                font-size: 19px !important;
             }
 
             .program_container .main .list li::before {
-                position: absolute;
-                content: "";
-                display: block;
-                width: 6px;
-                height: 6px;
-                background-color: #66c6c1;
-                border-radius: 50%;
-                -webkit-border-radius: 50%;
-                -moz-border-radius: 50%;
-                top: 13px;
-                left: -18px;
+                position: absolute !important;
+                content: "" !important;
+                display: block !important;
+                width: 6px !important;
+                height: 6px !important;
+                background-color: #66c6c1 !important;
+                border-radius: 50% !important;
+                -webkit-border-radius: 50% !important;
+                -moz-border-radius: 50% !important;
+                top: 13px !important;
+                left: -18px !important;
+				z-index: 5 !important;
             }
 
             /* Image certificate Text Positioning */

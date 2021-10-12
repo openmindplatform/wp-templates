@@ -10,11 +10,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		<link rel="icon" href="https://openmindplatform.org/wp-content/uploads/2017/11/cropped-OM-Icon-32x32.png" sizes="32x32" />
 
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<!-- Essential for GT embed -->
 		<script src="https://www.guidedtrack.com/assets/jquery_gt.js"></script>
-		<script src="https://www.guidedtrack.com/assets/interpreter.js?v=1"></script>
+		<script src="https://www.guidedtrack.com/assets/gt_interpreter.js"></script>
+		<script src="https://www.guidedtrack.com/assets/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
-		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i" rel="stylesheet">
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i|Noto+Serif:400,400i,700,700i" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<style>
@@ -51,10 +54,31 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 -webkit-box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.1);
                 -moz-box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.1);
 
-                font-family: 'PT Serif', Times, serif;
+				font-family: 'PT Serif', Times, serif;
                 font-size: 18px;
                 color: #555;
             }
+			
+			/* Responsive Styling */       
+            @media (max-width: 992px) {
+                body {
+                    background-color: #fff;
+                    padding-top: 15px;
+                }
+
+                .program_container {
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    padding: 15px;
+                }
+            }
+			@media screen and (max-width: 767px) {
+				.program_container {
+					margin-bottom: 20px;
+				}
+			}
+			
 
             /* Typography */
             .program_container .text p {
@@ -62,7 +86,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 line-height: 1.62;
                 color: #555;
             }
-
+			
             .h1, 
             .h2, 
             .h3, 
@@ -76,13 +100,42 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 margin-bottom: 30px !important;
                 margin-top: 0 !important;
             }
+			
+			i, 
+            em {
+				font-family: 'Noto Serif', Times, serif; 
+                font-size: 17.5px;
+            }
 
             b, 
             strong {
-                font-family: "800" !important;
+				font-family: 'Noto Serif', Times, serif; 
+                font-weight: 700 !important;
                 color: #111 !important;
-                font-size: 19px !important;
+                font-size: 18px;
             }
+			
+			@media screen and (max-width: 767px) {
+				.program_container .text p {
+					font-size: 17px;
+				}
+				.h1, 
+				.h2, 
+				.h3, 
+				h1, 
+				h2, 
+				h3 {
+					font-size: 22px !important;
+				}
+				b, 
+				strong {
+					font-size: 17px !important;
+				}
+				i, 
+				em {
+					font-size: 16.5px !important;
+				}
+			}
 
 			a {
 				color: #337ab7 !important;
@@ -96,8 +149,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             /* Images */
 			.program_container .multimedia_node * {
+				/* adjust margins */
 				margin-top: 16px;
-				margin-bottom: 16px;
+				margin-bottom: 24px;
 			}
 			
 			/* Component (Default — no classes added) */
@@ -113,7 +167,39 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			}
 			
 			/* Points Bubble */
-            .program_container .points div {
+			
+			/* white square behind points bubble*/
+			.program_container .points {
+                padding: 8px 4px 0 18px !important;
+                background-color: #fff;
+				height: 106px;
+				right: 0px;
+				z-index: 150 !important;
+				/* imported from GT legacy; positioning needs to be relative because y positioning depends on if progress is visible or not */
+				float: right;
+				position: relative;
+				/* override new GT CSS */
+/* 				display: block; */
+				top: -43px;
+            }
+			
+			@media screen and (max-width: 767px) {
+				.program_container .points {
+					top: 28px; 
+					height: 60px !important;
+					width: 60px !important;
+					margin-left: 0px !important;
+					margin-right: -6px !important;
+					max-width: 60px !important;
+					padding: 6px 3px 0 6px !important;
+					position: fixed;
+					background-color: transparent !important;
+				}
+			}
+				
+			
+			/* applies to divs .total & .change */
+			.program_container .points div {
                 width: 70px;
                 height: 70px;
                 padding-top: 40px;
@@ -121,9 +207,19 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 font-family: "Arimo", Arial, sans-serif;
                 right: 5px;
                 position: relative;
+				/* imported from GT legacy CSS */
+    			border-radius: 50%;
+				text-align: center;
             }
+			@media (max-width: 767px) {
+				.program_container .points div {
+					width: 45px !important;
+					height: 45px !important;
+				}
+			}
 
-            .program_container .points::before {
+            /* star icon */
+			.program_container .points::before {
                 position: absolute;
                 display: block;
                 content: "";
@@ -131,11 +227,21 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 width: 25px;
                 height: 24px;
                 background-size: 25px;
-                top: 12px;
+                top: 24px;
                 left: 50%;
-                margin-left: -5px;  
-                z-index: 1;
+                margin-left: -10px;  
+                z-index: 200 !important;
             }
+			
+			@media (max-width: 767px) {
+				.program_container .points::before {
+					top: 14px;
+					width: 20px;
+					height: 20px;
+					background-size: 20px;
+					margin-left: -16px;  
+				}
+			}
 
             .program_container .points div br {
                 content: "";
@@ -143,6 +249,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 padding-right: 3px;
             }
 
+			/* lists number of points */
             .program_container .points .total {
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
                 background: rgb(102,198,193); /* Old browsers */
@@ -150,36 +257,68 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
                 background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-                box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-                -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-                -moz-box-shadow:  0 5px 20px 0 rgba(0, 0, 0, 0.15);
+                box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+                -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+                -moz-box-shadow:  0 5px 15px 0 rgba(0, 0, 0, 0.15);
 
                 border: none;
                 color: #fff;
+				padding-top: 46px !important;
+				z-index: 175 !important;
             }
+			
+			@media (max-width: 767px) {
+				.program_container .total {
+					min-width: auto;
+					box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15) !important;
+					-webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15) !important;
+					-moz-box-shadow:  0 3px 8px 0 rgba(0, 0, 0, 0.15) !important;
+					/* override GT CSS */
+					margin: 0px !important;
+				}				
+				.program_container .total span {
+					position: fixed;
+					transform: translateY(-16px);
+					right: 25px;
+				}
+			}
+				
+			/* override new GT CSS mini star icon before points */
+			.program_container .total::before {
+				display: none !important;
+			}
 
+			.program_container .change {
+				width: inherit !important;
+                padding-top: 40px !important;
+                font-size: 10px !important;
+				height: inherit !important;
+				transform: none !important;
+				-webkit-transform: none !important;
+/* 				text-align: center;
+				font-size: 18px; */
+/* 				padding-top: 0px; */
+/* 				line-height: 1;
+				z-index: 1000;
+				font-weight: 500; */
+			}
+			
             .program_container .points div.change.positive {
-                position: absolute;
-                top: 0;
+                position: relative;
+                top: 0px;
                 right: 5px;
-                padding-top: 30px;
-                z-index: 2;
-                
+				/* hide change div when not active */
+				display: none;
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
                 background: rgb(102,198,193); /* Old browsers */
                 background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
                 background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
                 background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                
                 border: none;
+				/*override new GT CSS*/
+				color: #fff !important;
             }
-
-            .program_container .points {
-                right: -4px;
-                padding-left: 24px;
-                background-color: #fff;
-            }
-
+			
             /* Progress Bar */
             /* */
             .program_container .progress {
@@ -197,6 +336,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 margin-bottom: 5px;
 				/* override new GT CSS positioning */
 				top: auto !important;
+				z-index: 300 !important;
 				
             }
 			
@@ -204,13 +344,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				.program_container .progress {
 					width: auto !important;
 				}
-			}	
+			}
 			
 			@media screen and (max-width: 767px){
-				.progress {
+				.program_container .progress {
 					position: fixed !important;
 					width: calc(100% - 30px) !important;
-					margin: 40px 30px 0 15px !important;
+					margin: -20px 30px 0 15px !important;
+					height: 15px !important;
 				}
 			}
 			
@@ -234,27 +375,42 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				
 				z-index: 1 !important;
             }
+			
+			@media screen and (max-width: 767px){
+				.program_container .progress .progress-bar {
+					font-size: 10px !important;
+					line-height: 16px !important;
+				}
+			}
 
 
             /* Program navigation */
             #program_navigation {
 				display: flex;
 				flex-direction: row;
+				align-items: center;
+				justify-content: center;
                 border-bottom: 1px solid #eee !important;
                 min-height: 38px !important;
 				/* override GT CSS */
-				-webkit-box-shadow: none !important;
-   				box-shadow: none !important;
+				height: 38px !important;
+				-webkit-box-shadow: none;
+   				box-shadow: none;
 				width: 100% !important;
 				z-index: 10 !important;
             }
 			
-			@media (max-width: 767px) {
+			@media screen and (max-width: 767px) {
 				#program_navigation {
-					/* override new GT CSS positioning nav at very top */
+					/* adjust nav dimensions when it's sticky on mobile */
+					height: 60px !important;
 					margin-right: 15px !important;
-					max-width: calc(100% - 30px) !important;
+					margin-left: -15px !important;
+/* 					max-width: calc(100% - 30px) !important; */
 					margin-bottom: 1em !important;
+					-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+					box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+					clip-path: inset(0 0 -8px -0);
 				}
 			} 
 			
@@ -265,7 +421,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             #program_navigation #back-button span.glyphicon{
 				/* place in front of bottom nav border*/
-				z-index: 10;
+				z-index: 150;
                 width: 20px;
                 height: 19px;
                 line-height: 19px;
@@ -275,7 +431,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 text-indent: -9999px;
                 left: -5px;
 				/* adjust positioning to line up with nav border */
-                top: 39px;
+                top: 29px;
                 background-color: #fff !important;
                 padding-right: 40px !important;
                 -webkit-transition: all 0.3s ease-out;
@@ -286,7 +442,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			
 			@media (max-width: 767px) {
 				#program_navigation #back-button span.glyphicon{
-					left: 0px !important;
+					/* place within sticky header on mobile */
+					left: 15px !important;
+					margin-top: 5px !important;
 				}
 			}
 
@@ -294,20 +452,20 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 background-image: url("../wp-content/uploads/2017/12/icon-back_green.png");
             }
 
+			/* hide home icon */
             .navigation_items .text-center {
                 display: none !important;
             }
-
-			/* hide nav item by default */
+			/* hide nav item if it lacks an accompanying icon */
 			li.no-icon {
                 display: none !important;
             }
 
-            #program_navigation .navigation_container {
+            .program_container .navigation_container {
 				/* correct for excessive spacing */
                 margin-top: 0;
-                margin-bottom: 0;
-				width: auto !important;
+				margin-bottom: 0;
+				width: calc (100% -60px) !important;
             }
 			
 			/* override GT CSS box-shadow for small screens */
@@ -320,7 +478,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					bottom: auto !important;
 					left: 0;
 					margin-top: 0px;
-					z-index: 100;
+					z-index: 50;
 				}
 			}
 
@@ -328,37 +486,47 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 font-size: 14px;
                 font-family: "Arimo", sans-serif;
                 font-weight: 500;
-                color: #aaa;
-				/* remove lowered positioning */
-                top: 0;
-                position: relative;
             }
 
-            #program_navigation .navigation_container ul.navigation_items li {
+            .program_container .navigation_container ul li {
                 position: relative;
-                padding-left: 42px;
+				/* reduce padding */
+                padding: 0 10px 0 35px;
                 font-size: 16px;
                 -webkit-transition: all 0.3s ease-out;
                 -moz-transition: all 0.3s ease-out;
                 -o-transition: all 0.3s ease-out;
                 transition: all 0.3s ease-out;
+				background-color: #fff;
+				color: rgb(80, 80, 80, .6);
+                background-image: url("../wp-content/uploads/2017/12/icon-home.png");
+                background-repeat: no-repeat;
+                background-size: 16px;
+                background-position: 10px 7px;
+				/* override new GT CSS */
+				max-width: max-content !important;
+				height: 30px !important;
+				margin-top: 35px;
+				opacity: 1 !important;
             }
+			
+			@media screen and (max-width: 767px) {
+				.program_container .navigation_container ul li {
+					margin-top: 32px !important;
+					font-size: 14px !important;
+					background-color: transparent !important;
+					background-size: 13px;
+                	background-position: 18px 9px;
+					/* low opacity on mobile */
+					color: rgb(80, 80, 80, .4);
+				}
+			}
 
             .no-touch #program_navigation .navigation_container ul.navigation_items li:hover, 
             #program_navigation .navigation_container ul.navigation_items .no-touch li:hover, 
             .no-touch #program_navigation #run-menu:hover, 
             #program_navigation .no-touch #run-menu:hover {
                 color: #66c6c1;
-            }
-
-            #program_navigation .navigation_container ul.navigation_items li {
-                /* Trying to fix narrow container for nav li "Return to Main Menu" */
-                width: auto;
-                background-color: #fff;
-                background-image: url("../wp-content/uploads/2017/12/icon-home.png");
-                background-repeat: no-repeat;
-                background-size: 16px;
-                background-position: 18px 10px;
             }
 
             #program_navigation .navigation_container ul.navigation_items li:hover{
@@ -379,7 +547,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				position: absolute;
 				left: auto !important;
 				right: -47 !important;
-				top: 47 !important;
+				top: 52 !important;
 				line-height: 64px;
 				width: 47px;
             }
@@ -388,7 +556,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				#program_navigation #run-menu {
 					/* try to get menu visible in small screens */
 					right: 0 !important;
-					top: 15 !important;
+					top: 32 !important;
+					width: 20px !important;
 				}
 			}
 			
@@ -437,7 +606,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				user-select: none;
 			}
 			
-			@media (max-width: 768px) {
+			@media screen and (max-width: 767px) {
 				/* override new GT CSS focus styling for mobile */
 				.program_container #run-menu .dropdown-toggle:focus {
 					background-color: transparent !important;
@@ -454,6 +623,20 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				opacity: 1 !important;
             }
 			
+			#program_navigation #run-menu .dropdown-toggle span {
+                color: #555;
+				/* increase size of icon */
+				font-size: 1.2em;
+				padding-bottom: 0px !important;
+				/* override GT CSS reduced opacity */
+				opacity: 1 !important;
+            }
+			
+			@media screen and (max-width: 767px) {
+				#program_navigation #run-menu .dropdown-toggle span {
+					font-size: 1em !important;
+				}
+			}
 			
 			.dropdown-menu li {
 				/* override vertical divider between items in dropdown menu */
@@ -519,7 +702,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			}
 			
             .program_container .btn-default, 
-            ul.button-group li.btn-primary {
+            ul.button-group li.btn-primary,
+			.program_container .btn-primary{
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
                 background: rgb(102,198,193); /* Old browsers */
                 background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
@@ -549,7 +733,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .program_container .btn-default.focus, 
             .program_container .btn-default:active, 
             .program_container .btn-default:focus, 
-            .program_container .btn-default:hover, 
+            .program_container .btn-default:hover,
+			.program_container .btn-primary:focus,
+			.program_container .btn-primary:hover, 
             ul.button-group li.btn-primary:hover {
                 color: #fff;
 
@@ -668,23 +854,26 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 color: #555;
             }
 
+			
             /* Main content styling */
+			
             .program_container .main {
 				/* override GT CSS extra padding on left/right, extra bottom margin */
                 padding: 3em 0em 0em 0em;
 				margin-bottom: 0em;
+				/* keep main in place when points are visible */
+				position: initial;
             }
-			
 			@media screen and (max-width: 767px) {
 				.program_container .main {
 					margin-top: 48px;
 				}
 			}
 				
-
             .program_container .main .prompt {
 				/* bold & slightly enlarge question prompts */
-				font-size: 19px;
+				font-family: 'Noto Serif', Times, serif;
+				font-size: 18px;
                 font-weight: 700;
 				/* decrease top margin slightly */
                 margin-top: .5em;
@@ -692,8 +881,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 margin-right: 0;
             }
 			
-			/* don't display blank question prompt */
 			.program_container .prompt:empty {
+				/* if *question: {blank}, no empty space left for question prompt */
                 padding: 0;
                 margin: 0;
             }
@@ -701,7 +890,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Questions General Styling */
             .program_container .question {
                 font-size: 18px;
-                font-weight: 800;
+                font-weight: 700;
                 
                 background-color: #f7f7f7;
                 border-radius: 8px 8px 0 0;
@@ -735,9 +924,29 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 transition: all 0.3s ease-out;
             }
 			
-			.program_container li.answer {
+			.program_container li.answer, 
+			.program_container li label {
 				/*override GT CSS smaller font sizes for questions */
-				font-size: 18px;
+				font-size: 18px !important;
+			}
+			
+			.program_container li.answer span[role="checkbox"] {
+				width: 26px;
+    			height: 26px;
+				background-color: #f9f9f9 !important;
+			}
+			
+			/* enlarge check in checkbox*/
+			.program_container li.answer [type="checkbox"]:checked ~ span[role="checkbox"]:after {
+				font-size: 26px !important;
+			}
+			
+			/* for checkbox questions — last li styled as a button */
+			li.submit.btn-primary {
+				border: none !important;
+				box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%) !important;
+				-webkit-box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%) !important;
+				-moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15) !important;
 			}
 
 			/* imported from GT legacy CSS */
@@ -746,9 +955,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			}
 
             .no-touch ul.button-group .answer:hover:not(.selected) {
-/*                 background-color: #f5f6fa !important; */
-				/* try higher contrast color for hover state */
-				background-color: rgba(148, 207, 161, 0.1) !important;
+				/* background-color: #f5f6fa !important; */
+				/* try light green tint for hover state */
+				background-color: rgba(148, 207, 161, 0.09) !important;
 				border: 1px solid transparent !important;
 				font-weight: 500 !important;
                 box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
@@ -761,8 +970,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
             ul.button-group .answer.selected {
-/*                 background-color: #f5f6fa !important; */
-				background-color: rgba(148, 207, 161, 0.3) !important;
+				/* background-color: #f5f6fa !important; */
+				/* try green tint for selected state */
+				background-color: rgba(148, 207, 161, 0.18) !important;
 				border: 1px solid transparent !important;
             }
 
@@ -794,7 +1004,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				color: #666 !important;
                 background-color: #f7f7f7;
 				/* add top margin to counterbalance lack of bottom padding for prompt */
-                padding: 0.5em 0 1em 1.1em;
+                padding: 0.5em 1em 1em 1em;
                 margin: 0;
             }
 
@@ -851,26 +1061,28 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Gradable Question Styling */
             .program_container .question.question-gradable {
                 position: relative;
-                padding: 2px 1em 1em 45px;
+				/* left padding makes space for star icon */
+                padding-left: 52px;
             }
 
             .program_container .question.question-gradable::before {
                 position: absolute;
                 display: block;
                 background-image: url("../wp-content/uploads/2018/01/question-star-turquise.png");
-                background-size: 18px;
+				/* enlarge star size for greater visibility */
+                background-size: 26px;
                 content: "";
-                width: 18px;
-                height: 18px;
+                width: 26px;
+                height: 26px;
                 background-repeat: no-repeat;
                 left: 15px;
-                top: 22px;
+                top: 26px;
             }
 
             .program_container .tip.question-gradable {
                 background-color: #f7f7f7;
                 margin: 0;
-                padding: 0 0 1em 45px;
+                padding: 0 0 1em 52px;
             }
 
             .program_container .tip.question-gradable:empty {
@@ -960,6 +1172,33 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 margin-left: 0;
                 padding-left: 1em;
             }
+			
+			/* Calendar questions */
+			.program_container .calendar-answer-widget {
+				/* match widget background to prompt */
+				background-color: #f7f7f7;
+			}
+			
+			/* white background behind calendar */
+			.bootstrap-datetimepicker-widget .list-unstyled {
+				margin-top: 0;
+				margin-bottom: 8px;
+				padding: 15px;
+				background-color: #fff;
+				border: 1px solid #f7f7f7;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+			}
+			
+			/* reduce empty space above calendar */
+			.program_container .bootstrap-datetimepicker-widget {
+				margin: auto;
+				margin-top: 1em;
+			}
 
             /* Forms Styling */
 
@@ -1018,8 +1257,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			
             .program_container .main .list li {
 				font-size: inherit !important;
-				/* this isn't working */
-/* 				font-weight: inherit !important; */
+				font-weight: inherit !important;
 				line-height: 1.6em !important;
 				list-style: none !important;
                 position: relative !important;
@@ -1027,12 +1265,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				margin-bottom: 8px;
             }
 			
-			/* this should force strong to display as bold but isn't */
-			.program_container .main .list li strong {
-				font-weight: "800" !important;
+			.program_container ul.list li strong {
+				font-weight: 700 !important;
                 color: #111 !important;
-                font-size: 19px !important;
-            }
+                font-size: 18px !important;
+			}
 
             .program_container .main .list li::before {
                 position: absolute !important;
@@ -1049,117 +1286,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				z-index: 5 !important;
             }
 
-            /* Image certificate Text Positioning */
-            .image-superimpose {
-                position: relative;
-            }
 
-            .image-superimpose .multimedia_caption {
-                position: absolute;
-                top: 38%;
-                left: 8.6%;
-                font-family: 'Poppins','Arial', sans-serif;
-                font-size: 70%;
-                font-weight: 500;
-                font-style: normal;
-            }
-
-            .image-superimpose .multimedia_caption  strong {
-                width: 100%;
-                display: block;
-                text-align: left;
-                font-family: 'Poppins','Arial', sans-serif;
-                color: #3d4fa1;
-                font-size: 180%;
-                padding-top: 4px;
-            }
-
-            /* Print styling */
-            @media print {
-                .image-superimpose {
-                    position: relative !important;
-                }
-
-                .image-superimpose .multimedia_caption {
-                    position: absolute !important;
-                    top: 38% !important;
-                    left: 8.6% !important;
-                    font-family: 'Poppins','Arial', sans-serif !important;
-                    font-size: 70% !important;
-                    font-weight: 500 !important;
-                    font-style: normal !important;
-                }
-
-                .image-superimpose .multimedia_caption  strong {
-                    width: 100% !important;
-                    display: block !important;
-                    text-align: left !important;
-                    font-family: 'Poppins','Arial', sans-serif !important;
-                    color: #3d4fa1 !important;
-                    font-size: 180% !important;
-                    padding-top: 4px !important;
-                }
-            }
-
-            /* Responsive Styling */
-            @media (max-width: 992px) {
-                body {
-                    background-color: #fff;
-                    padding-top: 15px;
-                }
-
-                .program_container {
-                    box-shadow: none;
-                    -webkit-box-shadow: none;
-                    -moz-box-shadow: none;
-                    padding: 15px;
-                }
-            }
-
-            /* Responsive styling for Image certificate */
-            @media (max-width: 479px) {
-                
-                .image-superimpose .multimedia_caption {
-                    top: 35%;
-                    font-size: 50%;
-                }
-
-                .image-superimpose .multimedia_caption  strong {
-                    font-size: 150%;
-                }
-            }
-
-            @media (min-width: 480px) and (max-width: 567px) {
-                .image-superimpose .multimedia_caption {
-                    top: 38%;
-                    font-size: 50%;
-                }
-
-                .image-superimpose .multimedia_caption  strong {
-                    font-size: 150%;
-                }
-            }
-
-            @media (min-width: 768px) and (max-width: 991px) {
-                .image-superimpose .multimedia_caption {
-                    top: 40%;
-                }
-
-                .image-superimpose .multimedia_caption  strong {
-                    font-size: 180%;
-                }
-            }
-
-            @media (min-width: 992px) and (max-width: 1199px) {
-                .image-superimpose .multimedia_caption {
-                    font-size: 60%;
-                    top: 37%;
-                }
-
-                .image-superimpose .multimedia_caption  strong {
-                    font-size: 180%;
-                }
-            }
 
             /* Styling for Participant Progress Table div */
             .table-button{ 
@@ -1253,8 +1380,22 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		$(window).on("loadSettings", function(event, data){
 		  tableData={};
 		  AccessCode = data.AccessCode;
+		  UserType = data.UserType;
 		  csvHeaders = data.csvHeaders; 
-		     
+  		  //Displays Course title for courses and group name otherwise
+  		  if (UserType == "college" || UserType == "highschool") { 
+  		  	infoTitle = "Course Title: ";
+  		  	infoData = data.CourseTitle;
+  		  }else{
+  		  	infoTitle = "Group Name: ";
+  		  	infoData = data.GroupName;
+  		  }
+          // Displays Access Code and Group Name
+		  $('#accesscode').empty();
+          $('#accesscode').append("Access Code: "+"<em>"+AccessCode+"</em>");
+		  $('#info').empty();
+          $('#info').append(infoTitle+"<em>"+infoData+"</em>");
+		  
 		});
 
 		//Loads Headers and calls function to generate table 
@@ -1519,8 +1660,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
     </script>
 	
 <body class="openMind-app">
-    <div id="pp-display" style="display:none">
-        <br></br>
+	<div id="pp-display" style="display:none;margin-top: 0px;">
+	<br></br>
+		<div style="font-size:13px;">
+				<p id="accesscode" style="float:left;"></p>
+				<p id="info" style="text-align:right;display:run-in;"></p>
+	</div>
         <h3 style="margin-bottom:3px">Participant Progress Dashboard</h3>
 
         <p style="font-size:15px">Below you can view the progress of your participants on the OpenMind program. Only participants who have completed at least lesson 1 will display.</p>

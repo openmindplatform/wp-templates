@@ -118,6 +118,17 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				font-size: 20px;
             }
 			
+			a {
+				color: #337ab7 !important;
+				text-decoration: none !important;
+			}
+			
+			a:hover, 
+            a:focus {
+                color: #66c6c1 !important;
+            }
+			
+			/* Mobile Typography (smaller font sizes) */
 			@media screen and (max-width: 767px) {
 				.program_container .text p {
 					font-size: 17px;
@@ -131,22 +142,15 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					font-size: 22px !important;
 				}
 				i, 
-           		em,
+           		em {
+					font-size: 17.5px;
+				}
 				b, 
            		strong {
 					font-size: 18px;
 				}
 			}
 
-			a {
-				color: #337ab7 !important;
-				text-decoration: none !important;
-			}
-			
-			a:hover, 
-            a:focus {
-                color: #66c6c1 !important;
-            }
 
             /* Images */
 			.program_container .multimedia_node * {
@@ -154,6 +158,27 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				margin-top: 16px;
 				margin-bottom: 24px;
 			}
+			
+			/* overrides new GT CSS default image sizing for speech bubble icons in P2Ps*/
+			img[src*="https://openmindplatform.org/wp-content/uploads/2020/11/noun_speech_1966348.png"] {
+				height: 40px !important;
+				width: 50px !important;
+			}
+			
+			/* iFrames */
+			@media screen and (min-width: 768px) {
+				.multimedia_node iframe {
+					height: 550px !important;
+				}
+			}
+			@media screen and (max-width: 767px) {
+				.multimedia_node iframe {
+					height: 400px !important;
+					max-width: 700px;
+				}
+			}
+			
+			
 			
 			/* Component (Default — no classes added) */
 			.program_container .component {
@@ -167,11 +192,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				border-color: #eee;
 			}
 			
+			
 			/* Points Bubble */
 			
 			/* white square container for points bubble*/
 			.program_container .points {
-				
                 padding: 8px 4px 0 18px !important;
                 background-color: #fff;
 				height: 106px;
@@ -180,8 +205,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				/* imported from GT legacy; positioning needs to be relative because y positioning depends on if progress is visible or not */
 				float: right;
 				position: relative;
-				/* override new GT CSS */
-				display: unset;
 				top: -43px;
             }
 				
@@ -261,16 +284,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				font-size: 15px;
             }
 			
-			/* Mobile formatting for points */
+			/* Mobile formatting for Points */
 			@media screen and (max-width: 767px) {
 				.program_container .points {
-					top: 32px; 
+					top: 20px; 
 					height: 60px !important;
 					width: 60px !important;
 					margin-left: 0px !important;
 					margin-right: -6px !important;
 					max-width: 60px !important;
-					padding: 6px 3px 0 6px !important;
+					padding: 6 3px 0 6px !important;
 					position: fixed;
 					background-color: transparent !important;
 				}
@@ -332,20 +355,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				top: auto !important;
 				z-index: 300 !important;
 				
-            }
-			
+            }		
+			/* overrides new GT CSS full width default, except on mobile */
 			@media screen and (min-width: 768px){
 				.program_container .progress {
 					width: auto !important;
-				}
-			}
-			
-			@media screen and (max-width: 767px){
-				.program_container .progress {
-					position: fixed !important;
-					width: calc(100% - 30px) !important;
-					margin: -20px 30px 0 15px !important;
-					height: 15px !important;
 				}
 			}
 			
@@ -370,10 +384,18 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				z-index: 1 !important;
             }
 			
+			/* Mobile formatting for Progress */
 			@media screen and (max-width: 767px){
+				.program_container .progress {
+					position: fixed !important;
+					width: calc(100% - 30px) !important;
+					margin: 7px 30px 0 15px !important;
+					height: 13px !important;
+				}
+				
 				.program_container .progress .progress-bar {
 					font-size: 10px !important;
-					line-height: 16px !important;
+					line-height: 13px !important;
 				}
 			}
 
@@ -394,18 +416,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				z-index: 10 !important;
             }
 			
-			@media screen and (max-width: 767px) {
-				#program_navigation {
-					/* adjust nav dimensions when it's sticky on mobile */
-					margin-right: 15px !important;
-					margin-left: 0px !important;
-/* 					max-width: calc(100% - 30px) !important; */
-					margin-bottom: 1em !important;
-					-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-					box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-				}
-			} 
-			
 			/* override new GT CSS; make opaque */
 			#program_navigation #back-button{
 				opacity: 1;
@@ -423,22 +433,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 text-indent: -9999px;
                 left: -5px;
 				/* adjust positioning to line up with nav border */
-                top: 29px;
+                top: 39px;
                 background-color: #fff !important;
-                padding-right: 40px !important;
+                padding-right: 36px !important;
                 -webkit-transition: all 0.3s ease-out;
                 -moz-transition: all 0.3s ease-out;
                 -o-transition: all 0.3s ease-out;
                 transition: all 0.3s ease-out;
             }
-			
-			@media (max-width: 767px) {
-				#program_navigation #back-button span.glyphicon{
-					/* place within sticky header on mobile */
-					left: 15px !important;
-					margin-top: 5px !important;
-				}
-			}
 
             #program_navigation #back-button span.glyphicon:hover {
                 background-image: url("../wp-content/uploads/2017/12/icon-back_green.png");
@@ -459,20 +461,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				margin-bottom: 0;
 				width: calc (100% -60px) !important;
             }
-			
-			/* override GT CSS box-shadow for small screens */
-			@media screen and (max-width: 767px) {
-				.program_container .navigation_container {
-					background: var(--themeColor-background);
-					-webkit-box-shadow: none;
-					box-shadow: none;
-					position: relative;
-					bottom: auto !important;
-					left: 0;
-					margin-top: 0px;
-					display: none;
-				}
-			}
+
 
             #program_navigation .navigation_container ul.navigation_items {
                 font-size: 14px;
@@ -498,21 +487,53 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				/* override new GT CSS */
 				max-width: max-content !important;
 				height: 30px !important;
-				margin-top: 35px;
+				margin-top: 45px;
 				opacity: 1 !important;
             }
-			
+		
+			/* Mobile styling for Nav */
 			@media screen and (max-width: 767px) {
+				#program_navigation {
+					/* adjust nav dimensions when it's sticky on mobile */
+					margin-right: 15px !important;
+					margin-left: 0px !important;
+/* 					max-width: calc(100% - 30px) !important; */
+					margin-bottom: 1em !important;
+					-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+					box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+				}
+				
+				#program_navigation #back-button span.glyphicon{
+					/* place within sticky header on mobile */
+					left: 15px !important;
+					margin-top: -10px !important;
+					background-size: 15px 15px;
+					height: 15px;
+					width: 15px;
+				}
+				
+				/* override GT CSS box-shadow for small screens */
+				.program_container .navigation_container {
+					background: var(--themeColor-background);
+					-webkit-box-shadow: none;
+					box-shadow: none;
+					position: relative;
+					bottom: auto !important;
+					left: 0;
+					margin-top: 0px;
+				}
+				
 				.program_container .navigation_container ul li {
-					margin-top: 32px !important;
+					margin-top: 26px !important;
 					font-size: 14px !important;
 					background-color: transparent !important;
 					background-size: 13px;
                 	background-position: 18px 9px;
 					/* low opacity on mobile */
 					color: rgb(80, 80, 80, .4);
+					z-index: 150;
 				}
-			}
+			} 
 
             .no-touch #program_navigation .navigation_container ul.navigation_items li:hover, 
             #program_navigation .navigation_container ul.navigation_items .no-touch li:hover, 
@@ -539,19 +560,10 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				position: absolute;
 				left: auto !important;
 				right: -47 !important;
-				top: 52 !important;
+				top: 47 !important;
 				line-height: 64px;
 				width: 47px;
             }
-			
-			@media (max-width: 767px) {
-				#program_navigation #run-menu {
-					/* try to get menu visible in small screens */
-					right: 6px !important;
-					top: 10 !important;
-					z-index: 750 !important;
-				}
-			}
 			
             .dropdown-menu {
                 border: 1px solid #f7f7f7 !important;
@@ -571,21 +583,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				margin-top: 30px !important;
 			}
 			
-			@media screen and (max-width: 767px) {
-				.program_container .dropdown-menu.pull-right {
-					position: fixed !important;
-					right: 7px!important;
-					max-width: 97vw !important;
-					top: 6px !important;
-					z-index: 1111;
-					/* darker box shadow for more contrast on mobile */
-					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
-					-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
-					-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
-				}
-				
-			}
-			
 			/* imported from GT legacy CSS — menu toggle behavior */
 			#program_navigation #run-menu .dropdown-toggle {
 				display: inline-block;
@@ -599,30 +596,47 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				cursor: pointer;
 				user-select: none;
 			}
-			
-			@media screen and (max-width: 767px) {
-				/* override new GT CSS focus styling for mobile */
-				.program_container #run-menu .dropdown-toggle:focus {
-					background-color: transparent !important;
-					transition: none !important;
-				}
-			}
 
             #program_navigation #run-menu .dropdown-toggle span {
                 color: #555;
 				/* increase size of icon */
-				font-size: 1.2em;
+				font-size: 1.3em;
 				padding-bottom: 0px !important;
 				/* override GT CSS reduced opacity */
 				opacity: 1 !important;
             }
 			
-			/* background behind expanded dropdown on mobile*/
-			@media (max-width: 767px) {
+			/* Mobile Styling for Run Menu */
+			@media screen and (max-width: 767px) {
+				#program_navigation #run-menu {
+					/* fix positioning on small screens */
+					right: 38px !important;
+					top: 11 !important;
+					z-index: 750 !important;
+				}
+				
+				.program_container .dropdown-menu.pull-right {
+					position: fixed !important;
+					right: 5px!important;
+					max-width: 98vw !important;
+					top: 6px !important;
+					z-index: 1111;
+					/* darker box shadow for more contrast on mobile */
+					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
+					-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
+					-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
+				}
+				
+				/* override new GT CSS focus styling for mobile */
+				.program_container #run-menu .dropdown-toggle:focus {
+					background-color: transparent !important;
+					transition: none !important;
+				}
+				
+				/* background behind expanded dropdown on mobile*/
 				.program_container .dropdown.open>ul.dropdown-menu::after{
 					top: 40px !important;
 					background: #f9f9f9;
-					display: none !important;
 				}
 			}
 			
@@ -659,8 +673,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 			
 
-
-
 			
             /* Main content styling */
 			
@@ -680,6 +692,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				}
 			}
 				
+			/* Question Prompts */
+			
             .program_container .main .prompt {
 				/* bold & slightly enlarge question prompts */
 				font-family: 'Caladea', Times, serif;
@@ -690,20 +704,27 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 margin-left: 0;
                 margin-right: 0;
             }
-			@media screen and (max-width: 767px) {
-				.program_container .main .prompt {
-					font-size: 19px;
-				}
+
+			.program_container .main .prompt em {
+				font-size: 20px;
 			}
-			
 			
 			.program_container .prompt:empty {
 				/* if *question: {blank}, no empty space left for question prompt */
                 padding: 0;
                 margin: 0;
             }
+			
+			@media screen and (max-width: 767px) {
+				.program_container .main .prompt,
+				.program_container .main .prompt em {
+					font-size: 19px;
+				}
+			}
 
+	
             /* Questions General Styling */
+			
             .program_container .question {
                 font-size: 18px;
                 font-weight: 700;
@@ -801,6 +822,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				background-color: rgba(148, 207, 161, 0.18) !important;
 				border: 1px solid transparent !important;
             }
+			
+			@media screen and (max-width: 767px) {
+				ul.button-group .answer.selected {
+					font-size: 18px;
+            	}
+			}
+			
 
             ul.button-group .answer.selected span.glyphicon {
                 display: none;
@@ -862,23 +890,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				margin: 0 1em .5em 0 !important;
             }
 			
-			/* override full width in GT CSS */
-/* 			.program_container .answer_input .form-control, 
-			.program_container .form-inline .input-group, 
-			.program_container .form-inline .input-group>.form-control {
-				
-				width: auto !important;
-			} */
-		
-/* 			@media screen and (max-width: 767px) {
-				.program_container .answer_input .form-control, 
-				.program_container .form-inline .input-group, 
-				.program_container .form-inline .input-group>.form-control { */
-					/* override full width in GT CSS
-					width: 100% !important;
-				}
-			} */
-			
 
             /* Gradable Question Styling */
             .program_container .question.question-gradable {
@@ -904,7 +915,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .program_container .tip.question-gradable {
                 background-color: #f7f7f7;
                 margin: 0;
-                padding: 0 0 1em 52px;
+                padding: 0 1em 1em 52px;
             }
 
             .program_container .tip.question-gradable:empty {
@@ -1326,8 +1337,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
 
-
-
             /* Styling for Participant Progress Table div */
             .table-button{ 
                 display: inline-block;
@@ -1395,16 +1404,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 border-bottom: 2px solid #00B496;
             }
 		</style>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177276190-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177276190-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
-  gtag('config', 'UA-177276190-1');
-</script>
-
+		  gtag('config', 'UA-177276190-1');
+		</script>
 	</head>
 	
     <script>
@@ -1733,4 +1742,56 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
     </div> <!-- #main-content -->
   </body>
+	
+	<script>
+		// 	Hides points bubble when dropdown menu is opened on mobile
+
+		const dropdownMenu = document.getElementById('run-menu');
+		const pointsBubble = document.getElementsByClassName('points')[0];
+		const dropdownOpen = () => {
+			if (window.innerWidth < 768) {
+				// at the time that dropdown toggle is clicked...
+				if (dropdownMenu.classList.length < 2 ) {
+					// hides points bubble while dropdown menu is open
+					pointsBubble.style.display = "none";
+				} else {
+					pointsBubble.style.display = "unset";
+				}
+			}
+		};
+		// needs refinement — works on desktop but points don't reappear on mobile
+		dropdownMenu.addEventListener('click', dropdownOpen);
+
+		// Makes points appear upon re-entry
+		const showPoints = () => {
+			if (pointsBubble.firstElementChild.innerText === '0') {
+				pointsBubble.style.display = "none";
+			} else {
+				pointsBubble.style.display = "unset";
+			}
+		};
+		window.addEventListener('DOMContentLoaded', showPoints);
+		
+
+// 		Hides points value when no points have been scored yet
+// 		const noPoints = () => {
+// 			if (pointsBubble.firstElementChild.innerText === '0') {
+// 				pointsBubble.firstElementChild.style.display = "none";
+// 				console.log('no points');
+// 			} 
+// 		};
+// 		window.addEventListener('DOMContentLoaded', noPoints);
+
+// 		Supposed to hide points bubble while dropdown menu is available
+// 		const hidePoints = () => {
+// 			if (dropdownMenu.style.display === 'flex'){
+// 				pointsBubble.style.display = 'none';
+// 			} else {
+// 				pointsBubble.style.display = 'unset';
+// 			}
+// 		};
+// 		window.addEventListener('click', hidePoints);
+	</script>
+
+	
 </html>

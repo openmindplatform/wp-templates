@@ -17,7 +17,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
 		<!-- Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i|Noto+Serif:400,400i,700,700i" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i|Caladea:400,400i,700,700i" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<style>
@@ -74,8 +74,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 }
             }
 			@media screen and (max-width: 767px) {
+				body {
+                    padding-top: 0px;
+                }
 				.program_container {
 					margin-bottom: 20px;
+					padding: 0px;
 				}
 			}
 			
@@ -103,16 +107,15 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			
 			i, 
             em {
-				font-family: 'Noto Serif', Times, serif; 
-                font-size: 17.5px;
+                font-size: 19px;
             }
 
             b, 
             strong {
-				font-family: 'Noto Serif', Times, serif; 
+				font-family: 'Caladea', Times, serif; 
                 font-weight: 700 !important;
-                color: #111 !important;
-                font-size: 18px;
+                color: #222 !important;
+				font-size: 20px;
             }
 			
 			@media screen and (max-width: 767px) {
@@ -127,13 +130,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				h3 {
 					font-size: 22px !important;
 				}
-				b, 
-				strong {
-					font-size: 17px !important;
-				}
 				i, 
-				em {
-					font-size: 16.5px !important;
+           		em,
+				b, 
+           		strong {
+					font-size: 18px;
 				}
 			}
 
@@ -168,8 +169,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			
 			/* Points Bubble */
 			
-			/* white square behind points bubble*/
+			/* white square container for points bubble*/
 			.program_container .points {
+				
                 padding: 8px 4px 0 18px !important;
                 background-color: #fff;
 				height: 106px;
@@ -179,23 +181,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				float: right;
 				position: relative;
 				/* override new GT CSS */
-/* 				display: block; */
+				display: unset;
 				top: -43px;
             }
-			
-			@media screen and (max-width: 767px) {
-				.program_container .points {
-					top: 28px; 
-					height: 60px !important;
-					width: 60px !important;
-					margin-left: 0px !important;
-					margin-right: -6px !important;
-					max-width: 60px !important;
-					padding: 6px 3px 0 6px !important;
-					position: fixed;
-					background-color: transparent !important;
-				}
-			}
 				
 			
 			/* applies to divs .total & .change */
@@ -211,12 +199,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
     			border-radius: 50%;
 				text-align: center;
             }
-			@media (max-width: 767px) {
-				.program_container .points div {
-					width: 45px !important;
-					height: 45px !important;
-				}
-			}
+
 
             /* star icon */
 			.program_container .points::before {
@@ -233,16 +216,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 z-index: 200 !important;
             }
 			
-			@media (max-width: 767px) {
-				.program_container .points::before {
-					top: 14px;
-					width: 20px;
-					height: 20px;
-					background-size: 20px;
-					margin-left: -16px;  
-				}
-			}
-
             .program_container .points div br {
                 content: "";
                 line-height: 0;
@@ -266,48 +239,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				padding-top: 46px !important;
 				z-index: 175 !important;
             }
-			
-			@media (max-width: 767px) {
-				.program_container .total {
-					min-width: auto;
-					box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15) !important;
-					-webkit-box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.15) !important;
-					-moz-box-shadow:  0 3px 8px 0 rgba(0, 0, 0, 0.15) !important;
-					/* override GT CSS */
-					margin: 0px !important;
-				}				
-				.program_container .total span {
-					position: fixed;
-					transform: translateY(-16px);
-					right: 25px;
-				}
-			}
 				
 			/* override new GT CSS mini star icon before points */
 			.program_container .total::before {
 				display: none !important;
 			}
-
-			.program_container .change {
-				width: inherit !important;
-                padding-top: 40px !important;
-                font-size: 10px !important;
-				height: inherit !important;
-				transform: none !important;
-				-webkit-transform: none !important;
-/* 				text-align: center;
-				font-size: 18px; */
-/* 				padding-top: 0px; */
-/* 				line-height: 1;
-				z-index: 1000;
-				font-weight: 500; */
-			}
 			
             .program_container .points div.change.positive {
-                position: relative;
-                top: 0px;
-                right: 5px;
-				/* hide change div when not active */
+				/* fix positioning so it overlays bubble*/
+				top: -20px;
+				/* hide when not active */
 				display: none;
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
                 background: rgb(102,198,193); /* Old browsers */
@@ -317,7 +258,60 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 border: none;
 				/*override new GT CSS*/
 				color: #fff !important;
+				font-size: 15px;
             }
+			
+			/* Mobile formatting for points */
+			@media screen and (max-width: 767px) {
+				.program_container .points {
+					top: 32px; 
+					height: 60px !important;
+					width: 60px !important;
+					margin-left: 0px !important;
+					margin-right: -6px !important;
+					max-width: 60px !important;
+					padding: 6px 3px 0 6px !important;
+					position: fixed;
+					background-color: transparent !important;
+				}
+				.program_container .points div {
+					width: 45px;
+					height: 45px;
+				}
+				.program_container .points::before {
+					top: 13px;
+					width: 20px;
+					height: 20px;
+					background-size: 20px;
+					margin-left: -16px;  
+				}
+				.program_container .total {
+					min-width: auto;
+					box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.12) !important;
+					-webkit-box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.12) !important;
+					-moz-box-shadow:  1px 3px 6px 0 rgba(0, 0, 0, 0.12) !important;
+					/* override GT CSS */
+					margin: 0px !important;
+				}				
+				.program_container .total span {
+					position: fixed;
+					transform: translateY(-15px);
+					right: 22px;
+				}
+				.program_container .points div.change.positive {
+					top: 8px;
+					margin-left: 3px;
+					height: 40px;
+					width: 40px;
+				}
+				.program_container .change.positive span {
+					position: fixed;
+					transform: translateY(-26px);
+					right: 13px;
+					font-size: 12px;
+				}
+			}
+			
 			
             /* Progress Bar */
             /* */
@@ -391,9 +385,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				align-items: center;
 				justify-content: center;
                 border-bottom: 1px solid #eee !important;
-                min-height: 38px !important;
+                min-height: 38px;
 				/* override GT CSS */
-				height: 38px !important;
+				height: 38px;
 				-webkit-box-shadow: none;
    				box-shadow: none;
 				width: 100% !important;
@@ -403,14 +397,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			@media screen and (max-width: 767px) {
 				#program_navigation {
 					/* adjust nav dimensions when it's sticky on mobile */
-					height: 60px !important;
 					margin-right: 15px !important;
-					margin-left: -15px !important;
+					margin-left: 0px !important;
 /* 					max-width: calc(100% - 30px) !important; */
 					margin-bottom: 1em !important;
 					-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 					box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-					clip-path: inset(0 0 -8px -0);
 				}
 			} 
 			
@@ -478,7 +470,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					bottom: auto !important;
 					left: 0;
 					margin-top: 0px;
-					z-index: 50;
+					display: none;
 				}
 			}
 
@@ -527,6 +519,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .no-touch #program_navigation #run-menu:hover, 
             #program_navigation .no-touch #run-menu:hover {
                 color: #66c6c1;
+
             }
 
             #program_navigation .navigation_container ul.navigation_items li:hover{
@@ -541,7 +534,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
             /* Run Menu */
-
             #program_navigation #run-menu {
 				/* override GT CSS positioning */
 				position: absolute;
@@ -555,9 +547,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			@media (max-width: 767px) {
 				#program_navigation #run-menu {
 					/* try to get menu visible in small screens */
-					right: 0 !important;
-					top: 32 !important;
-					width: 20px !important;
+					right: 6px !important;
+					top: 10 !important;
+					z-index: 750 !important;
 				}
 			}
 			
@@ -574,7 +566,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				right: 0 !important;
             }
 			
-				
 			.program_container .dropdown-menu.pull-right {
 				/* override new GT CSS — put menu closer to toggle */
 				margin-top: 30px !important;
@@ -582,14 +573,17 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			
 			@media screen and (max-width: 767px) {
 				.program_container .dropdown-menu.pull-right {
-					max-width: 90vw !important;
-					margin-top: 48px !important;
-					z-index: 100;
+					position: fixed !important;
+					right: 7px!important;
+					max-width: 97vw !important;
+					top: 6px !important;
+					z-index: 1111;
 					/* darker box shadow for more contrast on mobile */
-					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2) !important;
-					-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2) !important;
-					-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2) !important;
+					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
+					-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
+					-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
 				}
+				
 			}
 			
 			/* imported from GT legacy CSS — menu toggle behavior */
@@ -623,25 +617,19 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				opacity: 1 !important;
             }
 			
-			#program_navigation #run-menu .dropdown-toggle span {
-                color: #555;
-				/* increase size of icon */
-				font-size: 1.2em;
-				padding-bottom: 0px !important;
-				/* override GT CSS reduced opacity */
-				opacity: 1 !important;
-            }
-			
-			@media screen and (max-width: 767px) {
-				#program_navigation #run-menu .dropdown-toggle span {
-					font-size: 1em !important;
+			/* background behind expanded dropdown on mobile*/
+			@media (max-width: 767px) {
+				.program_container .dropdown.open>ul.dropdown-menu::after{
+					top: 40px !important;
+					background: #f9f9f9;
+					display: none !important;
 				}
 			}
 			
 			.dropdown-menu li {
 				/* override vertical divider between items in dropdown menu */
 				border-bottom: none !important;
-				z-index: 1001;
+				z-index: 1000;
 			}
 
             .dropdown-menu>li>a {
@@ -669,190 +657,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             #program_navigation #run-menu:active {
                 color: #66c6c1;
             }
-
-            /* Main menu list items styling */
-            .button-group.custom-menu li.answer:nth-child(5), 
-            .button-group.custom-menu li.answer:nth-child(4), 
-            .button-group.custom-menu li.answer:nth-child(3), 
-            .button-group.custom-menu li.answer:nth-child(2), 
-            .button-group.custom-menu li.answer:first-child {
-                border: 1px solid #66c6c1;
-            }
-
-            .program_container .question.custom-menu {
-                padding: 0;
-                background-color: transparent;
-            }
-
-            .program_container .tip.custom-menu {
-                background-color: transparent;
-                padding: 0;
-            }
-
-            .program_container .main .answers.custom-menu {
-                background-color: transparent;
-                padding: 0;
-            }
-
-
-            /* Button Main Styling */
-			.program_container .btn {
-				/*override new GT CSS large top margin*/
-				margin: 0.5em 0px 7px 0px;
-			}
 			
-            .program_container .btn-default, 
-            ul.button-group li.btn-primary,
-			.program_container .btn-primary{
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background-image: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                white-space: normal;
-                font-family: "Arimo", Arial, sans-serif;
-                font-weight: 700 !important;
-				/* slightly larger font for better contrast */
-                font-size: 19px;
-                color: #fff;
-
-                border: none;
-
-                -webkit-transition: all 0.3s ease-out;
-                -moz-transition: all 0.3s ease-out;
-                -o-transition: all 0.3s ease-out;
-                transition: all 0.3s ease-out;
 
 
-                box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-                -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-                -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-            }
-
-            .program_container .btn-default.active, 
-            .program_container .btn-default.focus, 
-            .program_container .btn-default:active, 
-            .program_container .btn-default:focus, 
-            .program_container .btn-default:hover,
-			.program_container .btn-primary:focus,
-			.program_container .btn-primary:hover, 
-            ul.button-group li.btn-primary:hover {
-                color: #fff;
-
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cea0+0,66c6c1+100 */
-                background: rgb(147,206,160); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(147,206,160,1) 0%, rgba(102,198,193,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-                border: none;
-            }
-
-            .btn-group-lg>.btn, 
-            .btn-lg {
-                padding: 15px;
-                margin-top: 30px !important;
-            }
-
-            /* Accordion Styling First Level */
-            .program_container .main .panel-group .panel-heading a, 
-            .program_container .main .panel-group .panel-heading a:link, 
-            .program_container .main .panel-group .panel-heading a:hover, 
-            .program_container .main .panel-group .panel-heading a:active, 
-            .program_container .main .panel-group .panel-heading a:visited {
-                color: #404042;
-            }
-
-            .text + .panel-group {
-                margin-top: 15px;
-            }
-
-            .panel-default>.panel-heading {
-                background-color: #fff !important;
-            }
-
-            .panel-heading {
-                padding: 0;
-            }
-
-            .panel-heading .panel-title h4 {
-                padding: 15px 20px;
-                font-size: 18px;
-                line-height: 28px;
-            }
-
-            .panel-heading .panel-title {
-                width: 100%;
-                display: block;
-            }
-
-            .panel-heading .panel-title[aria-expanded="true"] {
-                border-left: 2px solid #66c6c1;
-                transition-delay: 0.3s;
-            }
-
-            .panel-collapse, 
-            .panel-title {
-                border-left: 2px solid;
-                border-color: transparent;
-            }
-
-            .panel-collapse.collapse.in {
-                border-left: 2px solid #66c6c1;
-            }
-
-            .panel-group .panel-heading+.panel-collapse>.list-group, 
-            .panel-group .panel-heading+.panel-collapse>.panel-body {
-                border-top: 0;
-                padding-top: 0;
-            }
-
-            .panel-group .panel-body.main .text {
-                padding-left: 2px;
-                padding-top: 0;
-            }
-
-            .panel {
-                background-color: #fff !important;
-                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
-                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
-                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-                border: 1px solid #f7f7f7 !important;
-
-                -webkit-transition: all 0.3s ease-out !important;
-                -moz-transition: all 0.3s ease-out !important;
-                -o-transition: all 0.3s ease-out !important;
-                transition: all 0.3s ease-out;
-            }
-
-            .panel:hover {
-                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
-                -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
-                -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
-            }
-
-            .program_container .main .panel-group .panel-heading a.panel-title .toggle-expand {
-                color: #404042 !important;
-                top: 1em !important;
-            }
-
-            .panel-group .panel-heading+.panel-collapse>.list-group, 
-            .panel-group .panel-heading+.panel-collapse>.panel-body {
-                border-top: 1px solid #eee !important;
-				/* added padding on all sides of panel content */
-                padding: 1em !important;
-            }
-
-            .program_container .main .panel-group .panel-heading a.panel-title.collapsed .toggle-expand .glyphicon-chevron-down {
-                top: 7px;
-            }
-
-            /* Accordion Second Level */
-            .panel .panel-collapse .panel-body .panel-group .panel .panel-heading h4 {
-                font-weight: 700;
-                line-height: 1.62;
-                color: #555;
-            }
 
 			
             /* Main content styling */
@@ -861,25 +668,34 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				/* override GT CSS extra padding on left/right, extra bottom margin */
                 padding: 3em 0em 0em 0em;
 				margin-bottom: 0em;
-				/* keep main in place when points are visible */
-				position: initial;
+				z-index: 0;
             }
 			@media screen and (max-width: 767px) {
 				.program_container .main {
+					position: relative;
 					margin-top: 48px;
+					padding-left: 15px;
+					padding-right: 15px;
+					z-index: 4;
 				}
 			}
 				
             .program_container .main .prompt {
 				/* bold & slightly enlarge question prompts */
-				font-family: 'Noto Serif', Times, serif;
-				font-size: 18px;
+				font-family: 'Caladea', Times, serif;
+				font-size: 20px;
                 font-weight: 700;
 				/* decrease top margin slightly */
                 margin-top: .5em;
                 margin-left: 0;
                 margin-right: 0;
             }
+			@media screen and (max-width: 767px) {
+				.program_container .main .prompt {
+					font-size: 19px;
+				}
+			}
+			
 			
 			.program_container .prompt:empty {
 				/* if *question: {blank}, no empty space left for question prompt */
@@ -927,13 +743,23 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			.program_container li.answer, 
 			.program_container li label {
 				/*override GT CSS smaller font sizes for questions */
-				font-size: 18px !important;
+				font-size: 18px;
+			}
+			
+			@media screen and (max-width: 767px){
+				/* smaller font size for questions on mobile */
+				.program_container li.answer, 
+				.program_container li label {
+					font-size: 17px;
+				}
 			}
 			
 			.program_container li.answer span[role="checkbox"] {
 				width: 26px;
     			height: 26px;
 				background-color: #f9f9f9 !important;
+				/* override new GT CSS */
+				margin-left: 5px;
 			}
 			
 			/* enlarge check in checkbox*/
@@ -947,11 +773,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%) !important;
 				-webkit-box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%) !important;
 				-moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15) !important;
-			}
-
-			/* imported from GT legacy CSS */
-			ul.button-group .answer.selected {
-				font-weight: 700;
 			}
 
             .no-touch ul.button-group .answer:hover:not(.selected) {
@@ -970,6 +791,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
             ul.button-group .answer.selected {
+				/* make bolding match regular bold style */
+				font-weight: 700;
+				font-family: 'Caladea', Times, serif;
+				font-size: 20px;
+				color: #404042;
 				/* background-color: #f5f6fa !important; */
 				/* try green tint for selected state */
 				background-color: rgba(148, 207, 161, 0.18) !important;
@@ -982,7 +808,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             ul.button-group li:last-of-type, 
             ul.button-group li:first-of-type {
-                border-bottom: 1px solid #f7f7f7 !important;
+				/* disable bottom border that appears on button for checkbox questions */
+				/* border-bottom: 1px solid #f7f7f7 !important; */
                 border-radius: 5px !important;
                 -webkit-border-radius: 5px !important;
                 -moz-border-radius: 5px !important;
@@ -1004,7 +831,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				color: #666 !important;
                 background-color: #f7f7f7;
 				/* add top margin to counterbalance lack of bottom padding for prompt */
-                padding: 0.5em 1em 1em 1em;
+                padding: 0.5em 1em .5em 1em;
                 margin: 0;
             }
 
@@ -1016,8 +843,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             .program_container .main .answer_textbox {
                 background-color: #f7f7f7;
-                padding: 1em;
+                padding: .5em 1em 1em 1em;
                 margin: 0;
+				border-radius: 0 0 8px 8px;
+				-webkit-border-radius: 0 0 8px 8px;
+				-moz-border-radius: 0 0 8px 8px;
             }
 
 			/* override full width for submit button in new GT CSS */
@@ -1025,38 +855,30 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 margin-left: 0;
 				border: none !important;
 				width: auto !important;
-            }
-			
-			@media screen and (max-width: 767px) {
-				/* add top margin above submit button on mobile since text boxes are full width above */
-				.program_container .answer_textbox .answer_submit {
-					margin-top: 1em;
-				}
-			}		
+            }	
 
             .program_container .answer_input {
 				/* override extra top margin in new GT CSS */
-				margin-top: 0px !important;
-                margin-right: 1em;
+				margin: 0 1em .5em 0 !important;
             }
 			
-			.program_container .answer_input .form-control, 
+			/* override full width in GT CSS */
+/* 			.program_container .answer_input .form-control, 
 			.program_container .form-inline .input-group, 
 			.program_container .form-inline .input-group>.form-control {
-				/* override full width in GT CSS */
+				
 				width: auto !important;
-			}
-			
-			@media screen and (max-width: 767px) {
+			} */
+		
+/* 			@media screen and (max-width: 767px) {
 				.program_container .answer_input .form-control, 
 				.program_container .form-inline .input-group, 
-				.program_container .form-inline .input-group>.form-control {
-					/* override full width in GT CSS */
+				.program_container .form-inline .input-group>.form-control { */
+					/* override full width in GT CSS
 					width: 100% !important;
 				}
-			}
+			} */
 			
-
 
             /* Gradable Question Styling */
             .program_container .question.question-gradable {
@@ -1256,7 +1078,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 			
             .program_container .main .list li {
-				font-size: inherit !important;
+				font-size: inherit;
 				font-weight: inherit !important;
 				line-height: 1.6em !important;
 				list-style: none !important;
@@ -1265,10 +1087,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				margin-bottom: 8px;
             }
 			
+			@media screen and (max-width: 767px){
+				.program_container .main .list li {
+					font-size: 17px;
+				}
+			}
+			
 			.program_container ul.list li strong {
 				font-weight: 700 !important;
-                color: #111 !important;
-                font-size: 18px !important;
+                color: #404042 !important;
+                font-size: 19px !important;
 			}
 
             .program_container .main .list li::before {
@@ -1285,6 +1113,218 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 left: -18px !important;
 				z-index: 5 !important;
             }
+			
+			 /* Main menu list items styling */
+            .button-group.custom-menu li.answer:nth-child(5), 
+            .button-group.custom-menu li.answer:nth-child(4), 
+            .button-group.custom-menu li.answer:nth-child(3), 
+            .button-group.custom-menu li.answer:nth-child(2), 
+            .button-group.custom-menu li.answer:first-child {
+                border: 1px solid #66c6c1;
+            }
+
+            .program_container .question.custom-menu {
+                padding: 0;
+                background-color: transparent;
+            }
+
+            .program_container .tip.custom-menu {
+                background-color: transparent;
+                padding: 0;
+            }
+
+            .program_container .main .answers.custom-menu {
+                background-color: transparent;
+                padding: 0;
+            }
+			
+			/* Chart Styling */
+			.chart-title h4 {
+				font-size: 20px;
+				font-family: 'Arimo', Arial, sans-serif;
+                font-weight: 700;
+                color: #404042;
+                margin-top: 1em !important;
+			}
+			
+			@media screen and (max-width: 767px) {
+				/* x-axis labels of chart */
+				.program_container .flot-x-axis .flot-tick-label{
+					font-size: 11px;
+				}
+				.program_container .flot-y-axis .flot-tick-label{
+					font-size: 12px;
+				}
+			}
+			
+            /* Button Main Styling */
+			.program_container .btn {
+				/*override new GT CSS large top margin*/
+				margin: 0.5em 0px 7px 0px;
+			}
+			
+            .program_container .btn-default, 
+            ul.button-group li.btn-primary,
+			.program_container .btn-primary{
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
+                background: rgb(102,198,193); /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background-image: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                white-space: normal;
+                font-family: "Arimo", Arial, sans-serif;
+                font-weight: 700 !important;
+				/* slightly larger font for better contrast */
+                font-size: 19px;
+                color: #fff;
+
+                border: none;
+
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+
+
+                box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+                -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+                -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+            }
+
+            .program_container .btn-default.active, 
+            .program_container .btn-default.focus, 
+            .program_container .btn-default:active, 
+            .program_container .btn-default:focus, 
+            .program_container .btn-default:hover,
+			.program_container .btn-primary:focus,
+			.program_container .btn-primary:hover, 
+            ul.button-group li.btn-primary:hover {
+                color: #fff;
+
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cea0+0,66c6c1+100 */
+                background: rgb(147,206,160); /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(147,206,160,1) 0%, rgba(102,198,193,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+                border: none;
+            }
+			
+			.program_container .btn-default[disabled]{
+				border: none;
+			}
+
+            .btn-group-lg>.btn, 
+            .btn-lg {
+                padding: 15px;
+                margin-top: 30px !important;
+            }
+
+            /* Accordion Styling First Level */
+            .program_container .main .panel-group .panel-heading a, 
+            .program_container .main .panel-group .panel-heading a:link, 
+            .program_container .main .panel-group .panel-heading a:hover, 
+            .program_container .main .panel-group .panel-heading a:active, 
+            .program_container .main .panel-group .panel-heading a:visited {
+                color: #404042;
+            }
+
+            .text + .panel-group {
+                margin-top: 15px;
+            }
+
+            .panel-default>.panel-heading {
+                background-color: #fff !important;
+            }
+
+            .panel-heading {
+                padding: 0;
+            }
+
+            .panel-heading .panel-title h4 {
+                padding: 15px 20px;
+                font-size: 18px;
+                line-height: 28px;
+            }
+			@media screen and (max-width: 767px) {
+				.panel-heading .panel-title h4 {
+					font-size: 17px;
+				}
+			}
+
+            .panel-heading .panel-title {
+                width: 100%;
+                display: block;
+            }
+
+            .panel-heading .panel-title[aria-expanded="true"] {
+                border-left: 2px solid #66c6c1;
+                transition-delay: 0.3s;
+            }
+
+            .panel-collapse, 
+            .panel-title {
+                border-left: 2px solid;
+                border-color: transparent;
+            }
+
+            .panel-collapse.collapse.in {
+                border-left: 2px solid #66c6c1;
+            }
+
+            .panel-group .panel-heading+.panel-collapse>.list-group, 
+            .panel-group .panel-heading+.panel-collapse>.panel-body {
+                border-top: 0;
+                padding-top: 0;
+            }
+
+            .panel-group .panel-body.main .text {
+                padding-left: 2px;
+                padding-top: 0;
+            }
+
+            .panel {
+                background-color: #fff !important;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                border: 1px solid #f7f7f7 !important;
+
+                -webkit-transition: all 0.3s ease-out !important;
+                -moz-transition: all 0.3s ease-out !important;
+                -o-transition: all 0.3s ease-out !important;
+                transition: all 0.3s ease-out;
+            }
+
+            .panel:hover {
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+            }
+
+            .program_container .main .panel-group .panel-heading a.panel-title .toggle-expand {
+                color: #404042 !important;
+                top: 1em !important;
+            }
+
+            .panel-group .panel-heading+.panel-collapse>.list-group, 
+            .panel-group .panel-heading+.panel-collapse>.panel-body {
+                border-top: 1px solid #eee !important;
+				/* added padding on all sides of panel content */
+                padding: 1em !important;
+            }
+
+            .program_container .main .panel-group .panel-heading a.panel-title.collapsed .toggle-expand .glyphicon-chevron-down {
+                top: 7px;
+            }
+
+            /* Accordion Second Level */
+            .panel .panel-collapse .panel-body .panel-group .panel .panel-heading h4 {
+                font-weight: 700;
+                line-height: 1.62;
+                color: #555;
+            }
+
 
 
 

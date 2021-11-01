@@ -207,14 +207,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				position: relative;
 				top: -43px;
             }
-				
-			
+						
 			/* applies to divs .total & .change */
 			.program_container .points div {
                 width: 70px;
                 height: 70px;
                 padding-top: 40px;
-                font-size: 10px;
+                font-size: 11px;
                 font-family: "Arimo", Arial, sans-serif;
                 right: 5px;
                 position: relative;
@@ -222,7 +221,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
     			border-radius: 50%;
 				text-align: center;
             }
-
 
             /* star icon */
 			.program_container .points::before {
@@ -245,7 +243,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 padding-right: 3px;
             }
 
-			/* lists number of points */
+			/* container for number of points */
             .program_container .points .total {
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
                 background: rgb(102,198,193); /* Old browsers */
@@ -262,6 +260,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				padding-top: 46px !important;
 				z-index: 175 !important;
             }
+			
+			/* points text */
+			.program_container .total span {
+				position: absolute;
+				right: 26px;
+			}
 				
 			/* override new GT CSS mini star icon before points */
 			.program_container .total::before {
@@ -270,7 +274,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			
             .program_container .points div.change.positive {
 				/* fix positioning so it overlays bubble*/
-				top: -20px;
+				top: -20px;				
 				/* hide when not active */
 				display: none;
                 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
@@ -281,8 +285,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 border: none;
 				/*override new GT CSS*/
 				color: #fff !important;
-				font-size: 15px;
+				font-size: 20px;		
             }
+			
+			.program_container .points div.change.positive span{
+				margin: -17px;
+    			position: absolute;
+			}
 			
 			/* Mobile formatting for Points */
 			@media screen and (max-width: 767px) {
@@ -298,6 +307,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					background-color: transparent !important;
 				}
 				.program_container .points div {
+					font-size: 10px;
 					width: 45px;
 					height: 45px;
 				}
@@ -327,11 +337,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					height: 40px;
 					width: 40px;
 				}
-				.program_container .change.positive span {
-					position: fixed;
-					transform: translateY(-26px);
-					right: 13px;
-					font-size: 12px;
+				.program_container .points div.change.positive span {
+					margin: -30px 10px -12px -12px;
+					font-size: 14px;
 				}
 			}
 			
@@ -691,6 +699,11 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					z-index: 4;
 				}
 			}
+			
+			/* adjust color of sign out icon to match others*/
+			.program_container li.answer .fas::before {
+				color: var(--themeColor-primary);
+			}
 				
 			/* Question Prompts */
 			
@@ -721,7 +734,62 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					font-size: 19px;
 				}
 			}
+			
+			/* Modal Error Messages */
 
+			.program_container .unexpected_answer {
+				position: absolute;
+				color: red;
+				z-index: 1000;
+				width: 632px;
+				background-color: #fff;
+			}
+			
+			/* error message for blank/invalid text inputs */
+			form.text .unexpected_answer,
+			form.number .unexpected_answer {		
+				text-align: center;
+				height: 32px;
+				padding: 4px 8px;
+				margin: -41px 0 40px 0;
+    			width: 684px;
+			}
+			
+			/* error message for paragraph textbox */
+			form.text textarea + .unexpected_answer {		
+				margin-top: -68px;
+			}
+			
+			/* error message for unanswered multiple choice */
+			ul.question_multiple_choice .unexpected_answer {
+				margin-top: -60px;
+			}
+			
+			/* error message for unanswered slider */
+			.slider-answer-widget .unexpected_answer {
+				margin-top: -54px;
+				width: 684px;
+			}
+			
+			/* Responsive styling for error messages */
+			@media screen and (max-width: 767px) {
+				.program_container .unexpected_answer,
+				form.text .unexpected_answer,
+				form.number .unexpected_answer {
+					width: calc(100vw - 4em);
+				}
+				.slider-answer-widget .unexpected_answer {
+					width: calc(100vw - 4.5em);
+				}
+			}
+			
+			@media screen and (min-width: 990px) {
+				.program_container .unexpected_answer,
+				form.text .unexpected_answer,
+				form.number .unexpected_answer{
+					width: 632px;
+				}
+			}
 	
             /* Questions General Styling */
 			
@@ -733,7 +801,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 border-radius: 8px 8px 0 0;
                 -webkit-border-radius: 8px 8px 0 0;
                 -moz-border-radius: 8px 8px 0 0;
-                /* eliminate bottom padding */
+                /* reduce bottom padding */
                 padding: 1em 1em 0.5em 1em;
             }
 
@@ -887,7 +955,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             .program_container .answer_input {
 				/* override extra top margin in new GT CSS */
-				margin: 0 1em .5em 0 !important;
+				margin-top: 0 !important;
+				margin-bottom: .5em !important;
             }
 			
 
@@ -1742,12 +1811,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
     </div> <!-- #main-content -->
   </body>
-	
 	<script>
 		// 	Hides points bubble when dropdown menu is opened on mobile
 
 		const dropdownMenu = document.getElementById('run-menu');
 		const pointsBubble = document.getElementsByClassName('points')[0];
+		// needs refinement; points don't reappear on mobile upon closing dropdown
 		const dropdownOpen = () => {
 			if (window.innerWidth < 768) {
 				// at the time that dropdown toggle is clicked...
@@ -1759,39 +1828,26 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				}
 			}
 		};
-		// needs refinement — works on desktop but points don't reappear on mobile
 		dropdownMenu.addEventListener('click', dropdownOpen);
-
-		// Makes points appear upon re-entry
-		const showPoints = () => {
-			if (pointsBubble.firstElementChild.innerText === '0') {
-				pointsBubble.style.display = "none";
-			} else {
-				pointsBubble.style.display = "unset";
-			}
-		};
-		window.addEventListener('DOMContentLoaded', showPoints);
-		
-
-// 		Hides points value when no points have been scored yet
-// 		const noPoints = () => {
-// 			if (pointsBubble.firstElementChild.innerText === '0') {
-// 				pointsBubble.firstElementChild.style.display = "none";
-// 				console.log('no points');
-// 			} 
-// 		};
-// 		window.addEventListener('DOMContentLoaded', noPoints);
-
-// 		Supposed to hide points bubble while dropdown menu is available
-// 		const hidePoints = () => {
-// 			if (dropdownMenu.style.display === 'flex'){
-// 				pointsBubble.style.display = 'none';
-// 			} else {
-// 				pointsBubble.style.display = 'unset';
-// 			}
-// 		};
-// 		window.addEventListener('click', hidePoints);
 	</script>
-
-	
+	<script>
+		// Alters class name for sign out icon so it loads properly 
+		let signOutIcon = '';
+		let container = '';
+		const changeIconClass = () => {
+			// slight delay prevents it from running before items are ready for queries
+			setTimeout( () => {
+				container = document.querySelector('.guidedtrack');
+				// only applied if parent program in container is OM-Dashboard
+				if (container.id === 'c6k4no4') {
+					signOutIcon = document.querySelector('.fa-sign-out-alt');
+					signOutIcon.classList.add('fas');
+					signOutIcon.classList.remove('fa');
+				}
+			} , 3000);
+		}
+		// runs once page is finished loading
+		window.onload = changeIconClass;
+		body.onPageShow = changeIconClass;
+	</script>
 </html>

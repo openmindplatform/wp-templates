@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blank Page
+Template Name: Blank Page Stage
 */
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 

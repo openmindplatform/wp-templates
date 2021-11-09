@@ -704,6 +704,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					z-index: 4;
 				}
 			}
+
+			/* Add spacing between bottom of question and next text element */
+			.program_container .main form + .text,
+			.program_container .main ul + .text {
+				margin-top: 1em;
+			}
 			
 			/* adjust color of sign out icon to match others*/
 			.program_container li.answer .fas::before {

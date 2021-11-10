@@ -10,934 +10,1496 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		<link rel="icon" href="https://openmindplatform.org/wp-content/uploads/2017/11/cropped-OM-Icon-32x32.png" sizes="32x32" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<!-- Essential for GT embed -->
 		<script src="https://www.guidedtrack.com/assets/jquery_gt.js"></script>
-		<script src="https://www.guidedtrack.com/assets/interpreter.js?v=1"></script>
+		<script src="https://www.guidedtrack.com/assets/gt_interpreter.js"></script>
+		<script src="https://www.guidedtrack.com/assets/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
 		 <link rel="stylesheet" type="text/css" href="https://1061174115.rsc.cdn77.org/css_samples/guidedtrack_legacy.css">
 		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i|Caladea:400,400i,700,700i" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<style>
-			body {
-				padding-top: 24px;
+            body {
+				/* increased padding */
+                padding-top: 40px;
+                background-color: #fbfcfe;
+            }
+			
+			/* parent of program-container div - center program container horizontally */
+			.row{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
 			}
 
-			body.openMind-app {
-				padding-top: 20px;
-				background-color: #fbfcfe;
-			}
+            /* Loader */
+            .spinner>.double-bounce1, .double-bounce2 {
+                background-color: #66c6c1;
+            }
 
-			/* Loader */
-			.openMind-app .spinner>.double-bounce1, .double-bounce2 {
-				background-color: #66c6c1;
-			}
+            /* Container basic styling */
+            .program_container {
+                background-color: #fff;
+				/* reduce bottom padding */
+                padding: 30px 50px 30px 50px;
+                margin-bottom: 40px;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
 
-			/* Container basic styling */
-			.openMind-app .program_container {
-				background-color: #fff;
-				padding: 30px 50px 50px 50px;
-				margin-bottom: 40px;
-				border-radius: 5px;
-				-webkit-border-radius: 5px;
-				-moz-border-radius: 5px;
-
-				box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.1);
-				-webkit-box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.1);
-				-moz-box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.1);
+                box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 2px 50px 0 rgba(0, 0, 0, 0.1);
 
 				font-family: 'PT Serif', Times, serif;
-				font-size: 18px;
-				color: #555;
+                font-size: 18px;
+                color: #555;
+            }
+			
+			/* Responsive Styling */       
+            @media (max-width: 992px) {
+                body {
+                    background-color: #fff;
+                    padding-top: 15px;
+                }
+
+                .program_container {
+                    box-shadow: none;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    padding: 15px;
+                }
+            }
+			@media screen and (max-width: 767px) {
+				body {
+                    padding-top: 0px;
+                }
+				.program_container {
+					margin-bottom: 20px;
+					padding: 0px;
+				}
+			}
+			
+
+            /* Typography */
+            .program_container .text p {
+                font-size: 18px;
+                line-height: 1.62;
+                color: #555;
+            }
+			
+            .h1, 
+            .h2, 
+            .h3, 
+            h1, 
+            h2, 
+            h3 {
+                font-size: 24px !important;
+				font-family: 'Arimo', Arial, sans-serif !important;
+                font-weight: 700 !important;
+                color: #404042 !important;
+                margin-bottom: 30px !important;
+                margin-top: 0 !important;
+            }
+			
+			i, 
+            em {
+                font-size: 19px;
+            }
+
+            b, 
+            strong {
+				font-family: 'Caladea', Times, serif; 
+                font-weight: 700 !important;
+                color: #222 !important;
+				font-size: 20px;
+            }
+			
+			a {
+				color: #337ab7 !important;
+				text-decoration: none !important;
+			}
+			
+			a:hover, 
+            a:focus {
+                color: #66c6c1 !important;
+            }
+			
+			/* Mobile Typography (smaller font sizes) */
+			@media screen and (max-width: 767px) {
+				.program_container .text p {
+					font-size: 17px;
+				}
+				.h1, 
+				.h2, 
+				.h3, 
+				h1, 
+				h2, 
+				h3 {
+					font-size: 22px !important;
+				}
+				i, 
+           		em {
+					font-size: 17.5px;
+				}
+				b, 
+           		strong {
+					font-size: 18px;
+				}
 			}
 
-			/* Typography */
-			.openMind-app .program_container .text p {
-				font-size: 18px;
-				line-height: 1.62;
-				color: #555;
-			}
 
-			.openMind-app .h1, .openMind-app .h2, .openMind-app .h3, .openMind-app h1, .openMind-app h2, .openMind-app h3 {
-				font-family: 'Arimo', Arial, sans-serif;
-				font-weight: 700;
-				color: #404042;
-				margin-bottom: 30px;
-				margin-top: 0;
+            /* Images */
+			.program_container .multimedia_node * {
+				/* adjust margins */
+				margin-top: 16px;
+				margin-bottom: 24px;
 			}
-
-			.openMind-app b, .openMind-app strong {
-				font-family: "800";
-				color: #111;
-				font-size: 19px;
+			
+			/* overrides new GT CSS default image sizing for speech bubble icons in P2Ps*/
+			img[src*="https://openmindplatform.org/wp-content/uploads/2020/11/noun_speech_1966348.png"] {
+				height: 40px !important;
+				width: 50px !important;
 			}
-
-			.openMind-app a:hover, .openMind-app a:focus {
-				color: #66c6c1;
+			
+			/* iFrames */
+			@media screen and (min-width: 768px) {
+				.multimedia_node iframe {
+					height: 550px !important;
+				}
 			}
-
+			@media screen and (max-width: 767px) {
+				.multimedia_node iframe {
+					height: 400px !important;
+					max-width: 700px;
+				}
+			}
+			
+			
+			
+			/* Component (Default — no classes added) */
+			.program_container .component {
+				padding: 12px;
+				padding-bottom: 0;
+				border: 1px solid;
+				margin-bottom: 12px;
+				-moz-border-radius: 3px;
+				-webkit-border-radius: 3px;
+				border-radius: 3px;
+				border-color: #eee;
+			}
+			
+			
 			/* Points Bubble */
-			.openMind-app .program_container .points div {
-  				width: 70px;
-  				height: 70px;
-  				padding-top: 40px;
-  				font-size: 10px;
-				font-family: "Arimo", Arial, sans-serif;
-  				right: 5px;
+			
+			/* white square container for points bubble*/
+			.program_container .points {
+                padding: 8px 4px 0 18px !important;
+                background-color: #fff;
+				height: 106px;
+				right: 0px;
+				z-index: 150 !important;
+				/* imported from GT legacy; positioning needs to be relative because y positioning depends on if progress is visible or not */
+				float: right;
 				position: relative;
-			}
+				top: -43px;
+            }
+						
+			/* applies to divs .total & .change */
+			.program_container .points div {
+                width: 70px;
+                height: 70px;
+                padding-top: 40px;
+                font-size: 11px;
+                font-family: "Arimo", Arial, sans-serif;
+                right: 5px;
+                position: relative;
+				/* imported from GT legacy CSS */
+    			border-radius: 50%;
+				text-align: center;
+            }
+
+            /* star icon */
+			.program_container .points::before {
+                position: absolute;
+                display: block;
+                content: "";
+                background-image: url("../wp-content/uploads/2018/01/icon-star.png");
+                width: 25px;
+                height: 24px;
+                background-size: 25px;
+                top: 24px;
+                left: 50%;
+                margin-left: -10px;  
+                z-index: 200 !important;
+            }
 			
-			.openMind-app .program_container .points::before {
+            .program_container .points div br {
+                content: "";
+                line-height: 0;
+                padding-right: 3px;
+            }
+
+			/* container for number of points */
+            .program_container .points .total {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
+                background: rgb(102,198,193); /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+                box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+                -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+                -moz-box-shadow:  0 5px 15px 0 rgba(0, 0, 0, 0.15);
+
+                border: none;
+                color: #fff;
+				padding-top: 46px !important;
+				z-index: 175 !important;
+            }
+			
+			/* points text */
+			.program_container .total span {
 				position: absolute;
-  				display: block;
-  				content: "";
-    			background-image: url("../wp-content/uploads/2018/01/icon-star.png");
-  				width: 25px;
-  				height: 24px;
-  				background-size: 25px;
-  				top: 12px;
-  				left: 50%;
- 				margin-left: -5px;  
-				z-index: 1;
+				right: 26px;
 			}
-
-			.openMind-app .program_container .points div br {
-  				content: "";
-  				line-height: 0;
-  				padding-right: 3px;
-			}
-
-			.openMind-app .program_container .points .total {
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-				background: rgb(102,198,193); /* Old browsers */
-				background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-				box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-				-webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-				-moz-box-shadow:  0 5px 20px 0 rgba(0, 0, 0, 0.15);
-
-				border: none;
-				color: #fff;
-			}
-
-			.openMind-app .program_container .points div.change.positive {
-				position: absolute;
-				top: 0;
-				right: 5px;
-				padding-top: 30px;
-				z-index: 2;
 				
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-				background: rgb(102,198,193); /* Old browsers */
-				background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			/* override new GT CSS mini star icon before points */
+			.program_container .total::before {
+				display: none !important;
+			}
+			
+            .program_container .points div.change.positive {
+				/* fix positioning so it overlays bubble*/
+				top: -20px;				
+				/* hide when not active */
+				display: none;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
+                background: rgb(102,198,193); /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                border: none;
+				/*override new GT CSS*/
+				color: #fff !important;
+				font-size: 20px;		
+            }
+			
+			.program_container .points div.change.positive span{
+				margin: -17px;
+    			position: absolute;
+			}
+			
+			/* Mobile formatting for Points */
+			@media screen and (max-width: 767px) {
+				.program_container .points {
+					top: 20px; 
+					height: 60px !important;
+					width: 60px !important;
+					margin-left: 0px !important;
+					margin-right: -6px !important;
+					max-width: 60px !important;
+					padding: 6 3px 0 6px !important;
+					position: fixed;
+					background-color: transparent !important;
+				}
+				.program_container .points div {
+					font-size: 10px;
+					width: 45px;
+					height: 45px;
+				}
+				.program_container .points::before {
+					top: 13px;
+					width: 20px;
+					height: 20px;
+					background-size: 20px;
+					margin-left: -16px;  
+				}
+				.program_container .total {
+					min-width: auto;
+					box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.12) !important;
+					-webkit-box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, 0.12) !important;
+					-moz-box-shadow:  1px 3px 6px 0 rgba(0, 0, 0, 0.12) !important;
+					/* override GT CSS */
+					margin: 0px !important;
+				}				
+				.program_container .total span {
+					position: fixed;
+					transform: translateY(-15px);
+					right: 22px;
+				}
+				.program_container .points div.change.positive {
+					top: 8px;
+					margin-left: 3px;
+					height: 40px;
+					width: 40px;
+				}
+				.program_container .points div.change.positive span {
+					margin: -30px 10px -12px -12px;
+					font-size: 14px;
+				}
+			}
+			
+			
+            /* Progress Bar */
+            /* */
+            .program_container .progress {
+				background-color: rgba(148, 207, 161, 0.2) !important;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                border-radius: 5px;
+                -webkit-border-radius: none;
+                -moz-border-radius: none;
+                /* overrides position: static that affixes progress to top of window */
+                position: relative;
+                height: 20px;
+				/* reduce bottom margin to match enlarged nav container */
+                margin-bottom: 5px;
+				/* override new GT CSS positioning */
+				top: auto !important;
+				z-index: 300 !important;
 				
-				border: none;
-			}
-
-			.openMind-app .program_container .points {
-  				right: -4px;
-				padding-left: 24px;
-				background-color: #fff;
-			}
-
-			/* Progress Bar */
-			.openMind-app .program_container .progress {
-				height: 20px;
-			}
-
-			.openMind-app .program_container .progress .progress-bar {
-				line-height: 20px;
-				font-family: "Arimo", Arial, sans-serif;
-				font-size: 10px;
-
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-				background: rgb(102,198,193); /* Old browsers */
-				background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-				box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-				-webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-				-moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-			}
-
-			.openMind-app .progress {
-				background-color: rgba(148, 207, 161, 0.2);
-				box-shadow: none;
-				-webkit-box-shadow: none;
-				-moz-box-shadow: none;
-
-				border-radius: 5px;
-				-webkit-border-radius: none;
-				-moz-border-radius: none;
-			}
-
-			/* Program navigation */
-			.openMind-app #program_navigation {
-				border-bottom: 1px solid #eee;
-				min-height: 38px;
-			}
-
-			.openMind-app #program_navigation #back-button span.glyphicon{
-  				width: 20px;
-  				height: 19px;
-  				line-height: 19px;
-  				background-image: url("../wp-content/uploads/2017/12/icon-back.png");
-  				background-size: 20px 19px;
-  				background-repeat: no-repeat;
-				text-indent: -9999px;
-				left: -5px;
-
-				top: 29px;
-  				background-color: #fff;
-  				padding-right: 40px;
-
-  				-webkit-transition: all 0.3s ease-out;
- 				 -moz-transition: all 0.3s ease-out;
-  				-o-transition: all 0.3s ease-out;
-  				transition: all 0.3s ease-out;
-			}
-
-			.openMind-app #program_navigation #back-button span.glyphicon:hover {
-  				background-image: url("../wp-content/uploads/2017/12/icon-back_green.png");
-			}
-
-			.openMind-app .program_container .progress {
-  				margin-bottom: 15px;
-			}
-
-			.openMind-app .navigation_items .text-center {
-  				display: none;
+            }		
+			/* overrides new GT CSS full width default, except on mobile */
+			@media screen and (min-width: 768px){
+				.program_container .progress {
+					width: auto !important;
+				}
 			}
 			
-			.openMind-app #program_navigation .navigation_container {
-				margin-top: -10px;
-				margin-bottom: -10px;
-			}
+            .program_container .progress .progress-bar {
+                line-height: 20px;
+                font-family: "Arimo", Arial, sans-serif;
+				/* enlarge font slightly */
+                font-size: 11px;
+				/* override new GT CSS narrow height, heavier font */
+				height: auto !important;
+				font-weight: 400 !important;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
+                background: rgb(102,198,193) !important; /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%) !important; /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%) !important; /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
-			.openMind-app #program_navigation .navigation_container ul.navigation_items {
-  				font-size: 14px;
-  				font-family: "Arimo", sans-serif;
-  				font-weight: 500;
-  				color: #aaa;
-				top: 18px;
-  				position: relative;
-			}
-
-			.openMind-app #program_navigation .navigation_container ul.navigation_items li {
-  				position: relative;
-  				padding-left: 42px;
-				font-size: 16px;
-
-  				-webkit-transition: all 0.3s ease-out;
- 				 -moz-transition: all 0.3s ease-out;
-  				-o-transition: all 0.3s ease-out;
-  				transition: all 0.3s ease-out;
-			}
-
-			.no-touch #program_navigation .navigation_container ul.navigation_items li:hover, #program_navigation .navigation_container ul.navigation_items .no-touch li:hover, .no-touch #program_navigation #run-menu:hover, #program_navigation .no-touch #run-menu:hover {
-  				color: #66c6c1;
-			}
-
-			.openMind-app #program_navigation .navigation_container ul.navigation_items li {
-				background-color: #fff;
-  				background-image: url("../wp-content/uploads/2017/12/icon-home.png");
-  				background-repeat: no-repeat;
-  				background-size: 16px;
-				background-position: 18px 10px;
-			}
-
-			.openMind-app #program_navigation .navigation_container ul.navigation_items li:hover{
-  				background-image: url("../wp-content/uploads/2017/12/icon-home_green.png");
-			}
-			
-			.openMind-app .gt-program-navigation-button.active, .openMind-app #program_navigation .active#back-button, .openMind-app #program_navigation .navigation_container ul.navigation_items li.active, .openMind-app #program_navigation .active#run-menu {
-				border-bottom: none;
-			}
-
-			/* Run Menu */
-
-			.openMind-app #program_navigation #run-menu {
-  				top: -20px;
-  				right: -50px;
-			}
-
-			.openMind-app .dropdown-menu {
-  				border: 1px solid #f7f7f7;
-  				box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				border-radius: 5px;
-  				-webkit-border-radius: 5px;
-  				-moz-border-radius: 5px;
-			}
-
-			.openMind-app #program_navigation #run-menu .dropdown-toggle span {
-				color: #555;
-			}
-
-			.openMind-app .dropdown-menu>li>a {
-  				font-family: "Arimo", sans-serif;
-  				color: #404042;
-
-				-webkit-transition: all 0.3s ease-out;
- 				 -moz-transition: all 0.3s ease-out;
-  				-o-transition: all 0.3s ease-out;
-  				transition: all 0.3s ease-out;
-			}
-
-			.openMind-app .dropdown-menu>li>a:focus, .openMind-app .dropdown-menu>li>a:hover {
-  				background-color: #fff;
-  				color: #66c6c1;
-			}
-
-			.gt-program-navigation-button.open, 
-			.openMind-app #program_navigation .open#back-button, 
-			.openMind-app #program_navigation .navigation_container ul.navigation_items li.open, 
-			.openMind-app #program_navigation .open#run-menu, 
-			.gt-program-navigation-button:active, 
-			.openMind-app #program_navigation #back-button:active, 
-			.openMind-app #program_navigation .navigation_container ul.navigation_items li:active, 
-			.openMind-app #program_navigation #run-menu:active {
-  				color: #66c6c1;
-			}
-			
-			/* Main menu list items styling */
-			.openMind-app .button-group.custom-menu li.answer:nth-child(5), 
-			.openMind-app .button-group.custom-menu li.answer:nth-child(4), 
-			.openMind-app .button-group.custom-menu li.answer:nth-child(3), 
-			.openMind-app .button-group.custom-menu li.answer:nth-child(2), 
-			.openMind-app .button-group.custom-menu li.answer:first-child {
-  				border: 1px solid #66c6c1;
-			}
-			
-			.openMind-app .program_container .question.custom-menu {
-  				padding: 0;
-  				background-color: transparent;
-			}
-
-			.openMind-app .program_container .tip.custom-menu {
-  				background-color: transparent;
-  				padding: 0;
-			}
-
-			.openMind-app .program_container .main .answers.custom-menu {
-  				background-color: transparent;
-  				padding: 0;
-			}
-
-
-			/* Button Main Styling */
-			.openMind-app .program_container .btn-default, .openMind-app ul.button-group li.btn-primary {
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-				background: rgb(102,198,193); /* Old browsers */
-				background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-				background-image: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+                -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+                -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
 				
-				white-space: normal;
-
-				font-family: "Arimo", Arial, sans-serif;
-				font-weight: 700;
-				font-size: 18px;
-				color: #fff;
-
-				border: none;
-
-				-webkit-transition: all 0.3s ease-out;
- 				 -moz-transition: all 0.3s ease-out;
-  				-o-transition: all 0.3s ease-out;
-  				transition: all 0.3s ease-out;
-
-
-				box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-				-webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-				-moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
-			}
-
-			.openMind-app .program_container .btn-default.active, 
-			.openMind-app .program_container .btn-default.focus, 
-			.openMind-app .program_container .btn-default:active, 
-			.openMind-app .program_container .btn-default:focus, 
-			.openMind-app .program_container .btn-default:hover, 
-			.openMind-app ul.button-group li.btn-primary:hover {
-				color: #fff;
-
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cea0+0,66c6c1+100 */
-				background: rgb(147,206,160); /* Old browsers */
-				background: -moz-linear-gradient(left, rgba(147,206,160,1) 0%, rgba(102,198,193,1) 100%); /* FF3.6-15 */
-				background: -webkit-linear-gradient(left, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
-				background: linear-gradient(to right, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-
-				border: none;
-			}
-
-			.openMind-app .btn-group-lg>.btn, .openMind-app .btn-lg {
-				padding: 15px;
-				margin-top: 20px;
-			}
-
-			/* Accordion Styling First Level */
-			.openMind-app .program_container .main .panel-group .panel-heading a, 
-			.openMind-app .program_container .main .panel-group .panel-heading a:link, 
-			.openMind-app .program_container .main .panel-group .panel-heading a:hover, 
-			.openMind-app .program_container .main .panel-group .panel-heading a:active, 
-			.openMind-app .program_container .main .panel-group .panel-heading a:visited {
-				color: #404042;
-			}
+				z-index: 1 !important;
+            }
 			
-			.text + .panel-group {
-  				margin-top: 15px;
-			}
-			
-			.openMind-app .panel-default>.panel-heading {
-  				background-color: #fff;
-			}
-
-			.openMind-app .panel-heading {
-  				padding: 0;
-			}
-
-			.openMind-app .panel-heading .panel-title h4 {
-  				padding: 15px 20px;
-				font-size: 18px;
-				line-height: 28px;
-			}
-
-			.openMind-app .panel-heading .panel-title {
-  				width: 100%;
-  				display: block;
-			}
-
-			.openMind-app .panel-heading .panel-title[aria-expanded="true"] {
-  				border-left: 2px solid #66c6c1;
-  				transition-delay: 0.3s;
-			}
-
-			.openMind-app .panel-collapse, .openMind-app .panel-title {
-  				border-left: 2px solid;
-  				border-color: transparent;
-			}
-
-			.openMind-app .panel-collapse.collapse.in {
-  				border-left: 2px solid #66c6c1;
-			}
-
-			.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
- 				border-top: 0;
-  				padding-top: 0;
-			}
-
-			.openMind-app .panel-group .panel-body.main .text {
-				padding-left: 2px;
-				padding-top: 0;
-			}
-
-			.openMind-app .panel {
-  				background-color: #fff;
-  				box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				border: 1px solid #f7f7f7;
-
-				-webkit-transition: all 0.3s ease-out;
- 				 -moz-transition: all 0.3s ease-out;
-  				-o-transition: all 0.3s ease-out;
-  				transition: all 0.3s ease-out;
-			}
-
-			.openMind-app .panel:hover {
-				box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-				-webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-				-moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-			}
-
-			.openMind-app .program_container .main .panel-group .panel-heading a.panel-title .toggle-expand {
-  				color: #404042;
-  				top: 1em;
-			}
-
-			.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body {
-  				border-top: 1px solid #eee;
-				padding-top: 1em;
-			}
-			
-			.program_container .main .panel-group .panel-heading a.panel-title.collapsed .toggle-expand .glyphicon-chevron-down {
-				top: 7px;
-			}
-
-			/* Accordion Second Level */
-			.openMind-app .panel .panel-collapse .panel-body .panel-group .panel .panel-heading h4 {
-				font-weight: 700;
-  				line-height: 1.62;
-				color: #555;
-			}
-
-			/* Main content styling */
-			.openMind-app .program_container .main {
-				padding-top: 3em;
-			}
-
-			.openMind-app .program_container .main .prompt {
-				margin-top: 1em;
-				margin-left: 0;
-				margin-right: 0;
-			}
-
-			/* Questions General Styling */
-			.openMind-app .program_container .question {
-				font-size: 18px;
-				font-weight: 800;
+			/* Mobile formatting for Progress */
+			@media screen and (max-width: 767px){
+				.program_container .progress {
+					position: fixed !important;
+					width: calc(100% - 30px) !important;
+					margin: 7px 30px 0 15px !important;
+					height: 13px !important;
+				}
 				
-				background-color: #f7f7f7;
-  				border-radius: 8px 8px 0 0;
-				-webkit-border-radius: 8px 8px 0 0;
-				-moz-border-radius: 8px 8px 0 0;
-  				padding: 0.5em 1em 1em 1em;
-			}
-			
-			.openMind-app ul.button-group {
-  				border: none;
+				.program_container .progress .progress-bar {
+					font-size: 10px !important;
+					line-height: 13px !important;
+				}
 			}
 
-			.openMind-app ul.button-group li {
-				font-size: 18px;
-				line-height: 28px;
-				font-weight: 400;
-
-				background-color: #fff;
-  				border: 1px solid #f7f7f7;
-  				box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-  				border-radius: 5px;
-  				-webkit-border-radius: 5px;
-  				-moz-border-radius: 5px;
-
-				-webkit-transition: all 0.3s ease-out;
- 				 -moz-transition: all 0.3s ease-out;
-  				-o-transition: all 0.3s ease-out;
-  				transition: all 0.3s ease-out;
-			}
-
-			.no-touch ul.button-group .answer:hover:not(.selected) {
-				background-color: #f5f6fa;
-
-				box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-				-webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-				-moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
-			}
-
-			.openMind-app ul.button-group .answer {
-  				margin-bottom: 10px;
-			}
-
-			.openMind-app ul.button-group .answer.selected {
-				background-color: #f5f6fa;
-			}
-
-			.openMind-app ul.button-group .answer.selected span.glyphicon {
+			/* Maintain div */
+			.program_container .maintain {
+				background-color: transparent !important;
 				display: none;
 			}
-
-			.openMind-app ul.button-group li:last-of-type, .openMind-app ul.button-group li:first-of-type {
-  				border-bottom: 1px solid #f7f7f7;
-  				border-radius: 5px;
-  				-webkit-border-radius: 5px;
-  				-moz-border-radius: 5px;
-			}
 			
-			.openMind-app .program_container .main .answers {
-				padding: 1em;
-  				margin: 0;
-  				background-color: #f7f7f7;
-  				
-				-webkit-border-radius: 8px 8px 0 0;
-				-moz-border-radius: 8px 8px 0 0;
-  				border-radius: 0 0 8px 8px;
-			}
-			
-			/* Tip styling */
-			.openMind-app .program_container .tip {
-				font-size: 16px;
-				
-				background-color: #f7f7f7;
-  				padding: 0 0 1em 1.1em;
-  				margin: 0;
-			}
-			
-			.openMind-app .program_container .tip:empty {
-  				padding: 0;
-  				margin: 0;
-			}
-
-			
-			.openMind-app .program_container .main .answer_textbox {
-				background-color: #f7f7f7;
-  				padding: 1em;
-  				margin: 0;
-			}
-			
-			.openMind-app .program_container .answer_textbox .answer_submit.textbox {
-				margin-left: 0;
-			}
-			
-			.openMind-app .program_container .answer_input {
-				margin-right: 1em;
-			}
-			
-			/* Gradable Question Styling */
-			.openMind-app .program_container .question.question-gradable {
-  				position: relative;
-				padding: 2px 1em 1em 45px;
-			}
-
-			.openMind-app .program_container .question.question-gradable::before {
-  				position: absolute;
-  				display: block;
-  				background-image: url("../wp-content/uploads/2018/01/question-star-turquise.png");
-  				background-size: 18px;
-  				content: "";
-  				width: 18px;
-  				height: 18px;
-  				background-repeat: no-repeat;
-  				left: 15px;
- 				top: 22px;
-			}
-			
-			.openMind-app .program_container .tip.question-gradable {
-				background-color: #f7f7f7;
-				margin: 0;
-				padding: 0 0 1em 45px;
-			}
-			
-			.openMind-app .program_container .tip.question-gradable:empty {
-  				padding: 0;
-				margin: 0;
-			}
-
-
-			/* Slider Styling */
-			.openMind-app .program_container .main .slider-answer-widget .slider-label {
-				font-size: 14px;
-				font-weight: 700;
-			}
-
-			.openMind-app .slider-track {
-				box-shadow: none;
+            /* Program navigation */
+            #program_navigation {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+                border-bottom: 1px solid #eee !important;
+                min-height: 38px;
+				/* override GT CSS */
+				height: 38px;
 				-webkit-box-shadow: none;
-				-moz-box-shadow: none;
-
-				border-radius: 5px;
-				-webkit-border-radius: 5px;
-				-moz-border-radius: 5px;
-
-				background-color: rgba(63, 80, 160, 0.1);
-				background-image: none;
-			}
-
-			.openMind-app .program_container .main .slider-answer-widget .slider-selection {
-				background-color: #66c6c1;
-
-				box-shadow: none;
-				-webkit-box-shadow: none;
-				-moz-box-shadow: none;
-
-				border-radius: 5px;
-				-webkit-border-radius: 5px;
-				-moz-border-radius: 5px;
-			}
-
-			.openMind-app .slider-handle {
-				width: 30px;
-				height: 30px;
-				background-color: #66c6c1;
-				background-image: none;
+   				box-shadow: none;
+				width: 100% !important;
+				z-index: 10 !important;
+            }
+			
+			/* override new GT CSS; make opaque */
+			#program_navigation #back-button{
 				opacity: 1;
 			}
 
-			.openMind-app .slider.slider-horizontal .slider-handle {
-				margin-left: -15px;
-				margin-top: -10px;
-			}
+            #program_navigation #back-button span.glyphicon{
+				/* place in front of bottom nav border*/
+				z-index: 150;
+                width: 20px;
+                height: 19px;
+                line-height: 19px;
+                background-image: url("../wp-content/uploads/2017/12/icon-back.png");
+                background-size: 20px 19px;
+                background-repeat: no-repeat;
+                text-indent: -9999px;
+                left: -5px;
+				/* adjust positioning to line up with nav border */
+                top: 39px;
+                background-color: #fff !important;
+                padding-right: 36px !important;
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+            }
 
-			.openMind-app .slider .tooltip {
-				margin-top: 0;
-			}
-			
-			/* Styling background on slider widget */
-			.program_container .main .slider-answer-widget {
-  				background-color: #f7f7f7;
-  				margin-bottom: 1em;
-  				margin-top: 0;
-  				margin-left: 0;
-  				margin-right: 0;
-  				padding: 1em;
-  				width: 100%;
-  				box-sizing: border-box;
+            #program_navigation #back-button span.glyphicon:hover {
+                background-image: url("../wp-content/uploads/2017/12/icon-back_green.png");
+            }
+
+			/* hide home icon */
+            .navigation_items .text-center {
+                display: none !important;
+            }
+			/* hide nav item if it lacks an accompanying icon */
+			li.no-icon {
+                display: none !important;
+            }
+
+            .program_container .navigation_container {
+				/* correct for excessive spacing */
+                margin-top: 0;
+				margin-bottom: 0;
+				width: calc (100% -60px) !important;
+            }
+
+
+            #program_navigation .navigation_container ul.navigation_items {
+                font-size: 14px;
+                font-family: "Arimo", sans-serif;
+                font-weight: 500;
+            }
+
+            .program_container .navigation_container ul li {
+                position: relative;
+				/* reduce padding */
+                padding: 0 10px 0 35px;
+                font-size: 16px;
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+				background-color: #fff;
+				color: rgb(80, 80, 80, .6);
+                background-image: url("../wp-content/uploads/2017/12/icon-home.png");
+                background-repeat: no-repeat;
+                background-size: 16px;
+                background-position: 10px 7px;
+				/* override new GT CSS */
+				max-width: max-content !important;
+				height: 30px !important;
+				margin-top: 45px;
+				opacity: 1 !important;
+            }
+		
+			/* Mobile styling for Nav */
+			@media screen and (max-width: 767px) {
+				#program_navigation {
+					/* adjust nav dimensions when it's sticky on mobile */
+					margin-right: 15px !important;
+					margin-left: 0px !important;
+/* 					max-width: calc(100% - 30px) !important; */
+					margin-bottom: 1em !important;
+					-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+					box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+				}
 				
-				border-radius: 0 0 8px 8px;
-				-webkit-border-radius: 0 0 8px 8px;
-				-moz-border-radius: 0 0 8px 8px;
-			}
+				#program_navigation #back-button span.glyphicon{
+					/* place within sticky header on mobile */
+					left: 15px !important;
+					margin-top: -10px !important;
+					background-size: 15px 15px;
+					height: 15px;
+					width: 15px;
+				}
+				
+				/* override GT CSS box-shadow for small screens */
+				.program_container .navigation_container {
+					background: var(--themeColor-background);
+					-webkit-box-shadow: none;
+					box-shadow: none;
+					position: relative;
+					bottom: auto !important;
+					left: 0;
+					margin-top: 0px;
+				}
+				
+				.program_container .navigation_container ul li {
+					margin-top: 26px !important;
+					font-size: 14px !important;
+					background-color: transparent !important;
+					background-size: 13px;
+                	background-position: 18px 9px;
+					/* low opacity on mobile */
+					color: rgb(80, 80, 80, .4);
+					z-index: 150;
+				}
+			} 
 
-			.program_container .main .slider-answer-widget .slider-label.left {
-  				margin-right: 0;
- 				padding-right 1em;
-			}
+            .no-touch #program_navigation .navigation_container ul.navigation_items li:hover, 
+            #program_navigation .navigation_container ul.navigation_items .no-touch li:hover, 
+            .no-touch #program_navigation #run-menu:hover, 
+            #program_navigation .no-touch #run-menu:hover {
+                color: #66c6c1;
 
-			.program_container .main .slider-answer-widget .slider-label.right {
-  				margin-left: 0;
-  				padding-left: 1em;
-			}
+            }
 
-			/* Forms Styling */
-			.openMind-app .form-control {
-  				border: 1px solid #eee;
-			}
+            #program_navigation .navigation_container ul.navigation_items li:hover{
+                background-image: url("../wp-content/uploads/2017/12/icon-home_green.png");
+            }
 
-			.openMind-app .input-group {
-  				box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  				-webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-  				-moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-			}
+            .gt-program-navigation-button.active, 
+            #program_navigation .active#back-button, 
+            #program_navigation .navigation_container ul.navigation_items li.active, 
+            #program_navigation .active#run-menu {
+                border-bottom: none;
+            }
 
-			.openMind-app .input-group-addon {
-  				background-color: rgba(63, 80, 160, 0.1);
-  				border: 1px solid #eee;
-			}
-
-			.openMind-app .form-control:focus {
-  				box-shadow: none;
-				-webkit-box-shadow: none;
-				-moz-box-shadow: none;
-  				border-color: #66c6c1;
-			}
-
-
-      .openMind-app ul.navigation_items li .navigation_icon {
-        line-height: 23.8px;
-      }
+            /* Run Menu */
+            #program_navigation #run-menu {
+				/* override GT CSS positioning */
+				position: absolute;
+				left: auto !important;
+				right: -47 !important;
+				top: 47 !important;
+				line-height: 64px;
+				width: 47px;
+            }
 			
-			/* Lists */
-			.openMind-app .program_container .main .list li {
+            .dropdown-menu {
+                border: 1px solid #f7f7f7 !important;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+				/* trying to fix positioning */
+				left: auto !important;
+				right: 0 !important;
+            }
+			
+			.program_container .dropdown-menu.pull-right {
+				/* override new GT CSS — put menu closer to toggle */
+				margin-top: 30px !important;
+			}
+			
+			/* imported from GT legacy CSS — menu toggle behavior */
+			#program_navigation #run-menu .dropdown-toggle {
+				display: inline-block;
+				margin-bottom: 0;
+				font-weight: 400;
+				line-height: 1.42857;
+				white-space: nowrap;
+				text-align: center;
+				vertical-align: middle;
+				touch-action: manipulation;
+				cursor: pointer;
+				user-select: none;
+			}
+
+            #program_navigation #run-menu .dropdown-toggle span {
+                color: #555;
+				/* increase size of icon */
+				font-size: 1.3em;
+				padding-bottom: 0px !important;
+				/* override GT CSS reduced opacity */
+				opacity: 1 !important;
+            }
+			
+			/* Mobile Styling for Run Menu */
+			@media screen and (max-width: 767px) {
+				#program_navigation #run-menu {
+					/* fix positioning on small screens */
+					right: 38px !important;
+					top: 11 !important;
+					z-index: 750 !important;
+				}
+				
+				.program_container .dropdown-menu.pull-right {
+					position: fixed !important;
+					right: 5px!important;
+					max-width: 98vw !important;
+					top: 6px !important;
+					z-index: 1111;
+					/* darker box shadow for more contrast on mobile */
+					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
+					-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
+					-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
+				}
+				
+				/* override new GT CSS focus styling for mobile */
+				.program_container #run-menu .dropdown-toggle:focus {
+					background-color: transparent !important;
+					transition: none !important;
+				}
+				
+				/* background behind expanded dropdown on mobile*/
+				.program_container .dropdown.open>ul.dropdown-menu::after{
+					top: 40px !important;
+					background: #f9f9f9;
+				}
+			}
+			
+			.dropdown-menu li {
+				/* override vertical divider between items in dropdown menu */
+				border-bottom: none !important;
+				z-index: 1000;
+			}
+
+            .dropdown-menu>li>a {
+                font-family: "Arimo", sans-serif;
+                color: #404042 !important;
+
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+            }
+
+            .dropdown-menu>li>a:focus,  .dropdown-menu>li>a:hover {
+                background-color: #fff;
+                color: #66c6c1;
+            }
+
+            .gt-program-navigation-button.open, 
+            #program_navigation .open#back-button, 
+            #program_navigation .navigation_container ul.navigation_items li.open, 
+            #program_navigation .open#run-menu, 
+            .gt-program-navigation-button:active, 
+            #program_navigation #back-button:active, 
+            #program_navigation .navigation_container ul.navigation_items li:active, 
+            #program_navigation #run-menu:active {
+                color: #66c6c1;
+            }
+			
+
+			
+            /* Main content styling */
+			
+            .program_container .main {
+				/* override GT CSS extra padding on left/right, extra bottom margin */
+                padding: 3em 0em 0em 0em;
+				margin-bottom: 0em;
+				z-index: 0;
+            }
+			@media screen and (max-width: 767px) {
+				.program_container .main {
+					position: relative;
+					margin-top: 48px;
+					padding-left: 15px;
+					padding-right: 15px;
+					z-index: 4;
+				}
+			}
+
+			/* Add spacing between bottom of question and next text element */
+			.program_container .main form + .text,
+			.program_container .main ul + .text {
+				margin-top: 1em;
+			}
+			
+			/* adjust color of sign out icon to match others*/
+			.program_container li.answer .fas::before {
+				color: var(--themeColor-primary);
+			}
+				
+			/* Question Prompts */
+			
+            .program_container .main .prompt {
+				/* bold & slightly enlarge question prompts */
+				font-family: 'Caladea', Times, serif;
+				font-size: 20px;
+                font-weight: 700;
+				/* decrease top margin slightly */
+                margin-top: .5em;
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+			.program_container .main .prompt em {
+				font-size: 20px;
+			}
+			
+			.program_container .prompt:empty {
+				/* if *question: {blank}, no empty space left for question prompt */
+                padding: 0;
+                margin: 0;
+            }
+			
+			@media screen and (max-width: 767px) {
+				.program_container .main .prompt,
+				.program_container .main .prompt em {
+					font-size: 19px;
+				}
+			}
+			
+			/* Modal Error Messages */
+
+			.program_container .unexpected_answer {
+				position: absolute;
+				color: red;
+				z-index: 1000;
+				width: 632px;
+				background-color: #fff;
+			}
+			
+			/* error message for blank/invalid text inputs */
+			form.text .unexpected_answer,
+			form.number .unexpected_answer {		
+				text-align: center;
+				height: 32px;
+				padding: 4px 8px;
+				margin: -41px 0 40px 0;
+    			width: 684px;
+			}
+			
+			/* error message for paragraph textbox */
+			form.text textarea + .unexpected_answer {		
+				margin-top: -68px;
+			}
+			
+			/* error message for unanswered multiple choice */
+			ul.question_multiple_choice .unexpected_answer {
+				margin-top: -60px;
+			}
+			
+			/* error message for unanswered slider */
+			.slider-answer-widget .unexpected_answer {
+				margin-top: -54px;
+				width: 684px;
+			}
+			
+			/* Responsive styling for error messages */
+			@media screen and (max-width: 767px) {
+				.program_container .unexpected_answer,
+				form.text .unexpected_answer,
+				form.number .unexpected_answer {
+					width: calc(100vw - 4em);
+				}
+				.slider-answer-widget .unexpected_answer {
+					width: calc(100vw - 4.5em);
+				}
+			}
+			
+			@media screen and (min-width: 990px) {
+				.program_container .unexpected_answer,
+				form.text .unexpected_answer,
+				form.number .unexpected_answer{
+					width: 632px;
+				}
+			}
+	
+            /* Questions General Styling */
+			
+            .program_container .question {
+                font-size: 18px;
+                font-weight: 700;
+                
+                background-color: #f7f7f7;
+                border-radius: 8px 8px 0 0;
+                -webkit-border-radius: 8px 8px 0 0;
+                -moz-border-radius: 8px 8px 0 0;
+                /* reduce bottom padding */
+                padding: 1em 1em 0.5em 1em;
+            }
+
+            ul.button-group {
+                border: none;
+            }
+
+            ul.button-group li {
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 400;
+
+                background-color: #fff !important;
+                border: 1px solid #f7f7f7 !important;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                border-radius: 5px !important;
+                -webkit-border-radius: 5px !important;
+                -moz-border-radius: 5px !important;
+
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+            }
+			
+			.program_container li.answer, 
+			.program_container li label {
+				/*override GT CSS smaller font sizes for questions */
 				font-size: 18px;
 			}
 			
-			.openMind-app .program_container .main .list li {
-  				list-style: none;
-  				position: relative;
-			}
-
-			.openMind-app .program_container .main .list li::before {
-  				position: absolute;
-  				content: "";
-  				display: block;
-  				width: 6px;
-  				height: 6px;
-  				background-color: #66c6c1;
-  				border-radius: 50%;
-  				-webkit-border-radius: 50%;
-  				-moz-border-radius: 50%;
-  				top: 13px;
-  				left: -18px;
-			}
-			
-			/* Image certificate Text Positioning */
-			.image-superimpose {
-  				position: relative;
-			}
-
-			.image-superimpose .multimedia_caption {
-  				position: absolute;
-  				top: 38%;
-				left: 8.6%;
-  				font-family: 'Poppins','Arial', sans-serif;
-  				font-size: 70%;
-  				font-weight: 500;
-  				font-style: normal;
-			}
-
-			.image-superimpose .multimedia_caption  strong {
-  				width: 100%;
-  				display: block;
-  				text-align: left;
-  				font-family: 'Poppins','Arial', sans-serif;
-  				color: #3d4fa1;
-  				font-size: 180%;
-  				padding-top: 4px;
-			}
-			
-			/* Print styling */
-			@media print {
-				.image-superimpose {
-  					position: relative !important;
-				}
-
-				.image-superimpose .multimedia_caption {
-  					position: absolute !important;
-  					top: 38% !important;
-					left: 8.6% !important;
-  					font-family: 'Poppins','Arial', sans-serif !important;
-  					font-size: 70% !important;
-  					font-weight: 500 !important;
-  					font-style: normal !important;
-				}
-
-				.image-superimpose .multimedia_caption  strong {
-  					width: 100% !important;
-  					display: block !important;
-  					text-align: left !important;
-  					font-family: 'Poppins','Arial', sans-serif !important;
-  					color: #3d4fa1 !important;
-  					font-size: 180% !important;
-  					padding-top: 4px !important;
+			@media screen and (max-width: 767px){
+				/* smaller font size for questions on mobile */
+				.program_container li.answer, 
+				.program_container li label {
+					font-size: 17px;
 				}
 			}
 			
-			/* Responsive Styling */
-			@media (max-width: 992px) {
-  				body.openMind-app {
-    				background-color: #fff;
-					padding-top: 15px;
-  				}
-  
-  				.openMind-app .program_container {
-    				box-shadow: none;
-    				-webkit-box-shadow: none;
-    				-moz-box-shadow: none;
-    				padding: 15px;
-  				}
+			.program_container li.answer span[role="checkbox"] {
+				width: 26px;
+    			height: 26px;
+				background-color: #f9f9f9 !important;
+				/* override new GT CSS */
+				margin-left: 5px;
 			}
 			
-			/* Responsive styling for Image certificate */
-			@media (max-width: 479px) {
-				
-				.image-superimpose .multimedia_caption {
-					top: 35%;
-					font-size: 50%;
-				}
+			/* enlarge check in checkbox*/
+			.program_container li.answer [type="checkbox"]:checked ~ span[role="checkbox"]:after {
+				font-size: 26px !important;
+			}
+			
+			/* for checkbox questions — last li styled as a button */
+			li.submit.btn-primary {
+				border: none !important;
+				box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%) !important;
+				-webkit-box-shadow: 0 5px 20px 0 rgb(0 0 0 / 15%) !important;
+				-moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15) !important;
+			}
 
-				.image-superimpose .multimedia_caption  strong {
-					font-size: 150%;
+            .no-touch ul.button-group .answer:hover:not(.selected) {
+				/* background-color: #f5f6fa !important; */
+				/* try light green tint for hover state */
+				background-color: rgba(148, 207, 161, 0.09) !important;
+				border: 1px solid transparent !important;
+				font-weight: 500 !important;
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+            }
+
+            ul.button-group .answer {
+                margin-bottom: 10px !important;
+            }
+
+            ul.button-group .answer.selected {
+				/* make bolding match regular bold style */
+				font-weight: 700;
+				font-family: 'Caladea', Times, serif;
+				font-size: 20px;
+				color: #404042;
+				/* background-color: #f5f6fa !important; */
+				/* try green tint for selected state */
+				background-color: rgba(148, 207, 161, 0.18) !important;
+				border: 1px solid transparent !important;
+            }
+			
+			@media screen and (max-width: 767px) {
+				ul.button-group .answer.selected {
+					font-size: 18px;
+            	}
+			}
+			
+
+            ul.button-group .answer.selected span.glyphicon {
+                display: none;
+            }
+
+            ul.button-group li:last-of-type, 
+            ul.button-group li:first-of-type {
+				/* disable bottom border that appears on button for checkbox questions */
+				/* border-bottom: 1px solid #f7f7f7 !important; */
+                border-radius: 5px !important;
+                -webkit-border-radius: 5px !important;
+                -moz-border-radius: 5px !important;
+            }
+
+            .program_container .main .answers {
+                padding: 1em;
+                margin: 0;
+                background-color: #f7f7f7;
+                
+                -webkit-border-radius: 8px 8px 0 0;
+                -moz-border-radius: 8px 8px 0 0;
+                border-radius: 0 0 8px 8px;
+            }
+			
+
+            /* Tip styling */
+            .program_container .tip {
+                font-size: 16px;
+				color: #666 !important;
+                background-color: #f7f7f7;
+				/* add top margin to counterbalance lack of bottom padding for prompt */
+                padding: 0.5em 1em .5em 1em;
+                margin: 0;
+            }
+
+            .program_container .tip:empty {
+                padding: 0;
+                margin: 0;
+            }
+
+
+            .program_container .main .answer_textbox {
+                background-color: #f7f7f7;
+                padding: .5em 1em 1em 1em;
+                margin: 0;
+				border-radius: 0 0 8px 8px;
+				-webkit-border-radius: 0 0 8px 8px;
+				-moz-border-radius: 0 0 8px 8px;
+            }
+
+			/* override full width for submit button in new GT CSS */
+            .program_container .answer_textbox .answer_submit {
+                margin-left: 0;
+				border: none !important;
+				width: auto !important;
+            }	
+
+            .program_container .answer_input {
+				/* override extra top margin in new GT CSS */
+				margin-top: 0 !important;
+				margin-bottom: .5em !important;
+            }
+			
+
+            /* Gradable Question Styling */
+            .program_container .question.question-gradable {
+                position: relative;
+				/* left padding makes space for star icon */
+                padding-left: 52px;
+            }
+
+            .program_container .question.question-gradable::before {
+                position: absolute;
+                display: block;
+                background-image: url("../wp-content/uploads/2018/01/question-star-turquise.png");
+				/* enlarge star size for greater visibility */
+                background-size: 26px;
+                content: "";
+                width: 26px;
+                height: 26px;
+                background-repeat: no-repeat;
+                left: 15px;
+                top: 26px;
+            }
+
+            .program_container .tip.question-gradable {
+                background-color: #f7f7f7;
+                margin: 0;
+                padding: 0 1em 1em 52px;
+            }
+
+            .program_container .tip.question-gradable:empty {
+                padding: 0;
+                margin: 0;
+            }
+
+
+            /* Slider Styling */
+            .program_container .main .slider-answer-widget .slider-label {
+                font-size: 14px;
+                font-weight: 700;
+            }
+
+            .slider-track {
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                background-color: rgba(63, 80, 160, 0.1) !important;
+                background-image: none;
+				/* override added border in new GT CSS; add small margin to make room for labels */
+				border: none !important;
+				margin-top: 5px !important;
+            }
+
+            .program_container .main .slider-answer-widget .slider-selection {
+                background-color: #66c6c1;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+            }
+
+            .slider-handle {
+                width: 30px;
+                height: 30px;
+                background-color: #66c6c1 !important;
+                background-image: none;
+                opacity: 1;
+				/* override added border in new GT CSS */
+				border: none !important;
+            }
+
+            .slider.slider-horizontal .slider-handle {
+                margin-left: -15px;
+				/* move handle down a smidge */
+                margin-top: -5px;
+            }
+
+            .slider .tooltip {
+				/* override new GT CSS higher tooltip placement */
+                margin-top: .5em !important;
+            }
+			
+			/* override new GT CSS matching tooltip to theme color */
+			.slider .tooltip .tooltip-inner {
+				background-color: #666 !important;
+			}
+			.slider .tooltip .tooltip-arrow {
+				border-top-color: #666 !important;
+			}
+
+            /* Styling background on slider widget */
+            .program_container .main .slider-answer-widget {
+                background-color: #f7f7f7;
+                margin: 0 0 1em 0;
+				/* extra padding on top & bottom */
+                padding: 2em 1em 1.5em 1em;
+                width: 100%;
+                box-sizing: border-box;
+                
+                border-radius: 0 0 8px 8px;
+                -webkit-border-radius: 0 0 8px 8px;
+                -moz-border-radius: 0 0 8px 8px;
+            }
+
+			.slider-answer-widget .slider-label.left {
+                margin-right: 0;
+                padding-right: 1em;
+            }
+            .slider-answer-widget .slider-label.right {
+                margin-left: 0;
+                padding-left: 1em;
+            }
+			
+			/* Calendar questions */
+			.program_container .calendar-answer-widget {
+				/* match widget background to prompt */
+				background-color: #f7f7f7;
+			}
+			
+			/* white background behind calendar */
+			.bootstrap-datetimepicker-widget .list-unstyled {
+				margin-top: 0;
+				margin-bottom: 8px;
+				padding: 15px;
+				background-color: #fff;
+				border: 1px solid #f7f7f7;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+			}
+			
+			/* reduce empty space above calendar */
+			.program_container .bootstrap-datetimepicker-widget {
+				margin: auto;
+				margin-top: 1em;
+			}
+
+            /* Forms Styling */
+
+			/* override extra margin in new GT CSS */
+			textarea.form-control {
+				margin-top: 0 !important;
+			}
+			
+			.form-inline .form-control {
+				/* override new GT CSS enlarged form input font */
+				font-size: 15px !important;
+			}
+			
+            .form-control {
+                border: 1px solid #eee !important;
+				background-color: #fff !important;
+				border-radius: 4px !important;
+				/* styling details import from bootstrap.css  — not working */
+				-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%) !important;
+				box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%) !important;
+				-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s !important;
+				-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s !important;
+				transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s !important;
+            }
+
+            .input-group {
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1) !important;
+                -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1) !important;
+            }
+
+            .input-group-addon {
+                background-color: rgba(63, 80, 160, 0.1) !important;
+                border: 1px solid #eee !important;
+				color: #555 !important;
+            }
+
+            .form-control:focus {
+                box-shadow: none !important;
+                -webkit-box-shadow: none !important;
+                -moz-box-shadow: none !important;
+                border-color: #66c6c1 !important;
+            }
+
+            ul.navigation_items li .navigation_icon {
+                line-height: 23.8px;
+            }
+
+            /* Lists */
+			.program_container .main .list {
+				list-style: disc outside;
+				/* override shallow padding in GT CSS */
+				padding-left: 40px;
+				margin: 0px 0px 10px 0px;
+            }
+			
+            .program_container .main .list li {
+				font-size: inherit;
+				font-weight: inherit !important;
+				line-height: 1.6em !important;
+				list-style: none !important;
+                position: relative !important;
+				/* override extra padding in GT CSS */
+				margin-bottom: 8px;
+            }
+			
+			.program_container ul.list li strong {
+				font-weight: 700 !important;
+                color: #404042 !important;
+                font-size: 19px;
+			}
+			
+			@media screen and (max-width: 767px){
+				.program_container .main .list li {
+					font-size: 17px;
+				}
+				.program_container ul.list li strong {
+					font-size: 18px;
+				}
+			}
+
+            .program_container .main .list li::before {
+                position: absolute !important;
+                content: "" !important;
+                display: block !important;
+                width: 6px !important;
+                height: 6px !important;
+                background-color: #66c6c1 !important;
+                border-radius: 50% !important;
+                -webkit-border-radius: 50% !important;
+                -moz-border-radius: 50% !important;
+                top: 13px !important;
+                left: -18px !important;
+				z-index: 5 !important;
+            }
+			
+			 /* Main menu list items styling */
+            .button-group.custom-menu li.answer:nth-child(5), 
+            .button-group.custom-menu li.answer:nth-child(4), 
+            .button-group.custom-menu li.answer:nth-child(3), 
+            .button-group.custom-menu li.answer:nth-child(2), 
+            .button-group.custom-menu li.answer:first-child {
+                border: 1px solid #66c6c1;
+            }
+
+            .program_container .question.custom-menu {
+                padding: 0;
+                background-color: transparent;
+            }
+
+            .program_container .tip.custom-menu {
+                background-color: transparent;
+                padding: 0;
+            }
+
+            .program_container .main .answers.custom-menu {
+                background-color: transparent;
+                padding: 0;
+            }
+			
+			/* Chart Styling */
+			.chart-title h4 {
+				font-size: 20px;
+				font-family: 'Arimo', Arial, sans-serif;
+                font-weight: 700;
+                color: #404042;
+                margin-top: 1em !important;
+			}
+			
+			@media screen and (max-width: 767px) {
+				/* x-axis labels of chart */
+				.program_container .flot-x-axis .flot-tick-label{
+					font-size: 11px;
+				}
+				.program_container .flot-y-axis .flot-tick-label{
+					font-size: 12px;
 				}
 			}
 			
-			@media (min-width: 480px) and (max-width: 567px) {
-				.image-superimpose .multimedia_caption {
-					top: 38%;
-					font-size: 50%;
-				}
-
-				.image-superimpose .multimedia_caption  strong {
-					font-size: 150%;
-				}
+            /* Button Main Styling */
+			.program_container .btn {
+				/*override new GT CSS large top margin*/
+				margin: 0.5em 0px 7px 0px;
 			}
 			
-			@media (min-width: 768px) and (max-width: 991px) {
-				.image-superimpose .multimedia_caption {
-					top: 40%;
-				}
+            .program_container .btn-default, 
+            ul.button-group li.btn-primary,
+			.program_container .btn-primary{
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
+                background: rgb(102,198,193); /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background-image: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                white-space: normal;
+                font-family: "Arimo", Arial, sans-serif;
+                font-weight: 700 !important;
+				/* slightly larger font for better contrast */
+                font-size: 19px;
+                color: #fff;
 
-				.image-superimpose .multimedia_caption  strong {
-					font-size: 180%;
-				}
-			}
+                border: none;
+
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+
+
+                box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+                -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+                -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+            }
+
+            .program_container .btn-default.active, 
+            .program_container .btn-default.focus, 
+            .program_container .btn-default:active, 
+            .program_container .btn-default:focus, 
+            .program_container .btn-default:hover,
+			.program_container .btn-primary:focus,
+			.program_container .btn-primary:hover, 
+            ul.button-group li.btn-primary:hover {
+                color: #fff;
+
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cea0+0,66c6c1+100 */
+                background: rgb(147,206,160); /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(147,206,160,1) 0%, rgba(102,198,193,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+                border: none;
+            }
 			
-			@media (min-width: 992px) and (max-width: 1199px) {
-				.image-superimpose .multimedia_caption {
-					font-size: 60%;
-					top: 37%;
+			.program_container .btn-default[disabled]{
+				border: none;
+			}
+
+            .btn-group-lg>.btn, 
+            .btn-lg {
+                padding: 15px;
+                margin-top: 30px !important;
+            }
+
+            /* Accordion Styling First Level */
+            .program_container .main .panel-group .panel-heading a, 
+            .program_container .main .panel-group .panel-heading a:link, 
+            .program_container .main .panel-group .panel-heading a:hover, 
+            .program_container .main .panel-group .panel-heading a:active, 
+            .program_container .main .panel-group .panel-heading a:visited {
+                color: #404042;
+            }
+
+            .text + .panel-group {
+                margin-top: 15px;
+            }
+
+            .panel-default>.panel-heading {
+                background-color: #fff !important;
+            }
+
+            .panel-heading {
+                padding: 0;
+            }
+
+            .panel-heading .panel-title h4 {
+                padding: 15px 20px;
+                font-size: 18px;
+                line-height: 28px;
+            }
+			@media screen and (max-width: 767px) {
+				.panel-heading .panel-title h4 {
+					font-size: 17px;
 				}
-
-				.image-superimpose .multimedia_caption  strong {
-					font-size: 180%;
-				}
 			}
 
-			/* Styling for Participant Progress Table div */
-			.table-button{ 
-			    display: inline-block;
-			    border-width: 2px;
-			    border-radius: 3px;
-			  }
-			#s-btn {
-			  margin-left: -6px;
-			}
-			#pp-display {
-			    margin-top: 15px;
-			    font-size: 12px;
-			  }
+            .panel-heading .panel-title {
+                width: 100%;
+                display: block;
+            }
 
-			#dl-button, #searchBox {
-			    float: right;
-			    margin-right: 5px;
-			  }
+            .panel-heading .panel-title[aria-expanded="true"] {
+                border-left: 2px solid #66c6c1;
+                transition-delay: 0.3s;
+            }
 
-			.styled-table{ overflow:auto; }
+            .panel-collapse, 
+            .panel-title {
+                border-left: 2px solid;
+                border-color: transparent;
+            }
+
+            .panel-collapse.collapse.in {
+                border-left: 2px solid #66c6c1;
+            }
+
+            .panel-group .panel-heading+.panel-collapse>.list-group, 
+            .panel-group .panel-heading+.panel-collapse>.panel-body {
+                border-top: 0;
+                padding-top: 0;
+            }
+
+            .panel-group .panel-body.main .text {
+                padding-left: 2px;
+                padding-top: 0;
+            }
+
+            .panel {
+                background-color: #fff !important;
+                box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1) !important;
+                -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+                border: 1px solid #f7f7f7 !important;
+
+                -webkit-transition: all 0.3s ease-out !important;
+                -moz-transition: all 0.3s ease-out !important;
+                -o-transition: all 0.3s ease-out !important;
+                transition: all 0.3s ease-out;
+            }
+
+            .panel:hover {
+                box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+                -moz-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
+            }
+
+            .program_container .main .panel-group .panel-heading a.panel-title .toggle-expand {
+                color: #404042 !important;
+                top: 1em !important;
+            }
+
+            .panel-group .panel-heading+.panel-collapse>.list-group, 
+            .panel-group .panel-heading+.panel-collapse>.panel-body {
+                border-top: 1px solid #eee !important;
+				/* added padding on all sides of panel content */
+                padding: 1em !important;
+            }
+
+            .program_container .main .panel-group .panel-heading a.panel-title.collapsed .toggle-expand .glyphicon-chevron-down {
+                top: 7px;
+            }
+
+            /* Accordion Second Level */
+            .panel .panel-collapse .panel-body .panel-group .panel .panel-heading h4 {
+                font-weight: 700;
+                line-height: 1.62;
+                color: #555;
+            }
 
 
-			.styled-table table{
-			    width: 100%;
-			    table-layout: auto;
-			    margin: auto;
-			    margin-top: 15px;
-			    border-collapse: collapse;
-			    font-size: 14px;
-			    font-family: sans-serif;
-			    border-spacing: 0;
-			    overflow: hidden;
-			    margin-bottom: 0px;
-			}
+            /* Styling for Participant Progress Table div */
+            .table-button{ 
+                display: inline-block;
+                border-width: 2px;
+                border-radius: 3px;
+            }
+            #s-btn {
+                margin-left: -6px;
+            }
+            #pp-display {
+                margin-top: 15px;
+                font-size: 12px;
+            }
 
+            #dl-button, 
+            #searchBox {
+                float: right;
+                margin-right: 5px;
+            }
 
-			.styled-table thead tr {
-			    white-space: nowrap;
-			    background-color: #00B496;
-			    color: #ffffff;
-			    text-align: left;
-			    font-size: 14px;
-			    cursor:  pointer;
-			}
+            .styled-table{ 
+                overflow:auto; 
+            }
 
-			.styled-table thead th{ 
-			   padding: 12px 12px 12px 8px;
-			}
+            .styled-table table{
+                width: 100%;
+                table-layout: auto;
+                margin: auto;
+                margin-top: 15px;
+                border-collapse: collapse;
+                font-size: 14px;
+                font-family: sans-serif;
+                border-spacing: 0;
+                overflow: hidden;
+                margin-bottom: 0px;
+            }
 
+            .styled-table thead tr {
+                white-space: nowrap;
+                background-color: #00B496;
+                color: #ffffff;
+                text-align: left;
+                font-size: 14px;
+                cursor:  pointer;
+            }
 
+            .styled-table thead th{ 
+                padding: 12px 12px 12px 8px;
+            }
 
-			.styled-table th,
-			.styled-table td {
-			    padding: 5px 8px;
-			}
+            .styled-table th,
+            .styled-table td {
+                padding: 5px 8px;
+            }
 
+            .styled-table tbody tr {
+                border-bottom: 1px solid #dddddd;
+            }
 
+            .styled-table tbody tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
 
-			.styled-table tbody tr {
-			    border-bottom: 1px solid #dddddd;
-
-			}
-
-			.styled-table tbody tr:nth-of-type(even) {
-			    background-color: #f3f3f3;
-			}
-
-			.styled-table tbody tr:last-of-type {
-			    border-bottom: 2px solid #00B496;
-			}
+            .styled-table tbody tr:last-of-type {
+                border-bottom: 2px solid #00B496;
+            }
 		</style>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177276190-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177276190-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
 
-  gtag('config', 'UA-177276190-1');
-</script>
-
+		  gtag('config', 'UA-177276190-1');
+		</script>
 	</head>
 	
     <script>
@@ -1266,4 +1828,43 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
     </div> <!-- #main-content -->
   </body>
+	<script>
+		// 	Hides points bubble when dropdown menu is opened on mobile
+
+		const dropdownMenu = document.getElementById('run-menu');
+		const pointsBubble = document.getElementsByClassName('points')[0];
+		// needs refinement; points don't reappear on mobile upon closing dropdown
+		const dropdownOpen = () => {
+			if (window.innerWidth < 768) {
+				// at the time that dropdown toggle is clicked...
+				if (dropdownMenu.classList.length < 2 ) {
+					// hides points bubble while dropdown menu is open
+					pointsBubble.style.display = "none";
+				} else {
+					pointsBubble.style.display = "unset";
+				}
+			}
+		};
+		dropdownMenu.addEventListener('click', dropdownOpen);
+	</script>
+	<script>
+		// Alters class name for sign out icon so it loads properly 
+		let signOutIcon = '';
+		let container = '';
+		const changeIconClass = () => {
+			// slight delay prevents it from running before items are ready for queries
+			setTimeout( () => {
+				container = document.querySelector('.guidedtrack');
+				// only applied if parent program in container is OM-Dashboard
+				if (container.id === 'c6k4no4') {
+					signOutIcon = document.querySelector('.fa-sign-out-alt');
+					signOutIcon.classList.add('fas');
+					signOutIcon.classList.remove('fa');
+				}
+			} , 3000);
+		}
+		// runs once page is finished loading
+		window.onload = changeIconClass;
+		body.onPageShow = changeIconClass;
+	</script>
 </html>

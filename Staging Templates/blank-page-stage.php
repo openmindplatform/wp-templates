@@ -931,6 +931,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 -moz-border-radius: 8px 8px 0 0;
                 border-radius: 0 0 8px 8px;
             }
+			
 
             /* Tip styling */
             .program_container .tip {
@@ -1178,16 +1179,19 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				margin-bottom: 8px;
             }
 			
+			.program_container ul.list li strong {
+				font-weight: 700 !important;
+                color: #404042 !important;
+                font-size: 19px;
+			}
+			
 			@media screen and (max-width: 767px){
 				.program_container .main .list li {
 					font-size: 17px;
 				}
-			}
-			
-			.program_container ul.list li strong {
-				font-weight: 700 !important;
-                color: #404042 !important;
-                font-size: 19px !important;
+				.program_container ul.list li strong {
+					font-size: 18px;
+				}
 			}
 
             .program_container .main .list li::before {

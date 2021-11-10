@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Blank Page Page Template
+Template Name: Page Template Blank
 */
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
@@ -704,7 +704,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					z-index: 4;
 				}
 			}
-
+			
 			/* Add spacing between bottom of question and next text element */
 			.program_container .main form + .text,
 			.program_container .main ul + .text {
@@ -1179,16 +1179,19 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				margin-bottom: 8px;
             }
 			
+			.program_container ul.list li strong {
+				font-weight: 700 !important;
+                color: #404042 !important;
+                font-size: 19px;
+			}
+			
 			@media screen and (max-width: 767px){
 				.program_container .main .list li {
 					font-size: 17px;
 				}
-			}
-			
-			.program_container ul.list li strong {
-				font-weight: 700 !important;
-                color: #404042 !important;
-                font-size: 19px !important;
+				.program_container ul.list li strong {
+					font-size: 18px;
+				}
 			}
 
             .program_container .main .list li::before {

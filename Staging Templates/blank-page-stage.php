@@ -8,20 +8,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 	<head>
 		<title>OpenMind</title>
 		<link rel="icon" href="https://openmindplatform.org/wp-content/uploads/2017/11/cropped-OM-Icon-32x32.png" sizes="32x32" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 		<!-- Essential for GT embed -->
 		<script src="https://www.guidedtrack.com/assets/jquery_gt.js"></script>
 		<script src="https://www.guidedtrack.com/assets/gt_interpreter.js"></script>
 		<script src="https://www.guidedtrack.com/assets/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
-		 <link rel="stylesheet" type="text/css" href="https://1061174115.rsc.cdn77.org/css_samples/guidedtrack_legacy.css">
-		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
 		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i|Caladea:400,400i,700,700i" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 		<style>
             body {
 				/* increased padding */
@@ -1846,25 +1842,5 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			}
 		};
 		dropdownMenu.addEventListener('click', dropdownOpen);
-	</script>
-	<script>
-		// Alters class name for sign out icon so it loads properly 
-		let signOutIcon = '';
-		let container = '';
-		const changeIconClass = () => {
-			// slight delay prevents it from running before items are ready for queries
-			setTimeout( () => {
-				container = document.querySelector('.guidedtrack');
-				// only applied if parent program in container is OM-Dashboard
-				if (container.id === 'c6k4no4') {
-					signOutIcon = document.querySelector('.fa-sign-out-alt');
-					signOutIcon.classList.add('fas');
-					signOutIcon.classList.remove('fa');
-				}
-			} , 3000);
-		}
-		// runs once page is finished loading
-		window.onload = changeIconClass;
-		body.onPageShow = changeIconClass;
 	</script>
 </html>

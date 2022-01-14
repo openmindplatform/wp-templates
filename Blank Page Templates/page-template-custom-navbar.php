@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: User Header 
+Template Name: Custom NavBar
 */
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
@@ -17,113 +17,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
 		<!-- Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i|Caladea:400,400i,700,700i|Poppins:600" rel="stylesheet">
-		<style>			
-			/* Special header for App-User */
-			
-			#custom-header-desktop {
-				position: fixed;
-				top: 0;
-				margin-top: 0;
-				padding: 0;
-				background-color: #fff !important; 
-				height: 63px; 
-				width: 100%;
-				box-shadow: 0 0 7px rgba(0,0,0,0.1);
-				display: flex !important;
-				align-items: center;
-				justify-content: space-between;
-				z-index: 2000;
-				margin-bottom: 30px;
-			}
-			
-			@media screen and (max-width: 767px) {
-				#custom-header-desktop {
-					display: none !important;
-				}
-			}
-			
-			#custom-header-desktop .OpenMind-logo img {
-				max-height: 43px;
-				margin-left: 30px;
-			}
-			
-			#custom-header-desktop .contact-us {
-				padding-top: 10px;	
-				margin-right: 30px;		
-			}
-			
-			.contact-us li{
-				list-style-type: none;
-			}
-			
-			.contact-us li a{
-				font-family: 'Poppins', Arial, sans-serif;
-				font-size: 18px;
-				font-weight: 600;
-				color: 3d4fa1 !important;
-			}
-			
-			#custom-header-desktop .contact-us li a:hover{
-				opacity: 0.7;
-				-webkit-transition: all 0.4s ease-in-out;
-                transition: all 0.4s ease-in-out
-			}
-			
-			#custom-header-mobile {
-				position: fixed;
-				top: 0;
-				margin-top: 0;
-				padding: 0; 
-				background-color: transparent !important; 
-				height: 63px; 
-				width: 100%;
-				display: flex !important;
-				align-items: center;
-				justify-content: space-between;
-				z-index: 2000;
-			}
-			@media screen and (min-width: 768px) {
-				#custom-header-mobile {
-					display: none !important;
-				}
-			}
-			
-			#custom-header-mobile .OpenMind-logo img {
-				margin-left: 15px;
-				max-height: 43px;
-			}
-			
-			#custom-header-mobile .contact-us {
-				padding-top: 10px;
-				margin-right: 15px;		
-			}
-			
-			#custom-header-mobile .contact-us li {
-				text-align: right;
-			}
-			
-			#custom-header-mobile .contact-us li a{
-				font-size: 16px;
-			}
-			
-			
-			/* Standard GT elements */
-			
+		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i|Caladea:400,400i,700,700i" rel="stylesheet">
+		<style>
             body {
 				/* increased padding */
+                padding-top: 40px;
                 background-color: #fbfcfe;
             }
-			
-			#main-content {
-				padding-top: 80px;
-			}
-			
-			@media screen and (max-width: 767px) {
-				#main-content {
-					padding-top: 60px;
-				}
-			}
 			
 			/* parent of program-container div - center program container horizontally */
 			.row{
@@ -143,6 +43,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 background-color: #fff;
 				/* reduce bottom padding */
                 padding: 30px 50px 30px 50px;
+				margin-top: 70px;
                 margin-bottom: 40px;
                 border-radius: 5px;
                 -webkit-border-radius: 5px;
@@ -156,7 +57,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 font-size: 18px;
                 color: #555;
             }
-			
 			
 			/* Responsive Styling */       
             @media (max-width: 992px) {
@@ -301,6 +201,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				height: 106px;
 				right: 0px;
 				z-index: 150 !important;
+				/* imported from GT legacy; positioning needs to be relative because y positioning depends on if progress is visible or not */
 				float: right;
 				position: relative;
 				top: -43px;
@@ -455,24 +356,22 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 /* overrides position: static that affixes progress to top of window */
                 position: relative;
                 height: 20px;
-				/* reduce bottom margin to match enlarged nav container */
-                margin-bottom: 5px;
+				margin: 15px auto 5px auto !important;
 				z-index: 300 !important;
 				
+				position: fixed !important;
+				top: 15px !important;
+				width: calc(100% - 400px) !important;
+				margin: 5px 0px 0 200px !important;
             }		
-			/* overrides new GT CSS full width default, except on mobile */
-			@media screen and (min-width: 768px){
-				.program_container .progress {
-					top: auto !important;
-					width: auto !important;
-				}
-			}
+		
+
 			
             .program_container .progress .progress-bar {
                 line-height: 20px;
                 font-family: "Arimo", Arial, sans-serif;
 				/* enlarge font slightly */
-                font-size: 11px;
+                font-size: 12px;
 				/* override new GT CSS narrow height, heavier font */
 				height: auto !important;
 				font-weight: 400 !important;
@@ -493,11 +392,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			@media screen and (max-width: 767px){
 				.program_container .progress {
 					position: fixed !important;
-					width: calc(100% - 90px) !important;
-					left: 30px;
-					margin: 7px 30px 0 15px!important;
+					width: calc(100% - 30px) !important;
+					margin: 7px 30px 0 15px !important;
 					height: 13px !important;
-					top: 60px !important;
 				}
 				
 				.program_container .progress .progress-bar {
@@ -506,20 +403,38 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				}
 			}
 
-
+			/* Maintain div */
+			.program_container .maintain {
+				background-color: transparent !important;
+				display: none;
+			}
+			
             /* Program navigation */
             #program_navigation {
+				position: fixed !important;
+				top: 0;
+				left: 0;
+				background-color: #fff !important;
 				display: flex;
 				flex-direction: row;
 				align-items: center;
 				justify-content: center;
                 border-bottom: 1px solid #eee !important;
-                min-height: 38px;
-				-webkit-box-shadow: none;
-   				box-shadow: none;
-				width: 100% !important;
-/* 				z-index: 10 !important; */
+                min-height: 80px;
+				margin-bottom: 1em !important;
+				-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important;
+				box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important;
+				z-index: 10;
             }
+			
+			#program_navigation img.OpenMind-logo {
+				height: 50px;
+				margin: 0 20px;
+			}
+			
+			#program_navigation .header-spacer {
+				min-width: 196px;
+			}
 			
 			/* override new GT CSS; make opaque */
 			#program_navigation #back-button{
@@ -530,15 +445,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				/* place in front of bottom nav border*/
 				z-index: 150;
                 width: 20px;
-                height: 19px;
-                line-height: 19px;
+                height: 22px;
+/*                 line-height: 19px; */
                 background-image: url("../wp-content/uploads/2017/12/icon-back.png");
-                background-size: 20px 19px;
+                background-size: 22px 22px;
                 background-repeat: no-repeat;
                 text-indent: -9999px;
-                left: -5px;
+                left: 200px;
+    			top: 50px;
 				/* adjust positioning to line up with nav border */
-                top: 39px;
+				/* top: 39px; */
                 background-color: #fff !important;
                 padding-right: 36px !important;
                 -webkit-transition: all 0.3s ease-out;
@@ -552,9 +468,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
 			/* hide home icon */
-/*             .navigation_items .text-center {
+            .navigation_items .text-center {
                 display: none !important;
-            } */
+            }
 			/* hide nav item if it lacks an accompanying icon */
 			li.no-icon {
                 display: none !important;
@@ -577,7 +493,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .program_container .navigation_container ul li {
                 position: relative;
 				/* reduce padding */
-                padding: 0 10px 0 10px;
+                padding: 0 10px 0 35px;
                 font-size: 16px;
                 -webkit-transition: all 0.3s ease-out;
                 -moz-transition: all 0.3s ease-out;
@@ -585,14 +501,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 transition: all 0.3s ease-out;
 				background-color: #fff;
 				color: rgb(80, 80, 80, .6);
-/*                 background-image: url("../wp-content/uploads/2017/12/icon-home.png"); */
+                background-image: url("../wp-content/uploads/2017/12/icon-home.png");
                 background-repeat: no-repeat;
                 background-size: 16px;
                 background-position: 10px 7px;
 				/* override new GT CSS */
 				max-width: max-content !important;
 				height: 30px !important;
-				margin-top: 21px;
+				margin-top: 42px;
 				opacity: 1 !important;
             }
 		
@@ -602,19 +518,16 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					/* adjust nav dimensions when it's sticky on mobile */
 					margin-right: 15px !important;
 					margin-left: 0px !important;
-					max-height: 90px;
-					height: 90px !important;
 /* 					max-width: calc(100% - 30px) !important; */
 					margin-bottom: 1em !important;
 					-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
 					box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-					z-index: 10 !important; 
 				}
 				
 				#program_navigation #back-button span.glyphicon{
 					/* place within sticky header on mobile */
 					left: 15px !important;
-					margin-top: 26px !important;
+					margin-top: -10px !important;
 					background-size: 15px 15px;
 					height: 15px;
 					width: 15px;
@@ -651,9 +564,9 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             }
 
-/*             #program_navigation .navigation_container ul.navigation_items li:hover{
+            #program_navigation .navigation_container ul.navigation_items li:hover{
                 background-image: url("../wp-content/uploads/2017/12/icon-home_green.png");
-            } */
+            }
 
             .gt-program-navigation-button.active, 
             #program_navigation .active#back-button, 
@@ -718,8 +631,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			@media screen and (max-width: 767px) {
 				#program_navigation #run-menu {
 					/* fix positioning on small screens */
-					right: -3 !important;
-    				top: 58 !important;
+					right: 38px !important;
+					top: 11 !important;
 					z-index: 750 !important;
 				}
 				
@@ -727,7 +640,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					position: fixed !important;
 					right: 5px!important;
 					max-width: 98vw !important;
-					top: 60px !important;
+					top: 6px !important;
 					z-index: 1111;
 					/* darker box shadow for more contrast on mobile */
 					box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3) !important;
@@ -786,13 +699,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			
             .program_container .main {
 				/* override GT CSS extra padding on left/right, extra bottom margin */
-                padding: 3em 0em 0em 0em;
+                padding: 1em 0em 0em 0em;
 				margin-bottom: 0em;
 				z-index: 0;
             }
 			@media screen and (max-width: 767px) {
 				.program_container .main {
 					position: relative;
+					margin-top: 48px;
 					padding-left: 15px;
 					padding-right: 15px;
 					z-index: 4;
@@ -1025,6 +939,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 -moz-border-radius: 8px 8px 0 0;
                 border-radius: 0 0 8px 8px;
             }
+			
 
             /* Tip styling */
             .program_container .tip {
@@ -1283,8 +1198,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					font-size: 17px;
 				}
 				.program_container ul.list li strong {
-					font-weight: 700 !important;
-					color: #404042 !important;
 					font-size: 18px;
 				}
 			}
@@ -1582,19 +1495,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .styled-table tbody tr:last-of-type {
                 border-bottom: 2px solid #00B496;
             }
-			
-			/* Styling for Contact Form divs */
-			#contact-toggle a:hover {
-				cursor: pointer;
-				opacity: 0.7;
-				-webkit-transition: all 0.4s ease-in-out;
-                transition: all 0.4s ease-in-out;
-			}
-			
-/* 			#contact-toggle::after {
-				content: '';
-			} */
-			
 		</style>
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1607,6 +1507,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		  gtag('config', 'UA-177276190-1');
 		</script>
 	</head>
+	
     <script>
 
     	//Sets default values
@@ -1898,119 +1799,27 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             $(".main").append(table);
         };
     </script>
-	<script>
-		// toggles visibility of modal "contact us" form
-		const listenForContactClick = () => {
-			document.querySelector('.contact-us').children[0].addEventListener('click', event => {
-				event.preventDefault();
-				
-				const contactForm = document.querySelector('#contact-display');
-				const contactOverlay = document.querySelector('#contact-overlay');
-				
-				if (contactForm === null){
-					const contactDisplay = document.createElement('div');
-					contactDisplay.innerHTML = `
-						<div id="contact-overlay" style="background-color: rgba(172,172,172,.3); opacity: .3; z-index: 8000;position: fixed; top: 0px; height: 100vh; width: 100%; left: 0px;">&nbsp;</div>
-						<div id="contact-display" style="z-index: 9000; background-color: #fff; position: fixed; top: 180px; margin-left: -50px; width: 767px; padding: 2em 50px 1em; border-radius: 5px; box-shadow: 0 2px 50px 0 rgb(0 0 0 / 10%);">
-							<div id="contact-toggle" style="float: right; z-index: 9001; font-family:'Arimo', Arial, sans-serif; font-size: 18px; font-weight: 400; color: #3d4fa1 !important; position: absolute; right: 50px;">
-								<a href=#>Close<i class="fas fa-times" style="margin-left: 10px;"></i></a>
-								
-							</div>
-							<div id="form-content">
-								<h3>Contact OpenMind</h3>
-								<div class="question">
-									<div class=“prompt”>Reason for getting in touch</div>
-								</div>
-								<div class="tip"></div>
-								<ul class="button-group answers question_multiple_choice">
-									<li role="button" tabindex="0" aria-roledescription="answer option" class="answer">Question(s) for the OpenMind team</li>
-									<li role="button" tabindex="0" aria-roledescription="answer option" class="answer">Technical issue</li>
-									<li role="button" tabindex="0" aria-roledescription="answer option" class="answer">Request to delete account data</li>
-									<li role="button" tabindex="0" aria-roledescription="answer option" class="answer selected">None of the above<span class="glyphicon glyphicon-ok pull-right"></span></li>
-								</ul>
-								<div class="question">
-									<div class="prompt">How can we help you?</div>
-								</div>
-								<div class="tip"></div>
-								<form class="answer_textbox text form-inline">
-									<input style="display: none">
-									<textarea class="form-control"></textarea>
-								</form>
-								<div class="button-single">
-									<button class="btn btn-default btn-lg btn-block" id="submit-contact-form">Submit</button>
-								</div>
-								<div style="height: 30px">&nbsp;</div>
-							</div>
-						</div>
-					`;
-					
-					document.querySelector('.main').appendChild(contactDisplay);
-					contactDisplay.style.display = "block";
-					
-					document.querySelector('#contact-toggle').addEventListener('click', event => {
-						document.querySelector('#contact-overlay').style.display = "none";
-						document.querySelector('#contact-display').style.display = "none";
-					})
-					
-					document.getElementById('submit-contact-form').addEventListener('click', event => {
-						document.getElementById('form-content').innerHTML = `
-							<div class="text">
-								<p>Thanks for getting in touch!</p>
-								<p>Our support team will get back to you promptly via email.<br></p>
-							</div>
-						`;
-					});
-
-				} else if (contactForm !== null && contactForm.style.display === 'none'){
-					contactOverlay.style.display = "block";
-					contactForm.style.display = "block";
-				}
-				
-			});
-		}
-		// set event listener on "Contact Us" once it's loaded into the DOM
-		window.onload = listenForContactClick;
-	</script>
 	
 <body class="openMind-app">
-	<div id="custom-header-desktop">
-		<div class="OpenMind-logo">
-			<img src="https://openmindplatform.org/wp-content/uploads/2018/06/OpenMind_smaller.png">
-		</div>
-		<ul class="contact-us">
-			<li><a id="contact-link-desktop" href=#>Contact Us</a></li>
-		</ul>
-	</div>
-	<div id="custom-header-mobile">
-		<div class="OpenMind-logo">
-			<img src="https://openmindplatform.org/wp-content/uploads/2018/06/OpenMind_smaller.png">
-		</div>
-		<ul class="contact-us">
-			<li><a id="contact-link-mobile" href=#>Contact Us</a></li>
-		</ul>
-	</div>
-	
 	<div id="pp-display" style="display:none;margin-top: 0px;">
-		<br></br>
+	<br></br>
 		<div style="font-size:13px;">
-			<p id="accesscode" style="float:left;"></p>
-			<p id="info" style="text-align:right;display:run-in;"></p>
-		</div>
-		<h3 style="margin-bottom:3px">Participant Progress Dashboard</h3>
+				<p id="accesscode" style="float:left;"></p>
+				<p id="info" style="text-align:right;display:run-in;"></p>
+	</div>
+        <h3 style="margin-bottom:3px">Participant Progress Dashboard</h3>
 
-		<p style="font-size:15px">Below you can view the progress of your participants on the OpenMind program. Only participants who have completed at least lesson 1 will display.</p>
+        <p style="font-size:15px">Below you can view the progress of your participants on the OpenMind program. Only participants who have completed at least lesson 1 will display.</p>
 
-		<input type="text" id="searchBox" onkeyup="filterList()" placeholder="Search for names...">
+        <input type="text" id="searchBox" onkeyup="filterList()" placeholder="Search for names...">
 
-		<button type="button" onclick="downloadCSV()" id="dl-button">Download</button>
+        <button type="button" onclick="downloadCSV()" id="dl-button">Download</button>
 
-		<button type="button" onclick="generateTable(progressHeaders, tableData);btnSelected(1)" id="p-btn" class="table-button">View Progress</button>
-		<button type="button" onclick="generateTable(scoreHeaders, tableData);btnSelected(2)" id="s-btn" class="table-button">View Scores</button>
+        <button type="button" onclick="generateTable(progressHeaders, tableData);btnSelected(1)" id="p-btn" class="table-button">View Progress</button>
+        <button type="button" onclick="generateTable(scoreHeaders, tableData);btnSelected(2)" id="s-btn" class="table-button">View Scores</button>
 
-		<div class='styled-table' id='showData'></div>
-	 </div>
-	
-	
+    <div class='styled-table' id='showData'></div>
+  </div>
     <div id="main-content">
 
       <?php while ( have_posts() ) : the_post(); ?>
@@ -2025,4 +1834,38 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
     </div> <!-- #main-content -->
   </body>
+	<script>
+		// 	Hides points bubble when dropdown menu is opened on mobile
+
+		const dropdownMenu = document.getElementById('run-menu');
+		const pointsBubble = document.getElementsByClassName('points')[0];
+		// needs refinement; points don't reappear on mobile upon closing dropdown
+		const dropdownOpen = () => {
+			if (window.innerWidth < 768) {
+				// at the time that dropdown toggle is clicked...
+				if (dropdownMenu.classList.length < 2 ) {
+					// hides points bubble while dropdown menu is open
+					pointsBubble.style.display = "none";
+				} else {
+					pointsBubble.style.display = "unset";
+				}
+			}
+		};
+		dropdownMenu.addEventListener('click', dropdownOpen);
+	</script>
+	<script>
+		const addLogo = () => {
+			const logo = document.createElement('img');
+			logo.src='https://omplatform.wpengine.com/wp-content/uploads/2018/06/OpenMind_smaller.png';
+			logo.classList.add('OpenMind-logo');
+			document.getElementById('program_navigation').prepend(logo);
+			
+			const spacer = document.createElement('div');
+			spacer.innerHTML='&nbsp';
+			spacer.classList.add('header-spacer');
+			document.getElementById('program_navigation').append(spacer);
+		}
+		window.onload = addLogo;
+		
+	</script>
 </html>

@@ -190,6 +190,55 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				border-radius: 3px;
 				border-color: #eee;
 			}
+
+			/* component styled as multiple choice question or menu */
+			.program_container .component.question-multiple-choice {
+				border: none !important;
+				border-radius: 8px !important;
+			}
+			
+			/* component styled as li.answer */
+			.program_container .component .custom-answer {
+				width: 100%;
+				line-height: 28px;
+				text-align: left;
+				min-height: 62px;
+				padding: 16px 16px 6x 16px;
+				font-size: 18px;
+				font-family: "PT Serif", Times, serif;
+				font-weight: 400;
+				margin-top: -1px;
+				background-color: #fff !important;
+				transition: background-color .15s;
+				border: 1px solid #f7f7f7 !important;
+				border-top: 1px solid transparent;
+				box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%) !important;
+				-webkit-box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%) !important;
+			}
+			.program_container .component .custom-answer:hover {
+				background-color: rgba(148, 207, 161, 0.09) !important;
+				border: 1px solid transparent !important;
+				font-weight: 500 !important;
+			}
+
+			/* text in fake li.answer div */
+			.program_container .component .custom-answer p{
+				margin: none !important;
+			}
+			
+			/* Component styled as fake button */
+			.component .likeBtn-default {
+				border-radius: 6px !important; 
+				border: none !important; 
+				padding:15px !important; 
+				padding-bottom:15px !important;
+			}
+			.component .likeBtn-default p {
+				color: #fff !important; 
+				font-family: 'Arimo', Arial, sans-serif; 
+				font-weight: 700; font-size: 20px !important; 
+				margin:0;
+			}
 			
 			
 			/* Points Bubble */
@@ -596,12 +645,23 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             #program_navigation #run-menu {
 				/* override GT CSS positioning */
 				position: absolute;
-				left: auto !important;
-				right: -47 !important;
-				top: 47 !important;
+				right: 20 !important;
+				top: 80 !important;
 				line-height: 64px;
 				width: 47px;
             }
+			
+			/* override GT CSS default */
+			@media (min-width: 768px) {
+				.program_container #back-button ~ #run-menu {
+					left: unset !important;
+				}
+				
+				.program_container #back-button:empty ~ #run-menu {
+					left: unset !important;
+				}
+			}
+
 			
             .dropdown-menu {
                 border: 1px solid #f7f7f7 !important;
@@ -1334,7 +1394,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				border: none;
 			}
 			
-			.program_container button.no-submission{
+			/* Styling for styled button for going back 1 page */
+			.program_container button.no-submission {
 				background: #b9b9b9 !important; 
 				box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%) !important; 
 				width: auto !important; float: right; 

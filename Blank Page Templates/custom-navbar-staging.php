@@ -419,7 +419,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				align-items: center;
 				justify-content: center;
                 border-bottom: 1px solid #eee !important;
-                min-height: 70px;
+                min-height: 90px;
 				margin-bottom: 1em !important;
 				-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important;
 				box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important;
@@ -428,11 +428,27 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			
 			#program_navigation img.OpenMind-logo {
 				height: 48px;
-				margin: 0 20px;
+				margin: 20 20px 0;
 			}
 			
 			#program_navigation .header-spacer {
 				min-width: calc(100vw - 400px);
+			}
+			
+			#program_navigation .program-header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				min-width: 200px;
+			}
+			
+			#program_navigation .program-name {
+				font-family: "Arimo", Arial, sans-serif;
+				font-weight: 700;
+                color: #666;
+				font-size: 16px;
+				margin-top: -4px;
 			}
 			
 			/* override new GT CSS; make opaque */
@@ -1317,6 +1333,15 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			.program_container .btn-default[disabled]{
 				border: none;
 			}
+			
+			.program_container button.no-submission{
+				background: #b9b9b9 !important; 
+				box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%) !important; 
+				width: auto !important; float: right; 
+				font-size: 16px !important; 
+				padding: 15px 20px !important;
+				font-weight: 600;
+			}
 
             .btn-group-lg>.btn, 
             .btn-lg {
@@ -1861,10 +1886,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			spacer.classList.add('header-spacer');
 			document.getElementById('program_navigation').prepend(spacer);
 			
-			const logo = document.createElement('img');
-			logo.src='https://omplatform.wpengine.com/wp-content/uploads/2018/06/OpenMind_smaller.png';
-			logo.classList.add('OpenMind-logo');
-			document.getElementById('program_navigation').prepend(logo);
+			const logoContainer = document.createElement('div');
+			logoContainer.innerHTML=`<img class="OpenMind-logo" src="https://omplatform.wpengine.com/wp-content/uploads/2018/06/OpenMind_smaller.png"><p class="program-name">Learning Program</p>`;
+// 			const logo = document.createElement('img');
+// 			logo.src='https://omplatform.wpengine.com/wp-content/uploads/2018/06/OpenMind_smaller.png';
+// 			logo.classList.add('OpenMind-logo');
+			logoContainer.classList.add('program-header');
+// 			document.getElementById('program_navigation').prepend(logo);
+			document.getElementById('program_navigation').prepend(logoContainer);
 		}
 		window.onload = addLogo;
 		

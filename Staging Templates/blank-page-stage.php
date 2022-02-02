@@ -189,6 +189,55 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				border-radius: 3px;
 				border-color: #eee;
 			}
+
+			/* component styled as multiple choice question or menu */
+			.program_container .component.question-multiple-choice {
+				border: none !important;
+				border-radius: 8px !important;
+			}
+			
+			/* component styled as li.answer */
+			.program_container .component .custom-answer {
+				width: 100%;
+				line-height: 28px;
+				text-align: left;
+				min-height: 62px;
+				padding: 16px 16px 6x 16px;
+				font-size: 18px;
+				font-family: "PT Serif", Times, serif;
+				font-weight: 400;
+				margin-top: -1px;
+				background-color: #fff !important;
+				transition: background-color .15s;
+				border: 1px solid #f7f7f7 !important;
+				border-top: 1px solid transparent;
+				box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%) !important;
+				-webkit-box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%) !important;
+			}
+			.program_container .component .custom-answer:hover {
+				background-color: rgba(148, 207, 161, 0.09) !important;
+				border: 1px solid transparent !important;
+				font-weight: 500 !important;
+			}
+
+			/* text in fake li.answer div */
+			.program_container .component .custom-answer p{
+				margin: none !important;
+			}
+			
+			/* Component styled as fake button */
+			.likeBtn-default {
+				border-radius: 6px !important; 
+				border: none !important; 
+				padding:15px !important; 
+				padding-bottom:15px !important;
+			}
+			.likeBtn-default p {
+				color: #fff !important; 
+				font-family: 'Arimo', Arial, sans-serif; 
+				font-weight: 700; font-size: 20px !important; 
+				margin:0;
+			}
 			
 			
 			/* Points Bubble */
@@ -1312,6 +1361,29 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 padding: 15px;
                 margin-top: 30px !important;
             }
+
+			.program_container button.btn.btn-default.btn-lg.btn-block.no-submission {
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cea0+0,66c6c1+100 */
+                background: rgb(147,206,160) !important; /* Old browsers */
+                background: -moz-linear-gradient(left, rgba(147,206,160,1) 0%, rgba(102,198,193,1) 100%) !important; /* FF3.6-15 */
+                background: -webkit-linear-gradient(left, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%) !important; /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to right, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
+				opacity: .9;
+				box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%) !important; 
+				width: auto !important; 
+				float: right; 
+				font-size: 16px !important; 
+				padding: 15px 20px !important;
+				font-weight: 600;
+				margin-top: 1.5em !important;
+			}
+			
+			.program_container button.btn.btn-default.btn-lg.btn-block.no-submission:hover{
+				transition: filter .15s, opacity .3s ease-out;
+    			filter: brightness(0.95);
+				opacity: 1;
+			}
+			
 
             /* Accordion Styling First Level */
             .program_container .main .panel-group .panel-heading a, 

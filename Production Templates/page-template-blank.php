@@ -605,8 +605,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             #program_navigation .navigation_container ul.navigation_items .no-touch li:hover, 
             .no-touch #program_navigation #run-menu:hover, 
             #program_navigation .no-touch #run-menu:hover {
-                color: #66c6c1;
-
+                color: #026d74;
             }
 
             #program_navigation .navigation_container ul.navigation_items li:hover{

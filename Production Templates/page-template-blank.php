@@ -292,14 +292,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
 			/* container for number of points */
             .program_container .points .total {
-				background-color: #AAA;
+                background-color: #AAA;
                 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 
 				background: #434d7c; /* Old browsers 
 				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15 
 				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 
 				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); IE6-9 */
-
 
                 box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
                 -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
@@ -327,7 +326,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				top: -20px;				
 				/* hide when not active */
 				display: none;
-				background-color: #AAA;
+                background-color: #AAA;
                 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 
 				background: #434d7c; /* Old browsers 
 				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15
@@ -335,7 +334,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); /* IE6-9 */
 
-                border: none;
+				border: none;
 				/*override new GT CSS*/
 				color: #fff !important;
 				font-size: 20px;		
@@ -400,7 +399,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Progress Bar */
             /* */
             .program_container .progress {
-				background-color: #e6e6e9 !important;
+				bbackground-color: #e6e6e9 !important;
                 box-shadow: none;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
@@ -432,13 +431,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				/* override new GT CSS narrow height, heavier font */
 				height: auto !important;
 				font-weight: 400 !important;
-				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
 				background: #434d7c !important; /* Old browsers */
 				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%) !important; /* FF3.6-15 */
 				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%) !important; /* Chrome10-25,Safari5.1-6 */
 				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ) !important; /* IE6-9 */
-
 
                 box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
                 -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
@@ -1315,14 +1313,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .program_container .btn-default, 
             ul.button-group li.btn-primary,
 			.program_container .btn-primary{
-				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
 				background: #434d7c; /* Old browsers */
 				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15 */
 				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 */
 				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); /* IE6-9 */
 
-                white-space: normal;
+				white-space: normal;
                 font-family: "Arimo", Arial, sans-serif;
                 font-weight: 700 !important;
 				/* slightly larger font for better contrast */
@@ -1569,30 +1567,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .styled-table tbody tr:last-of-type {
                 border-bottom: 2px solid #00B496;
             }
-			
-			 .mod-required {
-     			color: #2C98DB;
-    		 }
-			
-			.mod-not-required {
-     			padding-left: 35px !important
-    		 }
-			
-			.univ-list {
-				  width: 100%;
-				  background-color: #ffffff;
-				  border-radius: 0 0 5px 5px;
-				  list-style: none;
-			}
-			
-			.list-items {
-				  padding: 5px 15px;
-				  border-bottom: 1px solid rgb(132,132,132, 0.25);
-			}
-				
-			.list-items:hover {
-				  background-color: #dddddd;
-			}
 		</style>
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1607,133 +1581,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 	</head>
 	
     <script>
-		
-		// appends a tick the end of the menu item in learner Main Menu
-		const appendTickMark = (DOMElement) => {
-			const tickMark = document.createElement("span")
-			tickMark.style.float = "right"
-			tickMark.innerText = "✔"
-			DOMElement.appendChild(tickMark)
-		}
-		
-		function removeElements() {
-		  //clear all the item
-		  let items = document.querySelectorAll(".list-items");
-		  items.forEach((item) => item.remove());
-		}
-		
-		 $(window).on("guidedtrack:pageEnd", function() {
-			 const collegeNameInput = document.evaluate(
-			 '//div[contains(@class, "prompt") and contains(., "What\'s the name of your")]',
-			   document,
-			   null,
-			   XPathResult.ORDERED_NODE_ITERATOR_TYPE
-			 );
-			 
-			 var collegeNameNodes = []
-			 
-			 while(result = collegeNameInput.iterateNext()) {
-			      collegeNameNodes.push(result)
-			 }
-			 if(collegeNameNodes.length > 0) {
-				 console.log(collegeNameNodes)
-				 const parentNode = collegeNameNodes[0].parentElement.parentElement.children[2].children[1]
-				 
-				 // get the input element field for university name
-				 const collegeInputField = parentNode.children[0]
-				 console.log(collegeInputField)
-				 
-				// create the ul list to contain suggested universities list
-				const univ_ul = document.createElement("div")
-				univ_ul.style.leftPadding="0px"
-				univ_ul.classList.add("univ-list")
-				parentNode.append(univ_ul)
-				
-				collegeInputField.addEventListener("keyup", (e) => {
-					let names = [ "Selma University", "St John's Seminary", "Studio Incamminati", "St. Louis Med Tech", "Skagit Valley College", "South Seattle College", "Shoreline Community College", "Somerset County Technology Center", "Shepherd University", "Somerset Community College", "Southeast Kentucky Community" ];
-					 
-					//Sort names in ascending order
-					let sortedNames = names.sort();
-					console.log(e.target.value)
-					console.log(sortedNames)
-					
-					removeElements()
-					 for (let i of sortedNames) {
-					 	//convert input to lowercase and compare with each string
-					 	console.log(i,collegeInputField.value )
-						if (i.toLowerCase().startsWith(collegeInputField.value.toLowerCase()) && collegeInputField.value != "") {
-						  //create li element
-						  let listItem = document.createElement("li");
-						  //One common class name
-						  listItem.classList.add("list-items");
-						  listItem.style.cursor = "pointer";
-						  listItem.setAttribute("onclick", "displayNames('" + i + "')");
-						  //Display matched part in bold
-						  let word = "<b>" + i.substr(0, collegeInputField.value.length) + "</b>";
-						  word += i.substr(collegeInputField.value.length);
-						  //display the value in array
-						  listItem.innerHTML = word;
-						  document.querySelector(".univ-list").appendChild(listItem);
-						}
-				  }
-				 })
-			 }
-		 })
-		
-		// creates and prepends a blue asterisk to indicate a required lesson in Modular programs
-		 $(window).on("guidedtrack:pageEnd", function() {
-			 const requiredAnswers = document.evaluate(
-			 '//li[contains(@class, "answer") and contains(., "❋")]',
-			   document,
-			   null,
-			   XPathResult.ORDERED_NODE_ITERATOR_TYPE
-			 );
-			 
-			 var requiredAnswerNodes = []
-			 
-			 while(result = requiredAnswers.iterateNext()) {
-			      requiredAnswerNodes.push(result)
-			 }
-			 
-			 requiredAnswerNodes.forEach(function(answer) {
-				 const _asterisk = document.createElement('span')
-			 	_asterisk.innerText = "❋ "
-			 	_asterisk.classList.add("mod-required")
-				 
-				if(answer.firstChild.textContent.includes("✔")){
-					appendTickMark(answer)
-				}
-				 
-				answer.removeChild(answer.firstChild)
-			    answer.prepend(_asterisk)
-			 });
-			 
-			 // add a left padding to the Main Menu items that are not required in modular program
-			 if(requiredAnswerNodes.length > 0) {
-				 
-				const parentUL = requiredAnswerNodes[0].parentElement
-			 	const span_element = document.querySelector(".mod-required")
-			 
-				 Array.prototype.forEach.call(parentUL.children, function(child, index){
-					 if(!child.firstChild.isEqualNode(span_element)){
-						 child.classList.add("mod-not-required")
-
-						 // if there is a tick that indicates lesson is completed, move it to the end of the line
-						 if(child.firstChild.textContent.includes("✔")){
-							appendTickMark(child)
-							child.removeChild(child.firstChild)
-						}
-					 }
-				 });
-				 
-			     // Add a text that says " * indicates required lesson"
-				 const requiredNoticeContainer = parentUL.parentElement.children[2]
-				 const _div = document.createElement("div")
-				 _div.innerHTML = "<span class ='mod-required'> ❋ </span> indicates required lesson"
-				 _div.style.paddingLeft = "17px"
-				 requiredNoticeContainer.appendChild(_div)
-			 }
-		})
 
     	//Sets default values
 		var AccessCode, csvHeaders, scoreHeaders, progressHeaders, tableData={};

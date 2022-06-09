@@ -920,7 +920,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			/* enlarge check in checkbox*/
 			.program_container li.answer [type="checkbox"]:checked ~ span[role="checkbox"]:after {
 				font-size: 26px !important;
-				color: #137b81 !important;
+				color: #5158FF !important;
 			}
 			
 			/* for checkbox questions — last li styled as a button */

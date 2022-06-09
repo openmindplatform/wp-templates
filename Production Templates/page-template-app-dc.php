@@ -18,7 +18,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		<link rel="stylesheet" type="text/css" href="https://www.guidedtrack.com/assets/guidedtrack.css">
 		<!-- Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i|PT+Serif:400,400i,700,700i|Caladea:400,400i,700,700i|Poppins:600" rel="stylesheet">
-		<style>			
+		<style>
 			/* Special header for App-Mini-DC */
 			
 			#custom-header-desktop {
@@ -124,7 +124,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					padding-top: 60px;
 				}
 			}
-			
+
 			/* parent of program-container div - center program container horizontally */
 			.row{
 				display: flex;
@@ -135,7 +135,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             /* Loader */
             .spinner>.double-bounce1, .double-bounce2 {
-                background-color: #66c6c1;
+                background-color: #ffffff;
             }
 
             /* Container basic styling */
@@ -156,7 +156,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 font-size: 18px;
                 color: #555;
             }
-			
 			
 			/* Responsive Styling */       
             @media (max-width: 992px) {
@@ -218,13 +217,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 			
 			a {
-				color: #337ab7 !important;
+				color: #137b81 !important;
 				text-decoration: none !important;
 			}
 			
 			a:hover, 
             a:focus {
-                color: #66c6c1 !important;
+                color: #026d74!important;
             }
 			
 			/* Mobile Typography (smaller font sizes) */
@@ -290,6 +289,55 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				border-radius: 3px;
 				border-color: #eee;
 			}
+
+			/* component styled as multiple choice question or menu */
+			.program_container .component.question-multiple-choice {
+				border: none !important;
+				border-radius: 8px !important;
+			}
+			
+			/* component styled as li.answer */
+			.program_container .component .custom-answer {
+				width: 100%;
+				line-height: 28px;
+				text-align: left;
+				min-height: 62px;
+				padding: 16px 16px 6x 16px;
+				font-size: 18px;
+				font-family: "PT Serif", Times, serif;
+				font-weight: 400;
+				margin-top: -1px;
+				background-color: #fff !important;
+				transition: background-color .15s;
+				border: 1px solid #f7f7f7 !important;
+				border-top: 1px solid transparent;
+				box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%) !important;
+				-webkit-box-shadow: 0 2px 10px 0 rgb(0 0 0 / 10%) !important;
+			}
+			.program_container .component .custom-answer:hover {
+				background-color: rgba(148, 207, 161, 0.09) !important;
+				border: 1px solid transparent !important;
+				font-weight: 500 !important;
+			}
+
+			/* text in fake li.answer div */
+			.program_container .component .custom-answer p{
+				margin: none !important;
+			}
+			
+			/* Component styled as fake button */
+			.likeBtn-default {
+				border-radius: 6px !important; 
+				border: none !important; 
+				padding:15px !important; 
+				padding-bottom:15px !important;
+			}
+			.likeBtn-default p {
+				color: #fff !important; 
+				font-family: 'Arimo', Arial, sans-serif; 
+				font-weight: 700; font-size: 20px !important; 
+				margin:0;
+			}
 			
 			
 			/* Points Bubble */
@@ -301,6 +349,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				height: 106px;
 				right: 0px;
 				z-index: 150 !important;
+				/* imported from GT legacy; positioning needs to be relative because y positioning depends on if progress is visible or not */
 				float: right;
 				position: relative;
 				top: -43px;
@@ -343,11 +392,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
 			/* container for number of points */
             .program_container .points .total {
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				background-color: #AAA;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 
+				background: #434d7c; /* Old browsers 
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15 
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); IE6-9 */
+
 
                 box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
                 -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
@@ -375,11 +427,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				top: -20px;				
 				/* hide when not active */
 				display: none;
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				background-color: #AAA;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 
+				background: #434d7c; /* Old browsers 
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); /* IE6-9 */
+
                 border: none;
 				/*override new GT CSS*/
 				color: #fff !important;
@@ -445,7 +500,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Progress Bar */
             /* */
             .program_container .progress {
-				background-color: rgba(148, 207, 161, 0.2) !important;
+				background-color: #e6e6e9 !important;
                 box-shadow: none;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
@@ -463,7 +518,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			/* overrides new GT CSS full width default, except on mobile */
 			@media screen and (min-width: 768px){
 				.program_container .progress {
-					top: auto !important;
 					width: auto !important;
 				}
 			}
@@ -476,11 +530,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				/* override new GT CSS narrow height, heavier font */
 				height: auto !important;
 				font-weight: 400 !important;
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193) !important; /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%) !important; /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%) !important; /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
+				background: #434d7c !important; /* Old browsers */
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%) !important; /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%) !important; /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ) !important; /* IE6-9 */
+
 
                 box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
                 -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
@@ -506,7 +562,12 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				}
 			}
 
-
+			/* Maintain div */
+			.program_container .maintain {
+				background-color: transparent !important;
+				display: none;
+			}
+			
             /* Program navigation */
             #program_navigation {
 				display: flex;
@@ -797,7 +858,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					z-index: 4;
 				}
 			}
-			
+
 			/* Add spacing between bottom of question and next text element */
 			.program_container .main form + .text,
 			.program_container .main ul + .text {
@@ -958,6 +1019,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			/* enlarge check in checkbox*/
 			.program_container li.answer [type="checkbox"]:checked ~ span[role="checkbox"]:after {
 				font-size: 26px !important;
+				color: #137b81 !important;
 			}
 			
 			/* for checkbox questions — last li styled as a button */
@@ -969,9 +1031,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			}
 
             .no-touch ul.button-group .answer:hover:not(.selected) {
-				/* background-color: #f5f6fa !important; */
-				/* try light green tint for hover state */
-				background-color: rgba(148, 207, 161, 0.09) !important;
+				/* light purple tint for hover state */
+				background-color: #e3e6f0 !important;
 				border: 1px solid transparent !important;
 				font-weight: 500 !important;
                 box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
@@ -989,9 +1050,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				font-family: 'Caladea', Times, serif;
 				font-size: 20px;
 				color: #404042;
-				/* background-color: #f5f6fa !important; */
-				/* try green tint for selected state */
-				background-color: rgba(148, 207, 161, 0.18) !important;
+				/* slightly darker tint when selected */
+				background-color: #dbdfe7 !important;
 				border: 1px solid transparent !important;
             }
 			
@@ -1024,6 +1084,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 -moz-border-radius: 8px 8px 0 0;
                 border-radius: 0 0 8px 8px;
             }
+			
 
             /* Tip styling */
             .program_container .tip {
@@ -1282,8 +1343,6 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 					font-size: 17px;
 				}
 				.program_container ul.list li strong {
-					font-weight: 700 !important;
-					color: #404042 !important;
 					font-size: 18px;
 				}
 			}
@@ -1294,7 +1353,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 display: block !important;
                 width: 6px !important;
                 height: 6px !important;
-                background-color: #66c6c1 !important;
+                background-color: #384069 !important;
                 border-radius: 50% !important;
                 -webkit-border-radius: 50% !important;
                 -moz-border-radius: 50% !important;
@@ -1355,11 +1414,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .program_container .btn-default, 
             ul.button-group li.btn-primary,
 			.program_container .btn-primary{
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background-image: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
+				background: #434d7c; /* Old browsers */
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); /* IE6-9 */
+
                 white-space: normal;
                 font-family: "Arimo", Arial, sans-serif;
                 font-weight: 700 !important;
@@ -1389,12 +1450,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			.program_container .btn-primary:hover, 
             ul.button-group li.btn-primary:hover {
                 color: #fff;
-
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cea0+0,66c6c1+100 */
-                background: rgb(147,206,160); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(147,206,160,1) 0%, rgba(102,198,193,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				/* REVERSE of standard gradient */
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4953e5+0,434d7c+100 */
+				background: #4953e5; /* Old browsers */
+				background: -moz-linear-gradient(left,  #4953e5 0%, #434d7c 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #4953e5 0%,#434d7c 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #4953e5 0%,#434d7c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4953e5', endColorstr='#434d7c',GradientType=1 ); /* IE6-9 */
 
                 border: none;
             }
@@ -1408,6 +1470,31 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 padding: 15px;
                 margin-top: 30px !important;
             }
+
+			.program_container button.btn.btn-default.btn-lg.btn-block.no-submission {
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
+				background: #434d7c; /* Old browsers */
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); /* IE6-9 */
+
+				opacity: .9;
+				box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%) !important; 
+				width: auto !important; 
+				float: right; 
+				font-size: 16px !important; 
+				padding: 15px 20px !important;
+				font-weight: 600;
+				margin-top: 1.5em !important;
+			}
+			
+			.program_container button.btn.btn-default.btn-lg.btn-block.no-submission:hover{
+				transition: filter .15s, opacity .3s ease-out;
+    			filter: brightness(0.95);
+				opacity: 1;
+			}
+			
 
             /* Accordion Styling First Level */
             .program_container .main .panel-group .panel-heading a, 
@@ -1581,6 +1668,30 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .styled-table tbody tr:last-of-type {
                 border-bottom: 2px solid #00B496;
             }
+			
+			 .mod-required {
+     			color: #2C98DB;
+    		 }
+			
+			.mod-not-required {
+     			padding-left: 35px !important
+    		 }
+			
+			.univ-list {
+				  width: 100%;
+				  background-color: #ffffff;
+				  border-radius: 0 0 5px 5px;
+				  list-style: none;
+			}
+			
+			.list-items {
+				  padding: 5px 15px;
+				  border-bottom: 1px solid rgb(132,132,132, 0.25);
+			}
+				
+			.list-items:hover {
+				  background-color: #dddddd;
+			}
 		</style>
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1595,6 +1706,133 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 	</head>
 	
     <script>
+		
+		// appends a tick the end of the menu item in learner Main Menu
+		const appendTickMark = (DOMElement) => {
+			const tickMark = document.createElement("span")
+			tickMark.style.float = "right"
+			tickMark.innerText = "✔"
+			DOMElement.appendChild(tickMark)
+		}
+		
+		function removeElements() {
+		  //clear all the item
+		  let items = document.querySelectorAll(".list-items");
+		  items.forEach((item) => item.remove());
+		}
+		
+		 $(window).on("guidedtrack:pageEnd", function() {
+			 const collegeNameInput = document.evaluate(
+			 '//div[contains(@class, "prompt") and contains(., "What\'s the name of your")]',
+			   document,
+			   null,
+			   XPathResult.ORDERED_NODE_ITERATOR_TYPE
+			 );
+			 
+			 var collegeNameNodes = []
+			 
+			 while(result = collegeNameInput.iterateNext()) {
+			      collegeNameNodes.push(result)
+			 }
+			 if(collegeNameNodes.length > 0) {
+				 console.log(collegeNameNodes)
+				 const parentNode = collegeNameNodes[0].parentElement.parentElement.children[2].children[1]
+				 
+				 // get the input element field for university name
+				 const collegeInputField = parentNode.children[0]
+				 console.log(collegeInputField)
+				 
+				// create the ul list to contain suggested universities list
+				const univ_ul = document.createElement("div")
+				univ_ul.style.leftPadding="0px"
+				univ_ul.classList.add("univ-list")
+				parentNode.append(univ_ul)
+				
+				collegeInputField.addEventListener("keyup", (e) => {
+					let names = [ "Selma University", "St John's Seminary", "Studio Incamminati", "St. Louis Med Tech", "Skagit Valley College", "South Seattle College", "Shoreline Community College", "Somerset County Technology Center", "Shepherd University", "Somerset Community College", "Southeast Kentucky Community" ];
+					 
+					//Sort names in ascending order
+					let sortedNames = names.sort();
+					console.log(e.target.value)
+					console.log(sortedNames)
+					
+					removeElements()
+					 for (let i of sortedNames) {
+					 	//convert input to lowercase and compare with each string
+					 	console.log(i,collegeInputField.value )
+						if (i.toLowerCase().startsWith(collegeInputField.value.toLowerCase()) && collegeInputField.value != "") {
+						  //create li element
+						  let listItem = document.createElement("li");
+						  //One common class name
+						  listItem.classList.add("list-items");
+						  listItem.style.cursor = "pointer";
+						  listItem.setAttribute("onclick", "displayNames('" + i + "')");
+						  //Display matched part in bold
+						  let word = "<b>" + i.substr(0, collegeInputField.value.length) + "</b>";
+						  word += i.substr(collegeInputField.value.length);
+						  //display the value in array
+						  listItem.innerHTML = word;
+						  document.querySelector(".univ-list").appendChild(listItem);
+						}
+				  }
+				 })
+			 }
+		 })
+		
+		// creates and prepends a blue asterisk to indicate a required lesson in Modular programs
+		 $(window).on("guidedtrack:pageEnd", function() {
+			 const requiredAnswers = document.evaluate(
+			 '//li[contains(@class, "answer") and contains(., "❋")]',
+			   document,
+			   null,
+			   XPathResult.ORDERED_NODE_ITERATOR_TYPE
+			 );
+			 
+			 var requiredAnswerNodes = []
+			 
+			 while(result = requiredAnswers.iterateNext()) {
+			      requiredAnswerNodes.push(result)
+			 }
+			 
+			 requiredAnswerNodes.forEach(function(answer) {
+				 const _asterisk = document.createElement('span')
+			 	_asterisk.innerText = "❋ "
+			 	_asterisk.classList.add("mod-required")
+				 
+				if(answer.firstChild.textContent.includes("✔")){
+					appendTickMark(answer)
+				}
+				 
+				answer.removeChild(answer.firstChild)
+			    answer.prepend(_asterisk)
+			 });
+			 
+			 // add a left padding to the Main Menu items that are not required in modular program
+			 if(requiredAnswerNodes.length > 0) {
+				 
+				const parentUL = requiredAnswerNodes[0].parentElement
+			 	const span_element = document.querySelector(".mod-required")
+			 
+				 Array.prototype.forEach.call(parentUL.children, function(child, index){
+					 if(!child.firstChild.isEqualNode(span_element)){
+						 child.classList.add("mod-not-required")
+
+						 // if there is a tick that indicates lesson is completed, move it to the end of the line
+						 if(child.firstChild.textContent.includes("✔")){
+							appendTickMark(child)
+							child.removeChild(child.firstChild)
+						}
+					 }
+				 });
+				 
+			     // Add a text that says " * indicates required lesson"
+				 const requiredNoticeContainer = parentUL.parentElement.children[2]
+				 const _div = document.createElement("div")
+				 _div.innerHTML = "<span class ='mod-required'> ❋ </span> indicates required lesson"
+				 _div.style.paddingLeft = "17px"
+				 requiredNoticeContainer.appendChild(_div)
+			 }
+		})
 
     	//Sets default values
 		var AccessCode, csvHeaders, scoreHeaders, progressHeaders, tableData={};
@@ -1917,4 +2155,23 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
     </div> <!-- #main-content -->
   </body>
+	<script>
+		// 	Hides points bubble when dropdown menu is opened on mobile
+
+		const dropdownMenu = document.getElementById('run-menu');
+		const pointsBubble = document.getElementsByClassName('points')[0];
+		// needs refinement; points don't reappear on mobile upon closing dropdown
+		const dropdownOpen = () => {
+			if (window.innerWidth < 768) {
+				// at the time that dropdown toggle is clicked...
+				if (dropdownMenu.classList.length < 2 ) {
+					// hides points bubble while dropdown menu is open
+					pointsBubble.style.display = "none";
+				} else {
+					pointsBubble.style.display = "unset";
+				}
+			}
+		};
+		dropdownMenu.addEventListener('click', dropdownOpen);
+	</script>
 </html>

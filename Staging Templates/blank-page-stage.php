@@ -1,8 +1,9 @@
 <?php
 /*
-Template Name: Blank Page Stage
+Template Name: Page Template Blank
 */
-$is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
+$is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
+?>
 
 <html>
 	<head>
@@ -35,7 +36,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             /* Loader */
             .spinner>.double-bounce1, .double-bounce2 {
-                background-color: #66c6c1;
+                background-color: #ffffff;
             }
 
             /* Container basic styling */
@@ -81,7 +82,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				}
 			}
 			
-
+ 
             /* Typography */
             .program_container .text p {
                 font-size: 18px;
@@ -117,13 +118,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 			
 			a {
-				color: #337ab7 !important;
+/* 				color: #137b81 !important; */
+				color: #5158FF !important;
 				text-decoration: none !important;
 			}
 			
 			a:hover, 
             a:focus {
-                color: #66c6c1 !important;
+                color: #026d74!important;
             }
 			
 			/* Mobile Typography (smaller font sizes) */
@@ -292,11 +294,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
 			/* container for number of points */
             .program_container .points .total {
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				background-color: #AAA;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 
+				background: #434d7c; /* Old browsers 
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15 
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); IE6-9 */
+
 
                 box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
                 -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
@@ -324,11 +329,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				top: -20px;				
 				/* hide when not active */
 				display: none;
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				background-color: #AAA;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 
+				background: #434d7c; /* Old browsers 
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ 
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); /* IE6-9 */
+
                 border: none;
 				/*override new GT CSS*/
 				color: #fff !important;
@@ -394,7 +402,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             /* Progress Bar */
             /* */
             .program_container .progress {
-				background-color: rgba(148, 207, 161, 0.2) !important;
+				background-color: #e6e6e9 !important;
                 box-shadow: none;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;
@@ -426,11 +434,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				/* override new GT CSS narrow height, heavier font */
 				height: auto !important;
 				font-weight: 400 !important;
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193) !important; /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%) !important; /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%) !important; /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
+				background: #434d7c !important; /* Old browsers */
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%) !important; /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%) !important; /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ) !important; /* IE6-9 */
+
 
                 box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
                 -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
@@ -483,7 +493,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             #program_navigation #back-button span.glyphicon{
 				/* place in front of bottom nav border*/
-				z-index: 150;
+				z-index: 1;
                 width: 20px;
                 height: 19px;
                 line-height: 19px;
@@ -491,7 +501,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 background-size: 20px 19px;
                 background-repeat: no-repeat;
                 text-indent: -9999px;
-                left: -5px;
+                left: -5px;50
 				/* adjust positioning to line up with nav border */
                 top: 39px;
                 background-color: #fff !important;
@@ -759,7 +769,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			}
 			
 			/* adjust color of sign out icon to match others*/
-			.program_container li.answer .fas::before {
+			.program_container li.answer .fa::before {
 				color: var(--themeColor-primary);
 			}
 				
@@ -912,6 +922,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			/* enlarge check in checkbox*/
 			.program_container li.answer [type="checkbox"]:checked ~ span[role="checkbox"]:after {
 				font-size: 26px !important;
+/* 				color: #137b81 !important; */
+				color: #5158FF !important;
 			}
 			
 			/* for checkbox questions — last li styled as a button */
@@ -923,9 +935,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			}
 
             .no-touch ul.button-group .answer:hover:not(.selected) {
-				/* background-color: #f5f6fa !important; */
-				/* try light green tint for hover state */
-				background-color: rgba(148, 207, 161, 0.09) !important;
+				/* light purple tint for hover state */
+				background-color: #e3e6f0 !important;
 				border: 1px solid transparent !important;
 				font-weight: 500 !important;
                 box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2) !important;
@@ -943,9 +954,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 				font-family: 'Caladea', Times, serif;
 				font-size: 20px;
 				color: #404042;
-				/* background-color: #f5f6fa !important; */
-				/* try green tint for selected state */
-				background-color: rgba(148, 207, 161, 0.18) !important;
+				/* slightly darker tint when selected */
+				background-color: #dbdfe7 !important;
 				border: 1px solid transparent !important;
             }
 			
@@ -1247,7 +1257,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
                 display: block !important;
                 width: 6px !important;
                 height: 6px !important;
-                background-color: #66c6c1 !important;
+                background-color: #384069 !important;
                 border-radius: 50% !important;
                 -webkit-border-radius: 50% !important;
                 -moz-border-radius: 50% !important;
@@ -1308,11 +1318,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             .program_container .btn-default, 
             ul.button-group li.btn-primary,
 			.program_container .btn-primary{
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#66c6c1+0,93cea0+100 */
-                background: rgb(102,198,193); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(102,198,193,1) 0%, rgba(147,206,160,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background-image: linear-gradient(to right, rgba(102,198,193,1) 0%,rgba(147,206,160,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
+				background: #434d7c; /* Old browsers */
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); /* IE6-9 */
+
                 white-space: normal;
                 font-family: "Arimo", Arial, sans-serif;
                 font-weight: 700 !important;
@@ -1342,12 +1354,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			.program_container .btn-primary:hover, 
             ul.button-group li.btn-primary:hover {
                 color: #fff;
-
-                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cea0+0,66c6c1+100 */
-                background: rgb(147,206,160); /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(147,206,160,1) 0%, rgba(102,198,193,1) 100%); /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				/* REVERSE of standard gradient */
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4953e5+0,434d7c+100 */
+				background: #4953e5; /* Old browsers */
+				background: -moz-linear-gradient(left,  #4953e5 0%, #434d7c 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #4953e5 0%,#434d7c 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #4953e5 0%,#434d7c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4953e5', endColorstr='#434d7c',GradientType=1 ); /* IE6-9 */
 
                 border: none;
             }
@@ -1363,11 +1376,13 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
 			.program_container button.btn.btn-default.btn-lg.btn-block.no-submission {
-				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#93cea0+0,66c6c1+100 */
-                background: rgb(147,206,160) !important; /* Old browsers */
-                background: -moz-linear-gradient(left, rgba(147,206,160,1) 0%, rgba(102,198,193,1) 100%) !important; /* FF3.6-15 */
-                background: -webkit-linear-gradient(left, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%) !important; /* Chrome10-25,Safari5.1-6 */
-                background: linear-gradient(to right, rgba(147,206,160,1) 0%,rgba(102,198,193,1) 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ 
+				/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#434d7c+0,4953e5+100 */
+				background: #434d7c; /* Old browsers */
+				background: -moz-linear-gradient(left,  #434d7c 0%, #4953e5 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #434d7c 0%,#4953e5 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #434d7c 0%,#4953e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#434d7c', endColorstr='#4953e5',GradientType=1 ); /* IE6-9 */
+
 				opacity: .9;
 				box-shadow: 0 5px 10px 0 rgb(0 0 0 / 15%) !important; 
 				width: auto !important; 
@@ -1530,7 +1545,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 
             .styled-table thead tr {
                 white-space: nowrap;
-                background-color: #00B496;
+/*                 background-color: #00B496; */
+                background-color: #384069;
                 color: #ffffff;
                 text-align: left;
                 font-size: 14px;
@@ -1555,8 +1571,39 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
             }
 
             .styled-table tbody tr:last-of-type {
-                border-bottom: 2px solid #00B496;
+/*                 border-bottom: 2px solid #00B496; */
+                border-bottom: 2px solid #384069;
             }
+			
+			 .mod-required {
+     			color: #2C98DB;
+    		 }
+			
+			.mod-not-required {
+     			padding-left: 35px !important
+    		 }
+			
+			.university_list, .discipline_list {
+				  width: 100%;
+				  background-color: #ffffff;
+				  border-radius: 0 0 5px 5px;
+				  list-style: none;
+			}
+			
+			.hide {
+				display: none
+			}
+			
+			.list-items {
+				  padding: 5px 15px;
+				  border-bottom: 1px solid rgb(132,132,132, 0.25);
+				  font-size: 15px !important
+			}
+				
+			.list-items:hover {
+				  background-color: #dddddd;
+				  font-size: 15px !important
+			}
 		</style>
 		
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -1571,20 +1618,258 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 	</head>
 	
     <script>
+		// returns the universities list needed for autcompletion list during access code creation
+		const get_json_list = async function(file_name){
+			var rootFolder = '<?= get_stylesheet_directory_uri() ?>';
+			var jsonFile   = rootFolder + file_name;
+			
+			const response = await fetch(jsonFile)
+			const json = await response.json()
+			
+			return json;
+		}
+		
+		// appends a tick the end of the menu item in learner Main Menu
+		const appendTickMark = (DOMElement) => {
+			const tickMark = document.createElement("span")
+			tickMark.style.float = "right"
+			tickMark.innerText = "✔"
+			DOMElement.appendChild(tickMark)
+		}
+		
+		function removeElements() {
+		  //clear all the item
+		  let items = document.querySelectorAll(".list-items");
+		  items.forEach((item) => item.remove());
+		}
+		
+		async function handleDropdownItemSelect (json_list, field, selectorProperty, selectorClass, thirdInput) {	
+			    const list = Object.keys(json_list[selectorProperty])
+				removeElements()
+				
+				let counter = 0;
+			
+				for (let i of list) {
+					if (counter > 20) break;
+					
+					//convert input to lowercase and compare with each string
+					if (i.toLowerCase().startsWith(field.value.toLowerCase()) && field.value != "")                          {
+						//create li element
+						let listItem = document.createElement("li");
+						
+						//One common class name
+						listItem.classList.add("list-items");
+						listItem.style.cursor = "pointer";
+
+						listItem.addEventListener("click", (e) => {
+							e.stopPropagation();
+							field.value = i;
+							removeElements();
+							
+							// event listener to add zip code automatically when university / high school is selected from the list
+							if(selectorProperty === "university_list" || selectorProperty === "high_school_list"){
+								thirdInput.value = json_list[selectorProperty][i]["ZIPCODE"]
+							}
+						})
+						
+						//Display matched part in bold
+						let word = "<b style = 'font-size:15px !important'>" + i.substr(0, field.value.length) + "</b>";
+						word += i.substr(field.value.length);
+						
+						//display the value in array
+						listItem.innerHTML = word;
+						document.querySelector(`.${selectorClass}`).appendChild(listItem);
+						
+						// increment the counter
+						counter = counter + 1
+					}
+				}
+		}
+		  
+        // function to add a class to hide the dropdown on blur 		
+		const hideDropdown = (e, dropdown) => {
+			if(e.relatedTarget === null || (!e.relatedTarget.classList.contains("university_list") && !e.relatedTarget.classList.contains("discipline_list"))){
+			   dropdown.classList.add("hide")
+			}
+		}
+		
+		// function to show dropdown if the user focuses on the input field
+		const displayDropdown = (e, dropdown) => {
+			if(dropdown.classList.contains("hide")){
+			   dropdown.classList.remove("hide")
+		    }
+		}
+
+		 $(window).on("addDropdownLists", async function(event, user_country) {
+			 if(user_country === "USA")  {
+ 			 const NameInputPath = document.evaluate(
+			    `//div[(contains(@class, "prompt") and contains(., "What discipline is your course?")) or
+				 (contains(@class, "prompt") and contains(., "What's the name of your high school?")) or 
+				 (contains(@class, "prompt") and contains(., "What's the zip code")) or
+				 (contains(@class, "prompt") and contains(., "What's the name of your college or university?"))
+				]`,
+			     document,
+			     null,
+			     XPathResult.ORDERED_NODE_ITERATOR_TYPE
+			 );
+			 
+			 var NameNodes = []
+
+			 while(result = NameInputPath.iterateNext()) {
+			      NameNodes.push(result)
+			 }
+			 
+			 if(NameNodes.length > 0) {
+				 const parentNodeInst = NameNodes[0].parentElement.nextSibling.nextSibling.children[1]
+				 const parentNodeZipCode = NameNodes[1].parentElement.nextSibling.nextSibling.children[1]
+				 const parentNodeDiscipline = NameNodes[2].parentElement.nextSibling.nextSibling.children[1]
+				 
+				 // get the input element field for university name
+				 const disciplineInput = parentNodeDiscipline.firstChild
+				 const instInput = parentNodeInst.firstChild
+				 const zipCodeInput = parentNodeZipCode.firstChild
+
+				// create the ul list to contain suggested disciplines list
+				const dropdown_ul = document.createElement("div")
+				dropdown_ul.style.leftPadding="0px"
+				dropdown_ul.classList.add("discipline_list")
+				dropdown_ul.tabIndex = -1
+				 
+				parentNodeDiscipline.append(dropdown_ul)
+				
+				// create the ul list to contain suggested disciplines list
+				const dropdown_ul_inst = document.createElement("div")
+				dropdown_ul_inst.style.leftPadding="0px"
+				dropdown_ul_inst.classList.add("university_list")
+				dropdown_ul_inst.tabIndex = -1
+
+				parentNodeInst.append(dropdown_ul_inst)
+				
+				// add event handlers to hide drop down lists on blur
+
+				// university || high school dropdowns
+				instInput.addEventListener("blur", (e) => hideDropdown(e, dropdown_ul_inst))
+				instInput.addEventListener("focus", (e) => displayDropdown(e, dropdown_ul_inst))
+				 
+				// discipline dropdowns
+				disciplineInput.addEventListener("blur", (e) => hideDropdown(e, dropdown_ul))
+				disciplineInput.addEventListener("focus", (e) => displayDropdown(e, dropdown_ul))
+				 
+				//get json list containing universities, high school and discipline list
+				const json_list = await get_json_list('/JSON_Lists.json')
+				 
+				// attach an event listener to input field to add suggestion list on char change
+				disciplineInput.addEventListener("keyup", (e) => handleDropdownItemSelect(json_list, disciplineInput, 'discipline_list', 'discipline_list'))
+				 
+				if(NameNodes[0].innerText.includes("high school")){
+				const list = await get_json_list('/high_school_list.json')
+				
+				instInput.addEventListener("keyup", (e) => handleDropdownItemSelect(list, instInput, 'high_school_list','university_list', zipCodeInput))
+				} 
+				else {
+				instInput.addEventListener("keyup", (e) => handleDropdownItemSelect(json_list, instInput, 'university_list', 'university_list', zipCodeInput))	
+				}			
+			 }
+			 }
+		 })
+		
+		// creates and prepends a blue asterisk to indicate a required lesson in Modular programs
+		// prepends space to not completed lessons to align them with completed ones in Full Program
+		 $(window).on("guidedtrack:pageEnd", function() {
+			 const requiredAnswers = document.evaluate(
+			 '//li[contains(@class, "answer") and (contains(., "❋") or contains(., "✔")) ]',
+			   document,
+			   null,
+			   XPathResult.ORDERED_NODE_ITERATOR_TYPE
+			 );
+			 
+			 var requiredAnswerNodes = []
+			 
+			 while(result = requiredAnswers.iterateNext()) {
+			      requiredAnswerNodes.push(result)
+			 }
+			  
+			 var IsProgramModular = false
+			 
+			 requiredAnswerNodes.forEach(function(answer) {
+				if(answer.firstChild.textContent.includes("❋")){
+				
+				// creates a styled asterisk to append to menu item
+				const _asterisk = document.createElement('span')
+			 	_asterisk.innerText = "❋ "
+			 	_asterisk.classList.add("mod-required")
+				 
+				// appends the tick mark to the end of menu item in Modular Program
+				if(answer.firstChild.textContent.includes("✔")){
+					appendTickMark(answer)
+				}
+
+				// removes the tickmark, asterisk from the beginning and prepends a styled asterisk
+				answer.removeChild(answer.firstChild)
+			    answer.prepend(_asterisk)
+					
+				// if we have ❋ in any li element in Main Menu, it indicates Modular Program
+				if(!IsProgramModular) {
+					IsProgramModular = true
+				}
+			  }
+			});
+			 
+			 // add a left padding to the Main Menu items that are not required in modular program
+			 if(requiredAnswerNodes.length > 0) {	 
+				const parentUL = requiredAnswerNodes[0].parentElement
+			 	const span_element = document.querySelector(".mod-required")
+			 	
+				if(IsProgramModular){
+					 // Add a text that says " * indicates required lesson"
+					 const requiredNoticeContainer = parentUL.parentElement.children[2]
+					 const _div = document.createElement("div")
+					 _div.innerHTML = "<span class ='mod-required'> ❋ </span> indicates required lesson"
+					 _div.style.paddingLeft = "17px"
+					 requiredNoticeContainer.appendChild(_div)
+			    }
+				 
+				 Array.prototype.forEach.call(parentUL.children, function(child, index){
+
+					 if(!child.firstChild.isEqualNode(span_element)){
+
+						 // if there is a tick that indicates lesson is completed, move it to the end of the line
+						 if(IsProgramModular && child.firstChild.textContent.includes("✔")){
+							 appendTickMark(child)
+							 child.removeChild(child.firstChild)
+						 }
+						 
+						 // if there is a tick that indicates lesson is completed in complete program, make it bold so that it matches with P2P tickmark styling
+						 const modText = child.firstChild.textContent
+						 if(!IsProgramModular && modText.includes("✔") && modText.length === 2 ){
+							 child.removeChild(child.firstChild)
+							 child.firstChild.innerText = `✔ ${child.firstChild.innerText}`
+						 }
+
+						 // adds style for space if the menu item has neither asterisk or tickmark
+						 if(!child.firstChild.textContent.includes("✔")){
+							 child.classList.add("mod-not-required")
+						 }
+					 }
+				 });
+			 }
+		})
 
     	//Sets default values
 		var AccessCode, csvHeaders, scoreHeaders, progressHeaders, tableData={};
+		
+// 		TODO: find where this event listener is being triggered, otherwise remove it
+// 		$(window).on("loadData", function(event, data){
+// 		    tableData = data;
+// 		});
 
-		$(window).on("loadData", function(event, data){
-		    tableData = data;
-		});
-
-		//Loads CSV table headers and initializes table data object
+		// Loads CSV table headers and initializes table data object
 		$(window).on("loadSettings", function(event, data){
 		  tableData={};
 		  AccessCode = data.AccessCode;
 		  UserType = data.UserType;
 		  csvHeaders = data.csvHeaders; 
+			
   		  //Displays Course title for courses and group name otherwise
   		  if (UserType == "college" || UserType == "highschool") { 
   		  	infoTitle = "Course Title: ";
@@ -1601,7 +1886,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		  
 		});
 
-		//Loads Headers and calls function to generate table 
+		//Loads Headers and calls function to generate table
 		$(window).on("loadHeaders", function(event, data){
 
 		  // Sets score and progress table headers expected by AccessCode
@@ -1636,14 +1921,157 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		});
 
 		// Adds individual users to tableData object with OMID
-		$(window).on("addUser", function(event, data){
+		$(window).on("_addUser", function(event, data){
 		    tableData[data.OMID] = {};
 		    tableData[data.OMID] = data;
 		    delete tableData[data.OMID]['OMID'];
 		});
-
+		
+		// Adds individual users to tableData object with OMID
+		$(window).on("addUser", function(event, data){
+			const {roster, om_users } = data;
+			
+			for (let i = 0; i < om_users.length; i++){
+				let user = {}
+				
+				if(roster === "No"){
+					user = {
+						"First Name" : om_users[i]["firstname"],
+						"Last Name" : om_users[i]["lastname"],
+						"Email" : om_users[i]["email"],
+						"OMID": om_users[i]["OMID"]
+					}
+				} else if (roster === "Yes"){
+					user = {
+						"First Name" : om_users[i]["First Name"],
+						"Last Name" : om_users[i]["Last Name"],
+						"Email" : om_users[i]["Email"],
+						"Role": om_users[i]["Role"],
+						"Signed up": om_users[i]["Signed up"],
+						"OMID": om_users[i]["OMID"]
+					}
+				}
+				
+				tableData[user.OMID] = {};
+				tableData[user.OMID] = user;
+				delete tableData[user.OMID]['OMID'];
+			}
+			
+		});
+		
 		// Uses OMID to add Participant progress data to tableData object
 		$(window).on("addUserData", function(event, data){
+			const {pp_users, p2p_enabled, is_program_modular, lessons_completed_header, mods_assigned, lessons_map } = data
+			let userData = {}
+		
+			for (let i = 0; i < pp_users.length; i++){
+				let user = pp_users[i]
+				
+				userData["OMID"] = user["OMID"]
+				
+				const ModScores = user["ModScores"].split(",").filter(Boolean)
+				const ModQuestionTotals = user["ModQuestionTotals"].split(",").filter(Boolean)
+				const ModsComplete = user["ModsComplete"].split(",").filter(Boolean)
+				const DateFinished = user["DateFinished"]
+				
+				let P2PComplete = 0
+				if (p2p_enabled === "Yes"){
+					if(user["P2PComplete"].length !== 0) {
+						P2PComplete = user["P2PComplete"].split(",").length
+					}
+				}
+				
+				var ModsTotal = 0
+				var ModsQTotal = 0
+
+				let ModsCompleteSize = ModsComplete.length
+				
+				if(is_program_modular !== "Yes"){
+					
+					for (let j = 0; j < ModQuestionTotals.length; j++){
+						let score = 0
+						if (j < ModsCompleteSize && ModScores[j] != "0" ){
+							
+							ModsTotal = ModsTotal + parseInt(ModScores[j])
+							ModsQTotal = ModsQTotal + parseInt(ModQuestionTotals[j])
+							
+							// Calculates individual lesson scores 
+							score = Math.round(((ModScores[j] / ModQuestionTotals[j])*100))
+							score = `${score}%`
+							
+						} else if (j >= ModsCompleteSize){
+							score = "incomplete"
+						}
+						userData[`Lesson ${j+1}`] = score
+					}
+				} else if (is_program_modular === "Yes") {
+					let score = 0
+					let lesson = `Lesson ${j+1}`
+					
+					if (mods_assigned.includes(lessons_map[lesson]) && ModsComplete.includes(lessons_map[lesson]) ){
+						// Keeps track of total score
+						ModsTotal = ModsTotal + parseInt(ModScores[j])
+						ModsQTotal = ModsQTotal + parseInt(ModQuestionTotals[j])
+
+						// Calculates individual lesson scores 
+						score = Math.round(((ModScores[j] / ModQuestionTotals[j])*100))
+						score = `${score}%`
+						
+					} else if (!ModsComplete.includes(lessons_map[lesson])){
+						score = "incomplete"
+					}
+
+					userData[lesson] = score
+				}
+				
+				let ModScoresOverallText = ""
+				if (ModsTotal != 0 && ModsQTotal != 0) {
+					let ModScoresOverall = Math.round(((ModsTotal / ModsQTotal)*100))
+					ModScoresOverallText = `${ModScoresOverall}%`
+				}
+				
+				userData["% correct (of completed questions)"] = ModScoresOverallText
+				
+				if(is_program_modular === "Yes"){
+					ModsCompleteSize = 0
+					// 	calculate the number of completed modules in modular program				
+					mods_assigned.forEach((mod) => {
+						if(ModsComplete.includes(mod)){
+							ModsCompleteSize += 1
+						}
+					})
+				   
+				 }
+				
+				// Participant Progress: Calculates user's participant progress and adds to OMID table
+				userData[`${lessons_completed_header}`] = `${ModsCompleteSize}`
+				
+				if (p2p_enabled === "Yes") {
+					userData["Peer-to-Peer Complete (out of 4)"] = `${P2PComplete}`
+				}
+				
+				// Parse date from "2021-06-22T14:15:38.397Z" format to "2021-06-22 14:15"
+				try{
+					let iso_string = new Date(DateFinished).toISOString();
+					let completed_date = `${iso_string.substring(0, 10)} ${iso_string.substring(11, 16)}`
+					userData["Date Completed"] = completed_date
+				}catch(e){
+					userData["Date Completed"] = ""
+				}
+				
+				try {
+					Object.assign(tableData[userData.OMID], userData);
+					delete tableData[userData.OMID]['OMID'];
+				}
+				catch(err){
+					console.log(err);
+				}
+		}
+
+		});
+
+		// Uses OMID to add Participant progress data to tableData object
+		$(window).on("_addUserData", function(event, data){
 		    try{
 			    Object.assign(tableData[data.OMID], data);
 			    delete tableData[data.OMID]['OMID'];
@@ -1681,16 +2109,15 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 		    }
 		  }
 
-		            var divShowData = document.getElementById('showData');
-		            divShowData.innerHTML="";
-		  divShowData.appendChild(table);
-		  
+		    var divShowData = document.getElementById('showData');
+		    divShowData.innerHTML="";
+		    divShowData.appendChild(table);
 		} 
 
 		// Sets color selected for table buttons 
 		function btnSelected(n){
 			 if(n==1){ 
-			   $('#p-btn').css('background','#00B496');
+			   $('#p-btn').css('background','#384069');
 			   $('#p-btn').css('color','white');
 			   $('#s-btn').css('background','#fff');
 			   $('#s-btn').css('color', '#333');
@@ -1699,7 +2126,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 			 else {
 			   $('#p-btn').css('background','#fff');
 			   $('#p-btn').css('color', '#333');
-			   $('#s-btn').css('background','#00B496');
+			   $('#s-btn').css('background','#384069');
 			   $('#s-btn').css('color','white');
 			}
 		}
@@ -1871,7 +2298,7 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() ); ?>
 	</div>
         <h3 style="margin-bottom:3px">Participant Progress Dashboard</h3>
 
-        <p style="font-size:15px">Below you can view the progress of your participants on the OpenMind program. Only participants who have completed at least lesson 1 will display.</p>
+        <p style="font-size:15px">Below you can view the progress of your participants on the OpenMind program.</p>
 
         <input type="text" id="searchBox" onkeyup="filterList()" placeholder="Search for names...">
 
